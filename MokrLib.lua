@@ -1,6 +1,9 @@
 if game:GetService("CoreGui"):FindFirstChild("MUKURO GUI") then
 	game:GetService("CoreGui"):FindFirstChild("MUKURO GUI"):Destroy()
 end
+
+local Ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue()
+local Fps = workspace:GetRealPhysicsFPS()
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -590,7 +593,7 @@ function DiscordLib:Window(text,mainclr,cls)
 
 		spawn(function()
 			while wait() do
-				TimeGlobal.Text = "TIME | "..os.date("%H")..":"..os.date("%M")..":"..os.date("%S")
+				TimeGlobal.Text = ""..os.date("%H")..":"..os.date("%M")..":"..os.date("%S").."Fps : "..Fps.." Ping : "..math.round(Ping)
 			end
 		end)
 
