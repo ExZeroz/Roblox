@@ -80,7 +80,7 @@ if B.Name=='LibraryHintPaper'then
         local E=''for F=1,5 do
             local G=D[F]E=E..(G or'_')
         end 
-        k:Notify('[Code Parser]: '..E,10)
+        Library:Notify('[Code Parser]: '..E,10)
     end 
 end 
 end
@@ -737,6 +737,8 @@ local maintab = Window:AddTab('Main') do
                 section2:AddToggle('BREAKER_WIN',{Text='Breaker Assist',Default=false,Tooltip=[[Electrical breaker will be fully completed regardless of the actual state of the switches (Room 100)]]})
                 section2:AddToggle('AUTO_HEARTBEAT',{Text='Always Win Heartbeat Minigame',Default=false,Tooltip='Always win the heartbeat minigame (Room 50 & 100)'})
                 section2:AddToggle('AUTO_SCREECH',{Text='Anti-Screech',Default=false,Tooltip='Screech attacks no longer damage you.'})
+                section2:AddToggle('INSTANT_PROMPT',{Text='Instant Interact',Default=true,Tooltip='Instantly interacts with prompts'})
+                section2:AddToggle('AUTO_PROMPT',{Text='Automatic Interact',Default=false,Tooltip='Automaticall interacts with prompts'}):AddKeyPicker('AUTO_PROMPT_KEYBIND',{Text='Auto-Interact',Default='V'})
             end
         end
         local tab3 = maintab:AddRightTabbox() do
@@ -983,6 +985,18 @@ g:GetPropertyChangedSignal'CurrentCamera':Connect(function()
     end
 end)
 
+c.PromptButtonHoldBegan:Connect(function(ag,ah)
+    if Toggles.INSTANT_PROMPT.Value then 
+        task.spawn(fireproximityprompt,ag)
+    end 
+end)
+
+c.PromptShown:Connect(function(ag,ah)
+    if Toggles.AUTO_PROMPT.Value and Options.AUTO_PROMPT_KEYBIND:GetState()
+    then 
+        task.spawn(fireproximityprompt,ag)
+    end 
+end)
 p.Name=a:GenerateGUID(false)
 p.SoundId='rbxassetid://6026984224'
 p.Volume=6 
