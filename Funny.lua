@@ -549,12 +549,14 @@ SaveManager:SetFolder('MyScriptHub/specific-game')
 SaveManager:BuildConfigSection(Tabs['UI Settings'])
 local column = Tabs['UI Settings']:AddRightTabbox() do
     local section = column:AddTab('-- Status Players --') do
+    section:AddInput('MyTextbox', {Default = 'Put PlayersName Here',Numeric = false,Finished = false,Text = 'Players',Placeholder = 'PlaceHolder TextPlayerName',})
         local age = section:AddLabel('Age : ')
         local alive = section:AddLabel('Alive : ')
         local id = section:AddLabel('Id : ')
         local dis = section:AddLabel('DisplayName : ')
         local name = section:AddLabel('Name : ')
-        section:AddInput('MyTextbox', {Default = 'Put PlayersName Here',Numeric = false,Finished = false,Text = '',Placeholder = 'PlaceHolder TextPlayerName',}):OnChanged(function(val)
+        
+        Options.MyTextbox:OnChanged(function(val)
             if game.Players:FindFirstChild(val) then
                 local plr = game.Players:FindFirstChild(val)
 
