@@ -462,9 +462,9 @@ Groups.Autoplayer = Tabs.Main:AddLeftGroupbox('Autoplayer')
     Groups.Autoplayer:AddDropdown('PressMode', {
         Text = 'Input mode', 
         Compact = true, 
-        Default = 'firesignal', 
-        Values = { 'firesignal', 'virtual input' }, 
-        Tooltip = 'Input method used to press arrows.\n* firesignal: calls input functions directly.\n* virtual input: emulates key presses. use if "firesignal" does not work.', 
+        Default = 'สัญญาณไฟ', 
+        Values = { 'สัญญาณไฟ', 'อินพุตเสมือน' }, 
+        Tooltip = 'วิธีการป้อนข้อมูลที่ใช้ในการกดลูกศร.\n* firesignal: เรียกฟังก์ชันอินพุตโดยตรง.\n* อินพุตเสมือน: จำลองการกดปุ่ม ใช้ถ้า "firesignal" ไม่ทำงาน.', 
     })
 
 Groups.HitChances = Tabs.Main:AddLeftGroupbox('โอกาสในการกด')
@@ -472,8 +472,8 @@ Groups.HitChances = Tabs.Main:AddLeftGroupbox('โอกาสในการก
         Text = 'เลือกโหมดอัตโนมัติ',
         Compact = true,
         Default = 1,
-        Values = { 'Automatic', 'Manual' },
-        Tooltip = 'Mode to use for deciding when to hit notes.\n* Automatic: hits notes based on chance sliders\n* Manual: hits notes based on held keybinds',
+        Values = { 'อัตโนมัติ', 'คู่มือ' },
+        Tooltip = 'โหมดที่จะใช้ในการตัดสินใจว่าจะกดโน้ตเมื่อใด.\n* อัตโนมัติ: บันทึกย่อตามตัวเลื่อนโอกาส.\n* แมนนวล: ตีโน้ตตามคีย์ลัดที่ถือไว้',
     })
 
     Groups.HitChances:AddSlider('SickChance',   { Text = 'โอกาส Sick', Min = 0, Max = 100, Default = 100, Suffix = '%', Rounding = 0, Compact = true })
@@ -486,52 +486,52 @@ Groups.HitTiming = Tabs.Main:AddLeftGroupbox('Hit timing')
     Groups.HitTiming:AddDropdown('DelayMode', { 
         Text = 'ดีเลโหมด', 
         Default = 1, 
-        Values = { 'Manual', 'สุ่ม' },
-        Tooltip = 'Adjustable timing for when to release notes.\n* Manual releases the note after a fixed amount of time.\n* Random releases the note after a random amount of time.',
+        Values = { 'คู่มือ', 'สุ่ม' },
+        Tooltip = 'ปรับเวลาได้ว่าจะปล่อยโน้ตเมื่อใด.\n* คู่มือจะเผยแพร่บันทึกหลังจากระยะเวลาที่กำหนด.\n* สุ่มปล่อยโน้ตหลังจากผ่านไประยะหนึ่ง.',
     })
 
-    Groups.HitTiming:AddLabel('Manual delay')
-    Groups.HitTiming:AddSlider('ReleaseDelay',   { Text = 'Note delay', Min = 0, Max = 500, Default = 20, Rounding = 0, Compact = true, Suffix = 'ms' })
-    Groups.HitTiming:AddSlider('HeldDelay',      { Text = 'Held note delay', Min = -20, Max = 100, Default = 0, Rounding = 0, Compact = true, Suffix = 'ms' })
+    Groups.HitTiming:AddLabel('ล่าช้าด้วยตนเอง')
+    Groups.HitTiming:AddSlider('ReleaseDelay',   { Text = 'โน้ต ดีเล', Min = 0, Max = 500, Default = 20, Rounding = 0, Compact = true, Suffix = 'ms' })
+    Groups.HitTiming:AddSlider('HeldDelay',      { Text = 'จัดขึ้น โน้ต ดีเล', Min = -20, Max = 100, Default = 0, Rounding = 0, Compact = true, Suffix = 'ms' })
         
     Groups.HitTiming:AddLabel('Random delay')
-    Groups.HitTiming:AddSlider('NoteDelayMin',   { Text = 'Min note delay', Min = 0, Max = 100, Default = 0,    Rounding = 0, Compact = true, Suffix = 'ms' })
-    Groups.HitTiming:AddSlider('NoteDelayMax',   { Text = 'Max note delay', Min = 0, Max = 500, Default = 20,   Rounding = 0, Compact = true, Suffix = 'ms' })
+    Groups.HitTiming:AddSlider('NoteDelayMin',   { Text = 'บันทึกย่อล่าช้า', Min = 0, Max = 100, Default = 0,    Rounding = 0, Compact = true, Suffix = 'ms' })
+    Groups.HitTiming:AddSlider('NoteDelayMax',   { Text = 'แม็กซ์โน้ตล่าช้า', Min = 0, Max = 500, Default = 20,   Rounding = 0, Compact = true, Suffix = 'ms' })
     
-    Groups.HitTiming:AddSlider('HeldDelayMin',   { Text = 'Min held note delay', Min = 0, Max = 100, Default = 0,   Rounding = 0, Compact = true, Suffix = 'ms' })
-    Groups.HitTiming:AddSlider('HeldDelayMax',   { Text = 'Max held note delay', Min = 0, Max = 500, Default = 20,  Rounding = 0, Compact = true, Suffix = 'ms' })
+    Groups.HitTiming:AddSlider('HeldDelayMin',   { Text = 'มินถือโน้ตล่าช้า', Min = 0, Max = 100, Default = 0,   Rounding = 0, Compact = true, Suffix = 'ms' })
+    Groups.HitTiming:AddSlider('HeldDelayMax',   { Text = 'แม็กซ์ถือโน้ตล่าช้า', Min = 0, Max = 500, Default = 20,  Rounding = 0, Compact = true, Suffix = 'ms' })
 
-Groups.Unlockables = Tabs.Main:AddRightGroupbox('Unlockables')
-    Groups.Unlockables:AddButton('Unlock developer notes', ActivateUnlockables)
+Groups.Unlockables = Tabs.Main:AddRightGroupbox('ปลดล็อคได้')
+    Groups.Unlockables:AddButton('ปลดล็อกโน้ตของนักพัฒนา', ActivateUnlockables)
 
-Groups.Keybinds = Tabs.Main:AddRightGroupbox('Keybinds')
+Groups.Keybinds = Tabs.Main:AddRightGroupbox('คีย์ลัด')
     Groups.Keybinds:AddLabel('Sick'):AddKeyPicker('SickBind', { Default = 'One', NoUI = true })
     Groups.Keybinds:AddLabel('Good'):AddKeyPicker('GoodBind', { Default = 'Two', NoUI = true })
     Groups.Keybinds:AddLabel('Ok'):AddKeyPicker('OkayBind', { Default = 'Three', NoUI = true })
     Groups.Keybinds:AddLabel('Bad'):AddKeyPicker('BadBind', { Default = 'Four', NoUI = true })
 local Bitch = true
 local tabMenugroup = Tabs['UI Settings']:AddLeftTabbox() do
-    local MenuGroup = tabMenugroup:AddTab('Menu') do
-        MenuGroup:AddButton('Unload', function() Library:Unload() end)
-        MenuGroup:AddToggle('Show',{Text = 'Show Watermark',Default = true}):OnChanged(function()
+    local MenuGroup = tabMenugroup:AddTab('เมนู') do
+        MenuGroup:AddButton('ยกเลิกการโหลด', function() Library:Unload() end)
+        MenuGroup:AddToggle('Show',{Text = 'แสดงลายน้ำ',Default = true}):OnChanged(function()
             Bitch = Toggles.Show.Value
         end)
-        MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'RightControl', NoUI = true, Text = 'Menu keybind' })
+        MenuGroup:AddLabel('ปุ่มเปิดหน้าเมนู'):AddKeyPicker('MenuKeybind', { Default = 'RightControl', NoUI = true, Text = 'เลือกปุ่มหน้าเมนู' })
             Library.ToggleKeybind = Options.MenuKeybind
         end
-    local Client = tabMenugroup:AddTab('Server Time') do
-        Client:AddLabel('         -- Server Time --')
-        Hours = Client:AddLabel('      |Hour(s) : ')
-        Minutes = Client:AddLabel('    |Minute(s) : ')
-        Seconds = Client:AddLabel('    |Second(s) : ')
+    local Client = tabMenugroup:AddTab('เวลาเซิฟเวอร์') do
+        Client:AddLabel('         -- เวลาเซิฟเวอร์ --')
+        Hours = Client:AddLabel('      |ชั่วโมง(s) : ')
+        Minutes = Client:AddLabel('    |นาที(s) : ')
+        Seconds = Client:AddLabel('    |วินาที(s) : ')
         function UpdateTime()
             local GameTime = math.floor(workspace.DistributedGameTime+0.5)
             local Hour = math.floor(GameTime/(60^2))%24
             local Minute = math.floor(GameTime/(60^1))%60
             local Second = math.floor(GameTime/(60^0))%60
-            Hours:SetText("         Hour(s)   : "..Hour)
-            Minutes:SetText('         Minute(s) : '..Minute)
-            Seconds:SetText('         Second(s) : '..Second)
+            Hours:SetText("         ชั่วโมง(s)   : "..Hour)
+            Minutes:SetText('         นาที(s) : '..Minute)
+            Seconds:SetText('         วินาที(s) : '..Second)
         end
         
         spawn(function()
