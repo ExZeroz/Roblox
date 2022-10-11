@@ -1,6 +1,6 @@
 local I_W = game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("getInventoryWeapons")
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/naypramx/Ui__Project/Script/XeNonUi", true))()
-local CenterHubNo1 = library:CreateWindow("Reso Hub - Premieum Script",Enum.KeyCode.RightControl)
+local CenterHubNo1 = library:CreateWindow("🎃Reso Hub - Premieum Script",Enum.KeyCode.RightControl)
 local Tab = CenterHubNo1:CreateTab("General")
 local Tab2 = CenterHubNo1:CreateTab("Status")
 local Sector1 = Tab:CreateSector("Main","left")
@@ -56,7 +56,6 @@ function UpdateStatus()
         if v.Name == 'True Triple Katana' then
             TTK:Set('✅ : True Triple Katana')
         end
-        
 	end
     for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 		if v:IsA("Tool") then
