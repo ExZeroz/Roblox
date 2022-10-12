@@ -1,6 +1,15 @@
 if game:GetService('CoreGui'):FindFirstChild('ScreenGui') then
     game:GetService('CoreGui'):FindFirstChild('ScreenGui'):Destroy()
 end
+
+local function IsAlive(plr)
+	if plr and plr.Character and plr.Character.FindFirstChild(plr.Character, "Humanoid") and plr.Character.Humanoid.Health > 0 then
+		return true
+	end
+
+	return false
+end
+
 local start = tick()
 local a=game:GetService'HttpService'
 local b=game:GetService'Players'
