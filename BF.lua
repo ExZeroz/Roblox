@@ -1659,7 +1659,7 @@ spawn(function()
             pcall(function()
                 CameraShakerR:Stop()
                 CombatFramework.activeController.attacking = false
-                CombatFramework.activeController.timeToNextAttack = 0
+                CombatFramework.activeController.timeToNextAttack = .5
                 CombatFramework.activeController.increment = 3
                 CombatFramework.activeController.hitboxMagnitude = 100
                 CombatFramework.activeController.blocking = false
@@ -1966,3 +1966,7 @@ spawn(function()
         end)
     end
 end)
+
+if game:GetService("ReplicatedStorage").Effect.Container.Death then
+    game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
+end
