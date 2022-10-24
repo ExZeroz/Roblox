@@ -2369,7 +2369,7 @@ local PlayerTab = Tabs.Combat:AddLeftTabbox() do
 
         spawn(function ()
             pcall(function ()
-                while wait(.4) do
+                while wait(.2) do
                     table.clear(Playerslist)
                     for i,v in pairs(game:GetService('Players'):GetChildren()) do
                         table.insert(Playerslist,v.Name)
@@ -2381,7 +2381,45 @@ local PlayerTab = Tabs.Combat:AddLeftTabbox() do
     end
 end
 
+local CombatTab = Tabs.Combat:AddRightTabbox() do
+    local Combatsection = CombatTab:AddTab('Aimbot') do
+        Combatsection:AddToggle('Skill_Aimbot',{Text = 'Aimbot Skill',Default = false}):OnChanged(function ()
+            Skillaimbot = Toggles.Skill_Aimbot.Value
+        end)
+        Combatsection:AddToggle('Gun_Aimbot',{Text = 'Aimbot Gun',Default = false}):OnChanged(function()
+            _G.Aimbot_Gun = Toggles.Gun_Aimbot.Value
+        end)
 
+        spawn(function()
+            while task.wait() do
+                if _G.Aimbot_Gun and game:GetService("Players").LocalPlayer.Character:FindFirstChild(SelectWeaponGun) and game.Players:FindFirstChild(_G.SelectPly) then
+                    pcall(function()
+                        game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].Cooldown.Value = 0
+                        local args = {
+                            [1] = game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.HumanoidRootPart.Position,
+                            [2] = game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.HumanoidRootPart
+                        }
+                        game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
+                        game:GetService'VirtualUser':CaptureController()
+                        game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                    end)
+                end
+            end
+        end)
+
+        spawn(function ()
+            pcall(function ()
+                while wait() do
+                    if Skillaimbot then
+                        if game.Players:FindFirstChild(_G.SelectPly) and game.Players:FindFirstChild(_G.SelectPly).Character:FindFirstChild("HumanoidRootPart") and game.Players:FindFirstChild(_G.SelectPly).Character:FindFirstChild("Humanoid") and game.Players:FindFirstChild(_G.SelectPly).Character.Humanoid.Health > 0 then
+                            AimBotSkillPosition = game.Players:FindFirstChild(_G.SelectPly).Character:FindFirstChild("HumanoidRootPart").Position
+                        end
+                    end
+                end
+            end)
+        end)
+    end
+end
 
 spawn(function()
     while task.wait() do
