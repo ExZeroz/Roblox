@@ -2601,7 +2601,7 @@ function UpdateTime()
     local Hour = math.floor(GameTime/(60^2))%24
     local Minute = math.floor(GameTime/(60^1))%60
     local Second = math.floor(GameTime/(60^0))%60
-    Library:SetWatermark('🎃HHH Hub | '..Hour..' Hour(s), '..Minute..' Minute(s), '..Second..' Second(s)')
+    Library:SetWatermark('🎃 HHH Hub | '..Hour..' Hour(s), '..Minute..' Minute(s), '..Second..' Second(s)')
 end
 
 spawn(function()
