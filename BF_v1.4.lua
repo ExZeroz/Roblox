@@ -1304,6 +1304,7 @@ local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+Library:Notify('Loading UI...',3)
 Library:Notify('Script Is Loading...',3)
 local Window = Library:CreateWindow({
     Title = 'HHH Hub | ',
@@ -1436,10 +1437,22 @@ local MainTab = Tabs.General:AddLeftTabbox() do
                 _G.AutoThirdSea = Toggles.NewWorld2.Value
                 StopTween(_G.AutoThirdSea)
             end)
+        elseif W3 then
+            Mainsection:AddToggle('NewWorld3',{Text = 'New World',Default = false}):OnChanged(function()
+                
+            end)
         end
-        Mainsection:AddToggle('Bone',{Text = 'Auto Farm Bone',Default = false}):OnChanged(function ()
-            _G.AutoFarmBone = Toggles.Bone.Value
-            StopTween(_G.AutoFarmBone)
+
+        Mainsection:AddLabel('<b><font color=\"rgb(185, 0, 255)\">         Legendary Sword </font></b>')
+        Mainsection:AddToggle('Saber',{Text = 'Auto Saber',Default = false}):OnChanged(function()
+            _G.AutoSaber = value
+            StopTween(_G.AutoSaber)
+        end)
+        Mainsection:AddToggle('Legendary',{Text = 'Auto Legendary Sword',Default = false}):OnChanged(function()
+            _G.AutoBuyLegendarySword = Toggles.Legendary.Value
+        end)
+        Mainsection:AddToggle('LegendaryHop',{Text = 'Auto Legendary Sword Hop',Default = false}):OnChanged(function()
+            _G.AutoBuyLegendarySword_Hop = Toggles.LegendaryHop.Value
         end)
     end
     local Boss = MainTab:AddTab('Boss') do
@@ -1483,6 +1496,7 @@ local MainTab = Tabs.General:AddLeftTabbox() do
         end)
     end
     local Elite = MainTab:AddTab('Elite') do
+        Elite:AddLabel('<b><font color=\"rgb(255,255,255)\">           Elite Hunter </font></b>')
         local EliteSpawn = Elite:AddLabel('')
         local EliteProgress = Elite:AddLabel('')
 
@@ -1493,6 +1507,27 @@ local MainTab = Tabs.General:AddLeftTabbox() do
         end)
         Elite:AddToggle('EliteHop',{Text = 'Auto Elite Hunter Hop',Default = false}):OnChanged(function()
             _G.AutoEliteHunterHop = Toggles.EliteHop.Value
+        end)
+        Elite:AddToggle('EliteGodChalice',{Text = "Stop At God's Chalice",Default = false}):OnChanged(function()
+            _G.GodChalice = Toggles.EliteGodChalice.Value
+        end)
+
+        spawn(function()
+            pcall(function()
+                while wait() do
+                    if _G.GodChalice then
+                        for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                            if v:IsA("Tool") then
+                                if v.Name == "God's Chalice" then
+                                    Library:Notify("Found God's Chalice")
+                                    Toggles.Elite:SetValue(false)
+                                    Toggles.EliteGodChalice:SetValue(false)
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
         end)
         spawn(function()
             pcall(function()
@@ -1515,6 +1550,120 @@ local MainTab = Tabs.General:AddLeftTabbox() do
         end)
     end
 
+    spawn(function()
+        while wait() do
+            if _G.AutoBuyLegendarySword then
+                pcall(function()
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1")
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2")
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","3")
+                    if _G.AutoBuyLegendarySword_Hop and _G.AutoBuyLegendarySword and W2 then
+                        wait(10)
+                        Hop()
+                    end
+                end)
+            end 
+        end
+    end)
+    
+    spawn(function()
+        while wait() do
+            if _G.AutoSaber then
+                pcall(function()
+                    if game:GetService("Workspace").Map.Jungle.Final:FindFirstChild("Part").Transparency == 0 then
+                        TP(CFrame.new(-1421.6824951171875, 48.252071380615234, 21.318946838378906))
+                        wait(.5)
+                        TP(CFrame.new(-1181.1640625, 22.34051513671875, 188.13186645507812))
+                        wait(.5)
+                        TP(CFrame.new(-1648.1024169921875, 23.252126693725586, 438.4625549316406))
+                        wait(.5)
+                        TP(CFrame.new(-1153.3184814453125, 2.464047908782959, -701.0916748046875))
+                        wait(.5)
+                        TP(CFrame.new(-1325.6697998046875, 34.64987564086914, -463.0443420410156))
+                        wait(.7)
+                        TP(CFrame.new(-1610.5228271484375, 12.052069664001465, 162.6676025390625))
+                        wait(.6)
+                        EquipWeapon("Torch")
+                        wait(.5)
+                        TP(CFrame.new(1115.79688, 4.92147732, 4350.17334, -0.639640629, -4.97708896e-09, 0.768674076, -2.51370613e-09, 1, 4.38315872e-09, -0.768674076, 8.71425709e-10, -0.639640629))
+                        wait(6.5)
+                        TP(CFrame.new(1113.51929, 5.50669432, 4365.20752, -0.821950078, -4.84191531e-08, -0.569559574, 1.90744176e-09, 1, -8.77642634e-08, 0.569559574, -7.32242427e-08, -0.821950078))
+                        wait(.5)
+                        EquipWeapon("Cup")
+                        wait(.8)
+                        TP(CFrame.new(1392.83411, 37.3479347, -1323.19702, -0.0098256059, -1.19435768e-07, -0.99995172, 1.04197984e-08, 1, -1.19543927e-07, 0.99995172, -1.15938867e-08, -0.0098256059))
+                        wait(5)
+                        TP(CFrame.new(1458.23046875, 88.25215911865234, -1389.040283203125))
+                        wait(1.2)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress","SickMan")
+                        wait(.6)
+                        TP(CFrame.new(-908.8209838867188, 13.752044677734375, 4078.2666015625))
+                        wait(1.2)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress","RichSon")
+                        wait(.5)
+                        TP(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
+                        wait(1)
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Mob Leader [Lv. 120] [Boss]") then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v.Name == "Mob Leader [Lv. 120] [Boss]" then
+                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                        repeat task.wait()
+                                            AutoHaki()
+                                            EquipWeapon(_G.SelectWeapon)
+                                            v.HumanoidRootPart.CanCollide = false
+                                            v.Humanoid.WalkSpeed = 0
+                                            topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                            game:GetService("VirtualUser"):CaptureController()
+                                            game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                            sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                        until not _G.AutoSaber or v.Humanoid.Health <= 0
+                                    end
+                                end
+                            end
+                        end
+                        wait(.6)
+                        TP(CFrame.new(-908.8209838867188, 13.752044677734375, 4078.2666015625))
+                        wait(1.2)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress","RichSon")
+                        wait(1.1)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress")
+                        wait(.5)
+                        EquipWeapon("Relic")
+                        TP(CFrame.new(-1405.82397, 29.8520069, 5.05986547, 0.759286761, 4.36840342e-09, 0.65075618, 9.78191306e-09, 1, -1.81261139e-08, -0.65075618, 2.01285584e-08, 0.759286761))
+                        wait(1)
+                    else
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Saber Expert [Lv. 200] [Boss]") then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v.Name == "Saber Expert [Lv. 200] [Boss]" then
+                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                        repeat task.wait()
+                                            AutoHaki()
+                                            EquipWeapon(_G.SelectWeapon)
+                                            v.HumanoidRootPart.CanCollide = false
+                                            v.Humanoid.WalkSpeed = 0
+                                            topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                            game:GetService("VirtualUser"):CaptureController()
+                                            game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                            sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                        until not _G.AutoSaber or not v.Parent or v.Humanoid.Health <= 0
+                                    end
+                                end
+                            end
+                        else
+                            if game:GetService("ReplicatedStorage"):FindFirstChild("Saber Expert [Lv. 200] [Boss]") then
+                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Saber Expert [Lv. 200] [Boss]").HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                            else
+                                if _G.AutoSaber_Hop then
+                                    Hop()
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+    
     spawn(function()
         while wait() do 
             if _G.AutoSecondSea then
@@ -1653,20 +1802,63 @@ spawn(function()
             end)
         end
     end
+
+    spawn(function()
+        while wait() do
+            if _G.AutoAllBoss then
+                pcall(function()
+                    for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
+                        if string.find(v.Name,"Boss") then
+                            if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 17000 then
+                                repeat task.wait()
+                                    AutoHaki()
+                                    EquipWeapon(_G.SelectWeapon)
+                                    v.Humanoid.WalkSpeed = 0
+                                    v.HumanoidRootPart.CanCollide = false
+                                    v.Head.CanCollide = false
+                                    v.HumanoidRootPart.Size = Vector3.new(80,80,80)
+                                    topos(v.HumanoidRootPart.CFrame*CFrame.new(0,35,0))
+                                    game:GetService'VirtualUser':CaptureController()
+                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                until v.Humanoid.Health <= 0 or _G.AutoAllBoss == false or not v.Parent
+                            end
+                        else
+                            if _G.AutoAllBossHop then
+                                Hop()
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end)
 end)
 
 local AutoTab = Tabs.General:AddLeftTabbox() do
     local Autosection = AutoTab:AddTab('Events') do
+        Autosection:AddLabel('<b><font color=\"rgb(255, 0, 65)\">             Candies </font></b>')
+        Autosection:AddToggle('Buddy',{Text = 'Auto Buddy Sword',Default = false}):OnChanged(function()
+            _G.AutoBudySword = Toggles.Buddy.Value
+            StopTween(_G.AutoBudySword)
+        end)
+        Autosection:AddToggle('BuddyHop',{Text = 'Auto Buddy Sword Hop',Default = false}):OnChanged(function()
+            _G.AutoBudySwordHop = Toggles.BuddyHop.Value
+        end)
+        Autosection:AddLabel('<b><font color=\"rgb(255, 147, 0)\">            Halloween </font></b>')
+        Autosection:AddToggle('Scythe',{Text = 'Auto Hallow Scythe',Default = false}):OnChanged(function()
+            _G.AutoFarmBossHallow = Toggles.Scythe.Value
+            StopTween(_G.AutoFarmBossHallow)
+        end)
+        Autosection:AddToggle('ScytheHop',{Text = 'Auto Hallow Scythe Hop',Default = false}):OnChanged(function()
+            _G.AutoFarmBossHallowHop = Toggles.Scythe.Hop
+        end)
+        Autosection:AddLabel('<b><font color=\"rgb(0, 205, 255)\">             Portal </font></b>')
         local TotalPortal = Autosection:AddLabel('Enemies')
         Autosection:AddToggle('Portal',{Text = 'Auto Farm Princes',Default = false}):OnChanged(function ()
             _G.AutoDoughtBoss = Toggles.Portal.Value
             StopTween(_G.AutoDoughtBoss)
         end)
-        Autosection:AddToggle('Rengoku',{Text = 'Auto Rengoku',Default = false}):OnChanged(function ()
-            _G.AutoRengoku = Toggles.Rengoku.Value
-            StopTween(_G.AutoRengoku)
-        end)
-
         spawn(function()
             while wait(.2) do
                 pcall(function()
@@ -1686,44 +1878,41 @@ local AutoTab = Tabs.General:AddLeftTabbox() do
 end
 
 spawn(function()
-    pcall(function()
-        while wait() do
-            if _G.AutoRengoku then
-                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hidden Key") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Hidden Key") then
-                    EquipWeapon("Hidden Key")
-                    topos(CFrame.new(6571.1201171875, 299.23028564453, -6967.841796875))
-                else 
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Snow Lurker [Lv. 1375]") or game:GetService("Workspace").Enemies:FindFirstChild("Arctic Warrior [Lv. 1350]") then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if (v.Name == "Snow Lurker [Lv. 1375]" or v.Name == "Arctic Warrior [Lv. 1350]") and v.Humanoid.Health > 0 then
+    while wait() do
+        if _G.AutoBudySword then
+            pcall(function()
+                if game:GetService("Workspace").Enemies:FindFirstChild("Cake Queen [Lv. 2175] [Boss]") then
+                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                        if v.Name == "Cake Queen [Lv. 2175] [Boss]" then
+                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                 repeat task.wait()
-                                    EquipWeapon(_G.SelectWeapon)
                                     AutoHaki()
+                                    EquipWeapon(_G.SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
-                                    RengokuMon = v.HumanoidRootPart.CFrame
+                                    v.Humanoid.WalkSpeed = 0
                                     topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
-                                    game:GetService'VirtualUser':CaptureController()
-                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-                                    StartRengokuMagnet = true
-                                until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hidden Key") or _G.AutoRengoku == false or not v.Parent or v.Humanoid.Health <= 0
-                                StartRengokuMagnet = false
-                            end
-                        end
-                    else
-                        StartRengokuMagnet = false
-                        if game:GetService("ReplicatedStorage"):FindFirstChild("Snow Lurker [Lv. 1375]") then
-                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Snow Lurker [Lv. 1375]").HumanoidRootPart.CFrame * CFrame.new(0,35,0))
-                        else
-                            if game:GetService("ReplicatedStorage"):FindFirstChild("Arctic Warrior [Lv. 1350]") then
-                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Arctic Warrior [Lv. 1350]").HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                    game:GetService("VirtualUser"):CaptureController()
+                                    game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                until not _G.AutoBudySword or not v.Parent or v.Humanoid.Health <= 0
                             end
                         end
                     end
+                else
+                    if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Queen [Lv. 2175] [Boss]") then
+                        topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Queen [Lv. 2175] [Boss]").HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+					else
+						if _G.AutoBudySwordHop then
+							Hop()
+						end
+                    end
                 end
-            end
+            end)
         end
-    end)
+    end
 end)
+
+
 
 spawn(function()
     while wait() do
@@ -1907,6 +2096,63 @@ local SettingsTab = Tabs.General:AddRightTabbox() do
         end)
     end
 end
+
+local OtherFarm = Tabs.General:AddRightTabbox() do
+    local Othersection = OtherFarm:AddTab('Other') do
+        Othersection:AddToggle('Rengoku',{Text = 'Auto Rengoku',Default = false}):OnChanged(function ()
+            _G.AutoRengoku = Toggles.Rengoku.Value
+            StopTween(_G.AutoRengoku)
+        end)
+        Othersection:AddToggle('Bone',{Text = 'Auto Farm Bone',Default = false}):OnChanged(function ()
+            _G.AutoFarmBone = Toggles.Bone.Value
+            StopTween(_G.AutoFarmBone)
+        end)
+        Othersection:AddToggle('Ectoplasm',{Text = 'Auto Farm Ectoplasm',Default = false}):OnChanged(function()
+            _G.AutoEctoplasm = Toggles.Ectoplasm.Value
+            StopTween(_G.AutoEctoplasm)
+        end)
+    end
+end
+
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoRengoku then
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hidden Key") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Hidden Key") then
+                    EquipWeapon("Hidden Key")
+                    topos(CFrame.new(6571.1201171875, 299.23028564453, -6967.841796875))
+                else 
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Snow Lurker [Lv. 1375]") or game:GetService("Workspace").Enemies:FindFirstChild("Arctic Warrior [Lv. 1350]") then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if (v.Name == "Snow Lurker [Lv. 1375]" or v.Name == "Arctic Warrior [Lv. 1350]") and v.Humanoid.Health > 0 then
+                                repeat task.wait()
+                                    EquipWeapon(_G.SelectWeapon)
+                                    AutoHaki()
+                                    v.HumanoidRootPart.CanCollide = false
+                                    RengokuMon = v.HumanoidRootPart.CFrame
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                    game:GetService'VirtualUser':CaptureController()
+                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                    StartRengokuMagnet = true
+                                until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hidden Key") or _G.AutoRengoku == false or not v.Parent or v.Humanoid.Health <= 0
+                                StartRengokuMagnet = false
+                            end
+                        end
+                    else
+                        StartRengokuMagnet = false
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Snow Lurker [Lv. 1375]") then
+                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Snow Lurker [Lv. 1375]").HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                        else
+                            if game:GetService("ReplicatedStorage"):FindFirstChild("Arctic Warrior [Lv. 1350]") then
+                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Arctic Warrior [Lv. 1350]").HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end)
+end)
 
 local MapTab = Tabs.Visual:AddLeftTabbox() do
     local Mapsection = MapTab:AddTab('Map - Teleport') do
@@ -2932,7 +3178,43 @@ spawn(function()
 	end
 end)
 
-
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoEctoplasm then
+                if game:GetService("Workspace").Enemies:FindFirstChild("Ship Deckhand [Lv. 1250]") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Engineer [Lv. 1275]") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Steward [Lv. 1300]") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Officer [Lv. 1325]") then
+                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                        if string.find(v.Name, "Ship") then
+                            repeat task.wait()
+                                EquipWeapon(_G.SelectWeapon)
+                                AutoHaki()
+                                if string.find(v.Name,"Ship") then
+                                    v.HumanoidRootPart.CanCollide = false
+                                    v.Head.CanCollide = false
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                    game:GetService'VirtualUser':CaptureController()
+                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                    EctoplasmMon = v.HumanoidRootPart.CFrame
+                                    StartEctoplasmMagnet = true
+                                else
+                                    StartEctoplasmMagnet = false
+                                    topos(CFrame.new(911.35827636719, 125.95812988281, 33159.5390625))
+                                end
+                            until _G.AutoEctoplasm == false or not v.Parent or v.Humanoid.Health <= 0
+                        end
+                    end
+                else
+                    StartEctoplasmMagnet = false
+                    local Distance = (Vector3.new(911.35827636719, 125.95812988281, 33159.5390625) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                    if Distance > 18000 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
+                    end
+                    topos(CFrame.new(911.35827636719, 125.95812988281, 33159.5390625))
+                end
+            end
+        end
+    end)
+end)
 
 
 local Bitch = true
