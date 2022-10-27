@@ -1456,6 +1456,13 @@ local MainTab = Tabs.General:AddLeftTabbox() do
             _G.AutoFarmBoss = Toggles.Boss.Value
             StopTween(_G.AutoFarmBoss)
         end)
+        Boss:AddToggle('AllBoss',{Text = 'Auto Farm All Bosses',Default = false}):OnChanged(function()
+            _G.AutoAllBoss = Toggles.AllBoss.Value
+            StopTween(_G.AutoAllBoss)
+        end)
+        Boss:AddToggle('AllBossHop',{Text = 'Auto Farm All Bosses Hop',Default = false}):OnChanged(function()
+            _G.AutoAllBossHop = Toggles.AllBossHop
+        end)
         spawn(function ()
             pcall(function()
                 while wait(.2) do
