@@ -1837,7 +1837,7 @@ local Teleport = Page3:CreateSection({
 })
 Teleport:AddDropdown({
 	Name = "Select Island",
-	Value = "", -- ค่าที่จะให้มันเลือก
+	Value = "",
 	List = Island,
 	Callback = function(value)
 		_G.SelectIsland =  value
@@ -1948,6 +1948,54 @@ Teleport:AddToggle({
         StopTween(_G.TeleportIsland)
     end
 })
+local Stat = Page3:CreateSection({
+    Name = "Auto Stats",
+    Side = "Left"
+})
+Stat:AddToggle({
+    Name = "Auto Melee",
+    Value = false,
+    Callback = function(Value)
+        _G.Auto_Melee = Value
+    end
+})
+Stat:AddToggle({
+    Name = "Auto Defense",
+    Value = false,
+    Callback = function(Value)
+        _G.Auto_Defense = Value
+    end
+})
+Stat:AddToggle({
+    Name = "Auto Sword",
+    Value = false,
+    Callback = function(Value)
+        _G.Auto_Sword = Value
+    end
+})
+Stat:AddToggle({
+    Name = "Auto Gun",
+    Value = false,
+    Callback = function(Value)
+        _G.Auto_Gun = Value
+    end
+})
+Stat:AddToggle({
+    Name = "Auto Devil Fruits",
+    Value = false,
+    Callback = function(Value)
+        _G.Auto_DevilFruit = Value
+    end
+})
+Stat:AddSlider({
+    Name = "Add Point",
+    Value = 1,
+    Min = 1,
+    Max = 10,
+    Callback = function(Value)
+        _G.PointStats = Value
+    end
+})
 local dungeon = Page3:CreateSection({
     Name = "Dungeon",
     Side = "Right",
@@ -2008,6 +2056,8 @@ local devil = PlrStatus:AddLabel("Devil Fruit : "..game:GetService("Players").Lo
 local beli = PlrStatus:AddLabel("Beli : "..game:GetService("Players").LocalPlayer.Data.Beli.Value)
 local Fragment = PlrStatus:AddLabel("Fragment : "..game:GetService("Players").LocalPlayer.Data.Fragments.Value)
 
+
+
 spawn(function()
     pcall(function()
         while wait(.2) do
@@ -2019,6 +2069,66 @@ spawn(function()
             Fragment:Set("Fragment : "..game:GetService("Players").LocalPlayer.Data.Fragments.Value)
         end
     end)
+end)
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.Auto_Melee then
+                if game:GetService("Players")["LocalPlayer"].Data.Points.Value ~= 0 then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",_G.PointStats)
+                end
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.Auto_Defense then
+                if game:GetService("Players")["LocalPlayer"].Data.Points.Value ~= 0 then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense",_G.PointStats)
+                end
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.Auto_Sword then
+                if game:GetService("Players")["LocalPlayer"].Data.Points.Value ~= 0 then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Sword",_G.PointStats)
+                end
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.Auto_Gun then
+                if game:GetService("Players")["LocalPlayer"].Data.Points.Value ~= 0 then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Gun",_G.PointStats)
+                end
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.Auto_DevilFruit then
+                if game:GetService("Players")["LocalPlayer"].Data.Points.Value ~= 0 then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Demon Fruit",_G.PointStats)
+                end
+            end
+        end)
+    end
 end)
 
 spawn(function()
@@ -2362,7 +2472,7 @@ spawn(function()
             elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
                 TotalPortal:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39))
             else
-                TotalPortal:Set("Boss Is Spawning")
+                TotalPortal:Set("Dimension Has Open!!!") 
             end
         end)
     end
