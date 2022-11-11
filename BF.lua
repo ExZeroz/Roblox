@@ -1243,10 +1243,12 @@ end
 MIo = {
     "Super Fast",
     "Fast",
-    "Smooth"
+    "Smooth",
+    "Slow",
+    "Super Slow"
 }
-main:Dropdown("Select FastAttack Delay",MIo,function ()
-    _G.FastMode = Options.Select_Fast.Value
+main:Dropdown("Select FastAttack Delay",MIo,function (value)
+    _G.FastMode = value
 
     if _G.FastMode == "Fast" then
         _G.Fast_Delay = 0.1
@@ -1254,6 +1256,10 @@ main:Dropdown("Select FastAttack Delay",MIo,function ()
         _G.Fast_Delay = 0.2
     elseif _G.FastMode == "Super Fast" then
         _G.Fast_Delay = 0
+    elseif _G.FastMode == "Slow" then
+        _G.Fast_Delay = 0.3
+    elseif _G.FastMode == "Super Slow" then
+        _G.Fast_Delay = 1
     end
 end)
 main:Toggle("Fast Attack",true,function (Value)
@@ -1352,7 +1358,7 @@ spawn(function()
 end)
 
 spawn(function()
-    while wait() do
+    while task.wait() do
         pcall(function()
             if _G.BringMonster then
                 CheckQuest()
@@ -1658,4 +1664,109 @@ spawn(function()
             end
         end
     end)
+end)
+BossList = {}
+for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+    if string.find(v.Name, "Boss") then
+        table.insert(BossList, v.Name)
+    end
+end
+for i,v in pairs(game.workspace.Enemies:GetChildren()) do
+    if string.find(v.Name, "Boss") then
+        table.insert(BossList, v.Name)
+    end
+end
+main:Line()
+local Boss = main:Label("")
+Boss:Refresh("Bosses Farm")
+local reboss = main:Dropdown("Select Boss",BossList,function (value)
+    _G.SelectBoss = value
+end)
+main:Button("Refersh Bosses",function ()
+    reboss:Clear()
+    for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+        if string.find(v.Name, "Boss") then
+            reboss:Add(v.Name)
+        end
+    end
+    for i,v in pairs(game.workspace.Enemies:GetChildren()) do
+        if string.find(v.Name, "Boss") then
+            reboss:Add(v.Name)
+        end
+    end
+end)
+main:Toggle("Auto Farm Boss",false,function (value)
+    _G.AutoFarmBoss = value
+    StopTween(_G.AutoFarmBoss)
+end)
+
+spawn(function()
+    while wait() do
+        if _G.AutoFarmBoss then
+            pcall(function()
+                if game:GetService("Workspace").Enemies:FindFirstChild(_G.SelectBoss) then
+                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                        if v.Name == _G.SelectBoss then
+                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                repeat task.wait()
+                                    AutoHaki()
+                                    EquipWeapon(_G.SelectWeapon)
+                                    v.HumanoidRootPart.CanCollide = false
+                                    v.Humanoid.WalkSpeed = 0
+                                    v.HumanoidRootPart.Size = Vector3.new(80,80,80)                             
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                    game:GetService("VirtualUser"):CaptureController()
+                                    game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                    sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
+                                until not _G.AutoFarmBoss or not v.Parent or v.Humanoid.Health <= 0
+                            end
+                        end
+                    end
+                else
+                    if game:GetService("ReplicatedStorage"):FindFirstChild(_G.SelectBoss) then
+                        topos(game:GetService("ReplicatedStorage"):FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                    end
+                end
+            end)
+        end
+    end
+end)
+
+main:Toggle("Auto Farm All Bosses",false,function (value)
+    _G.AutoAllBoss = value
+    StopTween(_G.AutoAllBoss)
+end)
+main:Toggle("Auto Farm All Bosses Hop",false,function (value)
+    _G.AutoAllBossHop = value
+end)
+
+spawn(function()
+	while wait() do
+		if _G.AutoAllBoss then
+			pcall(function()
+				for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
+					if string.find(v.Name,"Boss") then
+						if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 17000 then
+							repeat task.wait()
+								AutoHaki()
+								EquipWeapon(_G.SelectWeapon)
+								v.Humanoid.WalkSpeed = 0
+								v.HumanoidRootPart.CanCollide = false
+								v.Head.CanCollide = false
+                                v.HumanoidRootPart.Size = Vector3.new(80,80,80)
+								topos(v.HumanoidRootPart.CFrame*CFrame.new(0,35,0))
+								game:GetService'VirtualUser':CaptureController()
+								game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+								sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+							until v.Humanoid.Health <= 0 or _G.AutoAllBoss == false or not v.Parent
+						end
+					else
+						if _G.AutoAllBossHop then
+							Hop()
+						end
+					end
+				end
+			end)
+		end
+	end
 end)
