@@ -75,7 +75,7 @@ Nord["Themes"] = {
             ["BackgroundColor3"] = Color3.fromRGB(25, 20, 20);
         },
         ["TextLabel"] = {
-            ["TextColor3"] = Color3.fromRGB(255, 215, 255)
+            ["TextColor3"] = Color3.fromRGB(255, 160, 255)
         }
     }
 }
