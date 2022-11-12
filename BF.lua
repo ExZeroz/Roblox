@@ -958,9 +958,10 @@ spawn(function()
     wait(1)
     game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
-
+_G.Config = { ["Theme"] = "Spotify" }
+local Nord = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ExZeroz/Roblox/main/Notify.lua", true))();
 DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ExZeroz/Roblox/main/MokrLib.lua"))()
-local win = DiscordLib:Window("Blox Fruits")
+local win = DiscordLib:Window("Blox Fruits",Color3.fromRGB(255, 180, 255))
 local Page = win:Server("Xeris Hub | Community", "")
 local main = Page:Channel("General")
 local BuyItem = Page:Channel("Items")
@@ -1614,57 +1615,7 @@ end)
 main:Toggle("Auto Elite Hunter Hop",false,function (value)
     _G.AutoEliteHunterHop = value
 end)
-main:Line()
-local s = main:Label("")
-s:Refresh("Bone Farm")
-main:Toggle("Auto Farm Bone",false,function (value)
-    _G.AutoFarmBone = value
-    StopTween(_G.AutoFarmBone)
-end)
 
-spawn(function()
-    while wait() do 
-        if _G.AutoFarmBone and W3 then
-            pcall(function()
-				if game:GetService("Workspace").Enemies:FindFirstChild("Reborn Skeleton [Lv. 1975]") or game:GetService("Workspace").Enemies:FindFirstChild("Living Zombie [Lv. 2000]") or game:GetService("Workspace").Enemies:FindFirstChild("Domenic Soul [Lv. 2025]") or game:GetService("Workspace").Enemies:FindFirstChild("Posessed Mummy [Lv. 2050]") then
-					for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-						if v.Name == "Reborn Skeleton [Lv. 1975]" or v.Name == "Living Zombie [Lv. 2000]" or v.Name == "Demonic Soul [Lv. 2025]" or v.Name == "Posessed Mummy [Lv. 2050]" then
-							if v.Humanoid.Health > 0 then
-								repeat task.wait()
-                                    AutoHaki()
-                                    EquipWeapon(_G.SelectWeapon)
-									v.HumanoidRootPart.CanCollide = false
-                                    v.Head.CanCollide = false 
-                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
-                                    game:GetService("VirtualUser"):CaptureController()
-                                    game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-									PosMonBone = v.HumanoidRootPart.CFrame
-									StartMagnetBoneMon = true
-								until not _G.AutoFarmBone or v.Humanoid.Health <= 0 or not v.Parent
-							end
-						end
-					end
-				else
-					StartMagnetBoneMon = false
-                    topos(CFrame.new(-9515.3720703125, 164.00624084473, 5786.0610351562))                    
-				end
-			end)
-		end
-	end
-end)
-main:Toggle("Auto Random Bone",false,function (value)
-    _G.Auto_Random_Bone = value
-end)
-
-spawn(function()
-    pcall(function()
-        while wait() do
-            if _G.Auto_Random_Bone then    
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
-            end
-        end
-    end)
-end)
 BossList = {}
 for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
     if string.find(v.Name, "Boss") then
@@ -1793,6 +1744,7 @@ spawn(function()
 end)
 main:Toggle("Auto Farm Princes",false,function (value)
     _G.AutoDoughtBoss = value
+    StopTween(_G.AutoDoughtBoss)
 end)
 spawn(function()
     while wait() do
@@ -1929,14 +1881,10 @@ spawn(function()
         while wait() do
             if _G.AutoObservation then
                 if game:GetService("Players").LocalPlayer.VisionRadius.Value >= 3000 then
-                    game:GetService("StarterGui"):SetCore("SendNotification", {
-                        Icon = "rbxassetid://0";
-                        Title = "Observation", 
-                        Text = "You Have Max Points"
-                    })
-                    wait(2)
+                    Nord:Notify(nil,"Observation\n\nYou Have Max","",3)
+                    wait(3)
                 else
-                    if World2 then
+                    if W2 then
                         if game:GetService("Workspace").Enemies:FindFirstChild("Lava Pirate [Lv. 1200]") then
                             if game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui:FindFirstChild("ImageLabel") then
                                 repeat task.wait()
@@ -1954,7 +1902,7 @@ spawn(function()
                         else
                             topos(CFrame.new(-5478.39209, 15.9775667, -5246.9126))
                         end
-                    elseif World1 then
+                    elseif W then
                         if game:GetService("Workspace").Enemies:FindFirstChild("Galley Captain [Lv. 650]") then
                             if game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui:FindFirstChild("ImageLabel") then
                                 repeat task.wait()
@@ -1972,7 +1920,7 @@ spawn(function()
                         else
                             topos(CFrame.new(5533.29785, 88.1079102, 4852.3916))
                         end
-                    elseif World3 then
+                    elseif W3 then
                         if game:GetService("Workspace").Enemies:FindFirstChild("Giant Islander [Lv. 1650]") then
                             if game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui:FindFirstChild("ImageLabel") then
                                 repeat task.wait()
@@ -2244,6 +2192,131 @@ spawn(function()
         end
     end)
 end)
+
+main:Toggle("Auto Farm Ectoplasm",false,function (value)
+    _G.AutoEctoplasm = value
+    StopTween(_G.AutoEctoplasm)
+end)
+
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoEctoplasm and W2 then
+                if game:GetService("Workspace").Enemies:FindFirstChild("Ship Deckhand [Lv. 1250]") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Engineer [Lv. 1275]") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Steward [Lv. 1300]") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Officer [Lv. 1325]") then
+                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                        if string.find(v.Name, "Ship") then
+                            repeat task.wait()
+                                EquipWeapon(_G.SelectWeapon)
+                                AutoHaki()
+                                if string.find(v.Name,"Ship") then
+                                    v.HumanoidRootPart.CanCollide = false
+                                    v.Head.CanCollide = false
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                    game:GetService'VirtualUser':CaptureController()
+                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                    EctoplasmMon = v.HumanoidRootPart.CFrame
+                                    StartEctoplasmMagnet = true
+                                else
+                                    StartEctoplasmMagnet = false
+                                    topos(CFrame.new(911.35827636719, 125.95812988281, 33159.5390625))
+                                end
+                            until _G.AutoEctoplasm == false or not v.Parent or v.Humanoid.Health <= 0
+                        end
+                    end
+                else
+                    StartEctoplasmMagnet = false
+                    local Distance = (Vector3.new(911.35827636719, 125.95812988281, 33159.5390625) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                    if Distance > 18000 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
+                    end
+                    topos(CFrame.new(911.35827636719, 125.95812988281, 33159.5390625))
+                end
+            end
+        end
+    end)
+end)
+main:Toggle("Auto Farm Bone",false,function (value)
+    _G.AutoFarmBone = value
+    StopTween(_G.AutoFarmBone)
+end)
+
+spawn(function()
+    while wait() do 
+        if _G.AutoFarmBone and W3 then
+            pcall(function()
+				if game:GetService("Workspace").Enemies:FindFirstChild("Reborn Skeleton [Lv. 1975]") or game:GetService("Workspace").Enemies:FindFirstChild("Living Zombie [Lv. 2000]") or game:GetService("Workspace").Enemies:FindFirstChild("Domenic Soul [Lv. 2025]") or game:GetService("Workspace").Enemies:FindFirstChild("Posessed Mummy [Lv. 2050]") then
+					for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+						if v.Name == "Reborn Skeleton [Lv. 1975]" or v.Name == "Living Zombie [Lv. 2000]" or v.Name == "Demonic Soul [Lv. 2025]" or v.Name == "Posessed Mummy [Lv. 2050]" then
+							if v.Humanoid.Health > 0 then
+								repeat task.wait()
+                                    AutoHaki()
+                                    EquipWeapon(_G.SelectWeapon)
+									v.HumanoidRootPart.CanCollide = false
+                                    v.Head.CanCollide = false 
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                    game:GetService("VirtualUser"):CaptureController()
+                                    game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+									PosMonBone = v.HumanoidRootPart.CFrame
+									StartMagnetBoneMon = true
+								until not _G.AutoFarmBone or v.Humanoid.Health <= 0 or not v.Parent
+							end
+						end
+					end
+				else
+					StartMagnetBoneMon = false
+                    topos(CFrame.new(-9515.3720703125, 164.00624084473, 5786.0610351562))                    
+				end
+			end)
+		end
+	end
+end)
+main:Toggle("Auto Holy Torch",false,function (value)
+    _G.AutoHolyTorch = value
+    StopTween(_G.AutoHolyTorch)
+end)
+
+spawn(function()
+    while wait() do
+        if _G.AutoHolyTorch and W3 then
+            pcall(function()
+                if game.Players.LocalPlayer.Backpack:FindFirstChild("Holy Torch") or game.Players.LocalPlayer.Character:FindFirstChild("Holy Torch") then
+                    repeat wait(.2)
+                        EquipWeapon("Holy Torch")
+                        topos(CFrame.new(-10752.4434, 415.261749, -9367.43848, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+                    until (Vector3.new(-10752.4434, 415.261749, -9367.43848)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        EquipWeapon("Holy Torch")
+                        topos(CFrame.new(-11671.6289, 333.78125, -9474.31934, 0.300932229, 0, -0.953645527, 0, 1, 0, 0.953645527, 0, 0.300932229))
+                    until (Vector3.new(-11671.6289, 333.78125, -9474.31934)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        EquipWeapon("Holy Torch")
+                        topos(CFrame.new(-12133.1406, 521.507446, -10654.292, 0.80428642, 0, -0.594241858, 0, 1, 0, 0.594241858, 0, 0.80428642))
+                    until (Vector3.new(-12133.1406, 521.507446, -10654.292)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        EquipWeapon("Holy Torch")
+                        topos(CFrame.new(-13336.127, 484.521179, -6985.31689, 0.853732228, 0, -0.520712316, 0, 1, 0, 0.520712316, 0, 0.853732228))
+                    until (Vector3.new(-13336.127, 484.521179, -6985.31689)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    EquipWeapon("Holy Torch")
+                    repeat wait(.2)
+                        topos(CFrame.new(-13487.623, 336.436188, -7924.53857, -0.982848108, 0, 0.184417039, 0, 1, 0, -0.184417039, 0, -0.982848108))
+                    until (Vector3.new(-13487.623, 336.436188, -7924.53857)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    Nord:Notify(nil, "Holy Torch\n\nSuccess", "", 3)
+                    wait(20)
+                elseif not game.Players.LocalPlayer.Backpack:FindFirstChild("Holy Torch") and not game.Players.LocalPlayer.Character:FindFirstChild("Holy Torch") then
+                    if Uiio == nil then
+                        Nord:Notify(nil, "Can't Find Holy Torch", "", 3)
+					end
+                    wait(3)
+                end
+            end)
+        end
+    end
+end)
 Melee = {"Combat","Black Leg","Electro","Fishman Karate","Dragon Claw","Superhuman","Death Step","Electric Claw","Sharkman Karate","Dragon Talon","Godhuman"}
 local ml = BuyItem:Label("")
 ml:Refresh("Fighting Style")
@@ -2367,6 +2440,25 @@ end)
 
 BuyItem:Button("Swordsman Hat", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Swordsman Hat")
+end)
+BuyItem:Line()
+local bone = BuyItem:Label("")
+bone:Refresh("Bone Random")
+BuyItem:Button("Random Bone",function ()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
+end)
+BuyItem:Toggle("Auto Random Bone",false,function (value)
+    _G.Auto_Random_Bone = value
+end)
+
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.Auto_Random_Bone then    
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
+            end
+        end
+    end)
 end)
 Playerslist = {}
 
