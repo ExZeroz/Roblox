@@ -2895,7 +2895,7 @@ end)
 visual:Line()
 local dun = visual:Label("")
 dun:Refresh("Dungeons")
-local TimeRaid = visual:Label("Wait For Dungeon")
+local TimeRaid = visual:Label("Status : ")
 
 spawn(function()
     pcall(function()
