@@ -1774,7 +1774,7 @@ end)
 main:Line()
 local pristol = main:Label("")
 pristol:Refresh("Portal")
-local MobKilled = main:Label("Killed")
+local MobKilled = main:Label("")
 
 spawn(function()
     while wait() do
@@ -2910,6 +2910,7 @@ spawn(function()
 end)
 visual:Toggle("Auto Farm Dungeons",false,function (value)
     _G.Auto_Dungeon = value
+    StopTween(_G.Auto_Dungeon)
 end)
 spawn(function()
     pcall(function() 
@@ -2990,8 +2991,6 @@ spawn(function()
                     _G.SelectChip = "Bird: Phoenix"
                 elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dough") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dough") then
                     _G.SelectChip = "Dough"
-                else
-                    _G.SelectChip = "Flame"
                 end
             end)
         end
