@@ -1,0 +1,299 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local StarterDoujin = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
+local TextLabel_7 = Instance.new("TextLabel")
+local TextLabel_8 = Instance.new("TextLabel")
+local TextLabel_9 = Instance.new("TextLabel")
+local TextLabel_10 = Instance.new("TextLabel")
+local TextLabel_11 = Instance.new("TextLabel")
+local TextLabel_12 = Instance.new("TextLabel")
+local TextLabel_13 = Instance.new("TextLabel")
+local TextLabel_14 = Instance.new("TextLabel")
+local TextLabel_15 = Instance.new("TextLabel")
+local TextLabel_16 = Instance.new("TextLabel")
+local TextLabel_17 = Instance.new("TextLabel")
+local TextLabel_18 = Instance.new("TextLabel")
+local TextLabel_19 = Instance.new("TextLabel")
+local TextLabel_20 = Instance.new("TextLabel")
+
+--Properties:
+
+StarterDoujin.Name = "StarterDoujin"
+StarterDoujin.Parent = game.CoreGui
+StarterDoujin.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = StarterDoujin
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Position = UDim2.new(0.123768471, 0, 0.0320987664, 0)
+Frame.Size = UDim2.new(0, 1294, 0, 759)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel.Position = UDim2.new(0.000772789121, 0, -0.0658761561, 0)
+TextLabel.Size = UDim2.new(0, 610, 0, 85)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_2.Position = UDim2.new(0.000772804022, 0, 0.0461132899, 0)
+TextLabel_2.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_3.Position = UDim2.new(0.000772804022, 0, 0.15678522, 0)
+TextLabel_3.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+TextLabel_4.Parent = Frame
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_4.Position = UDim2.new(0.000772804022, 0, 0.602108002, 0)
+TextLabel_4.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_4.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+
+TextLabel_5.Parent = Frame
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_5.Position = UDim2.new(0.000772804022, 0, 0.491436064, 0)
+TextLabel_5.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_5.Font = Enum.Font.SourceSans
+TextLabel_5.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_5.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_5.TextScaled = true
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextWrapped = true
+
+TextLabel_6.Parent = Frame
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.BackgroundTransparency = 1.000
+TextLabel_6.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_6.Position = UDim2.new(0.000772804022, 0, 0.379446656, 0)
+TextLabel_6.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_6.Font = Enum.Font.SourceSans
+TextLabel_6.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_6.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_6.TextScaled = true
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextWrapped = true
+
+TextLabel_7.Parent = Frame
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.BackgroundTransparency = 1.000
+TextLabel_7.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_7.Position = UDim2.new(0.000772804022, 0, 0.267457217, 0)
+TextLabel_7.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_7.Font = Enum.Font.SourceSans
+TextLabel_7.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_7.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_7.TextScaled = true
+TextLabel_7.TextSize = 14.000
+TextLabel_7.TextWrapped = true
+
+TextLabel_8.Parent = Frame
+TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.BackgroundTransparency = 1.000
+TextLabel_8.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_8.Position = UDim2.new(0.472179294, 0, -0.0671936795, 0)
+TextLabel_8.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_8.Font = Enum.Font.SourceSans
+TextLabel_8.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_8.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_8.TextScaled = true
+TextLabel_8.TextSize = 14.000
+TextLabel_8.TextWrapped = true
+
+TextLabel_9.Parent = Frame
+TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_9.BackgroundTransparency = 1.000
+TextLabel_9.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_9.Position = UDim2.new(0.472179294, 0, 0.0447957665, 0)
+TextLabel_9.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_9.Font = Enum.Font.SourceSans
+TextLabel_9.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_9.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_9.TextScaled = true
+TextLabel_9.TextSize = 14.000
+TextLabel_9.TextWrapped = true
+
+TextLabel_10.Parent = Frame
+TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_10.BackgroundTransparency = 1.000
+TextLabel_10.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_10.Position = UDim2.new(0.472179294, 0, 0.490118563, 0)
+TextLabel_10.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_10.Font = Enum.Font.SourceSans
+TextLabel_10.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_10.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_10.TextScaled = true
+TextLabel_10.TextSize = 14.000
+TextLabel_10.TextWrapped = true
+
+TextLabel_11.Parent = Frame
+TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_11.BackgroundTransparency = 1.000
+TextLabel_11.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_11.Position = UDim2.new(0.472179294, 0, 0.155467719, 0)
+TextLabel_11.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_11.Font = Enum.Font.SourceSans
+TextLabel_11.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_11.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_11.TextScaled = true
+TextLabel_11.TextSize = 14.000
+TextLabel_11.TextWrapped = true
+
+TextLabel_12.Parent = Frame
+TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_12.BackgroundTransparency = 1.000
+TextLabel_12.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_12.Position = UDim2.new(0.472179294, 0, 0.600790501, 0)
+TextLabel_12.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_12.Font = Enum.Font.SourceSans
+TextLabel_12.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_12.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_12.TextScaled = true
+TextLabel_12.TextSize = 14.000
+TextLabel_12.TextWrapped = true
+
+TextLabel_13.Parent = Frame
+TextLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_13.BackgroundTransparency = 1.000
+TextLabel_13.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_13.Position = UDim2.new(0.472179294, 0, 0.266139686, 0)
+TextLabel_13.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_13.Font = Enum.Font.SourceSans
+TextLabel_13.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_13.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_13.TextScaled = true
+TextLabel_13.TextSize = 14.000
+TextLabel_13.TextWrapped = true
+
+TextLabel_14.Parent = Frame
+TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_14.BackgroundTransparency = 1.000
+TextLabel_14.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_14.Position = UDim2.new(0.472179294, 0, 0.378129125, 0)
+TextLabel_14.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_14.Font = Enum.Font.SourceSans
+TextLabel_14.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_14.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_14.TextScaled = true
+TextLabel_14.TextSize = 14.000
+TextLabel_14.TextWrapped = true
+
+TextLabel_15.Parent = Frame
+TextLabel_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_15.BackgroundTransparency = 1.000
+TextLabel_15.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_15.Position = UDim2.new(0.000772804022, 0, 0.712779939, 0)
+TextLabel_15.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_15.Font = Enum.Font.SourceSans
+TextLabel_15.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_15.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_15.TextScaled = true
+TextLabel_15.TextSize = 14.000
+TextLabel_15.TextWrapped = true
+
+TextLabel_16.Parent = Frame
+TextLabel_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_16.BackgroundTransparency = 1.000
+TextLabel_16.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_16.Position = UDim2.new(0.000772804022, 0, 0.935441315, 0)
+TextLabel_16.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_16.Font = Enum.Font.SourceSans
+TextLabel_16.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_16.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_16.TextScaled = true
+TextLabel_16.TextSize = 14.000
+TextLabel_16.TextWrapped = true
+
+TextLabel_17.Parent = Frame
+TextLabel_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_17.BackgroundTransparency = 1.000
+TextLabel_17.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_17.Position = UDim2.new(0.000772804022, 0, 0.824769378, 0)
+TextLabel_17.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_17.Font = Enum.Font.SourceSans
+TextLabel_17.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_17.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_17.TextScaled = true
+TextLabel_17.TextSize = 14.000
+TextLabel_17.TextWrapped = true
+
+TextLabel_18.Parent = Frame
+TextLabel_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_18.BackgroundTransparency = 1.000
+TextLabel_18.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_18.Position = UDim2.new(0.472179294, 0, 0.731225252, 0)
+TextLabel_18.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_18.Font = Enum.Font.SourceSans
+TextLabel_18.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_18.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_18.TextScaled = true
+TextLabel_18.TextSize = 14.000
+TextLabel_18.TextWrapped = true
+
+TextLabel_19.Parent = Frame
+TextLabel_19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_19.BackgroundTransparency = 1.000
+TextLabel_19.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_19.Position = UDim2.new(0.472179294, 0, 0.843214691, 0)
+TextLabel_19.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_19.Font = Enum.Font.SourceSans
+TextLabel_19.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_19.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_19.TextScaled = true
+TextLabel_19.TextSize = 14.000
+TextLabel_19.TextWrapped = true
+
+TextLabel_20.Parent = Frame
+TextLabel_20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_20.BackgroundTransparency = 1.000
+TextLabel_20.BorderColor3 = Color3.fromRGB(148, 25, 249)
+TextLabel_20.Position = UDim2.new(0.472179294, 0, 0.953886628, 0)
+TextLabel_20.Size = UDim2.new(0, 610, 0, 85)
+TextLabel_20.Font = Enum.Font.SourceSans
+TextLabel_20.Text = "ขอ doujin หน่อยค้าบ"
+TextLabel_20.TextColor3 = Color3.fromRGB(0, 170, 127)
+TextLabel_20.TextScaled = true
+TextLabel_20.TextSize = 14.000
+TextLabel_20.TextWrapped = true
