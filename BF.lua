@@ -969,6 +969,7 @@ end)
 _G.Config = { ["Theme"] = "Spotify" }
 local Nord = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ExZeroz/Roblox/main/Notify.lua", true))();
 DiscordLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ExZeroz/Roblox/main/MokrLib.lua"))()
+
 Nord:Notify(nil,"Loading...","",3)
 local win = DiscordLib:Window("Blox Fruits",Color3.fromRGB(30, 215, 96))
 local Page = win:Server("Xeris Hub | Community", "")
@@ -976,6 +977,7 @@ local main = Page:Channel("General")
 local BuyItem = Page:Channel("Items")
 local player = Page:Channel("Players")
 local visual = Page:Channel("Visuals")
+local cecker = Page:Channel("Checker")
 local misc = Page:Channel("Misc")
 local m = main:Label("Time : ")
 function UpdateTime()
@@ -1207,6 +1209,85 @@ spawn(function()
                     end
                 end
             end)
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if _G.Auto_New_World and W then
+            pcall(function()
+                if game.Players.LocalPlayer.Data.Level.Value >= 700 then
+                    if game.Workspace.Map.Ice.Door.CanCollide == true and game.Workspace.Map.Ice.Door.Transparency == 0 then
+                        repeat wait() topos(CFrame.new(4851.8720703125, 5.6514348983765, 718.47094726563)) until (CFrame.new(4851.8720703125, 5.6514348983765, 718.47094726563).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.Auto_New_World
+                        wait(1)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("DressrosaQuestProgress","Detective")
+                        EquipWeapon("Key")
+                        local pos2 = CFrame.new(1347.7124, 37.3751602, -1325.6488)
+                        repeat wait() topos(pos2) until (pos2.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.Auto_New_World
+                        wait(3)
+                    elseif game.Workspace.Map.Ice.Door.CanCollide == false and game.Workspace.Map.Ice.Door.Transparency == 1 then
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Ice Admiral [Lv. 700] [Boss]") then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v.Name == "Ice Admiral [Lv. 700] [Boss]" and v.Humanoid.Health > 0 then
+                                    repeat wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.SelectWeapon)
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+                                        v.HumanoidRootPart.Transparency = 1
+                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                        game:GetService("VirtualUser"):CaptureController()
+                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 870),workspace.CurrentCamera.CFrame)
+                                    until v.Humanoid.Health <= 0 or not v.Parent or not _G.Auto_New_World
+                                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+                                end
+                            end
+                        else
+                            topos(CFrame.new(1347.7124, 37.3751602, -1325.6488))
+                        end
+                    else
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+                    end
+                end
+            end)
+        elseif _G.Auto_New_World and W2 then
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.Data.Level.Value >= 1500 then
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ZQuestProgress","Check") == 0 then
+                        topos(CFrame.new(-1926.3221435547, 12.819851875305, 1738.3092041016))
+                        if (CFrame.new(-1926.3221435547, 12.819851875305, 1738.3092041016).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
+                            wait(1.5)
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ZQuestProgress","Begin")
+                        end
+                        wait(1.8)
+                        if game:GetService("Workspace").Enemies:FindFirstChild("rip_indra [Lv. 1500] [Boss]") then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v.Name == "rip_indra [Lv. 1500] [Boss]" then
+                                    OldCFrameThird = v.HumanoidRootPart.CFrame
+                                    repeat wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.SelectWeapon)
+                                        v.HumanoidRootPart.CFrame = OldCFrameThird
+                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                        game:GetService'VirtualUser':CaptureController()
+                                        game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+                                        sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
+                                    until _G.Auto_Third_World == false or v.Humanoid.Health <= 0 or not v.Parent
+                                end
+                            end
+                        elseif not game:GetService("Workspace").Enemies:FindFirstChild("rip_indra [Lv. 1500] [Boss]") and (CFrame.new(-26880.93359375, 22.848554611206, 473.18951416016).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1000 then
+                            topos(CFrame.new(-26880.93359375, 22.848554611206, 473.18951416016))
+                        end
+                    end
+                end
+            end)
+        elseif _G.Auto_New_World and W3 then
+            Nord:Notify(nil,"Wait for game Update 4 Sea","",3)
         end
     end
 end)
@@ -3303,6 +3384,38 @@ misc:Button("Get Stage",function ()
         local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
         Event:InvokeServer(A_1, A_2)
     end
+end)
+local status = cecker:Label("")
+status:Refresh("Status Player")
+local lvl = cecker:Label("")
+local xp = cecker:Label("")
+local mny = cecker:Label("")
+local gem = cecker:Label("")
+local race = cecker:Label("")
+local divil = cecker:Label("")
+cecker:Line()
+local quets = cecker:Label("")
+quets:Refresh("Status Quest")
+local BartiloQuestLable = cecker:Label("")
+cecker:Line()
+
+spawn(function ()
+    pcall(function ()
+        while wait() do
+            lvl:Refresh("Level : "..game:GetService("Players").LocalPlayer.Data.Level.Value)
+            xp:Refresh("Exp : "..game:GetService("Players").LocalPlayer.Data.Exp.Value)
+            mny:Refresh("Beli : "..game:GetService("Players").LocalPlayer.Data.Beli.Value)
+            gem:Refresh("Fragment : "..game:GetService("Players").LocalPlayer.Data.Fragments.Value)
+            race:Refresh("Race : "..game:GetService("Players").LocalPlayer.Data.Race.Value)
+            divil:Refresh("Devil Fruit : "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
+            local BartiloQuestProgress = game.ReplicatedStorage.Remotes.CommF_:InvokeServer("BartiloQuestProgress", "Bartilo") 
+            if BartiloQuestProgress == 3 then
+                BartiloQuestLable:Refresh("Bartilo Quest : Finished✔️")
+            else
+                BartiloQuestLable:Refresh("Bartilo Quest : Not Finished❌")
+            end
+        end
+    end)
 end)
 misc:Line()
 local ser = misc:Label("")
