@@ -20,7 +20,7 @@ end)
 
 pfp = userinfo["pfp"] or "https://www.roblox.com/headshot-thumbnail/image?userId=" .. game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png"
 user = userinfo["user"] or game.Players.LocalPlayer.DisplayName
-tag = userinfo["tag"] or tostring(math.random(0001, 9999))
+tag = userinfo["tag"] or tostring(math.random(1000, 9999))
 
 local function SaveInfo()
 	userinfo["pfp"] = pfp
@@ -203,12 +203,19 @@ function DiscordLib:Window(text,mainclr,cls)
 	Title.BackgroundTransparency = 1.000
 	Title.Position = UDim2.new(0.0102790017, 0, 0, 0)
 	Title.Size = UDim2.new(0, 192, 0, 23)
-	Title.Font = Enum.Font.Gotham
+	Title.Font = Enum.Font.PermanentMarker
 	Title.Text = text
 	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Title.TextSize = 13.000
+	Title.TextSize = 20
 	Title.TextXAlignment = Enum.TextXAlignment.Left
 
+    spawn(function ()
+        pcall(function ()
+            while wait() do
+                Title.TextColor3 = Color3.fromHSV(tick()%5/5,1,1)
+            end
+        end)
+    end)
 	ServersHolder.Name = "ServersHolder"
 	ServersHolder.Parent = TopFrameHolder
 
