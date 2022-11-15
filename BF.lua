@@ -1212,7 +1212,10 @@ spawn(function()
         end
     end
 end)
-
+main:Toggle("Auto Farm New World",false,function(value)
+	_G.Auto_New_World = value
+	StopTween(_G.Auto_New_World)
+end)
 spawn(function()
     while wait() do
         if _G.Auto_New_World and W then
