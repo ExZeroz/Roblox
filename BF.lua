@@ -1,7 +1,7 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ExZeroz/Roblox/main/Bruh12123.lua"))()
 wait(2)
-if game.Players.LocalPlayer("CoreGui"):FindFirstChild("ScreenGui") then
-	game.Players.LocalPlayer("CoreGui"):FindFirstChild("ScreenGui"):Destroy()
+if game:GetService('CoreGui'):FindFirstChild('ScreenGui') then
+    game:GetService('CoreGui'):FindFirstChild('ScreenGui'):Destroy()
 end
 repeat wait(1) until game:IsLoaded()
 if game.PlaceId == 2753915549 then
