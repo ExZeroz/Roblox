@@ -2568,7 +2568,109 @@ spawn(function ()
         end
     end
 end)
-
+main:Toggle("Auto Quest Bartilo",false,function(value)
+    _G.AutoBartilo = value
+    StopTween(_G.AutoBartilo)
+end)
+spawn(function()
+    while wait() do
+        if _G.AutoBartilo then
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.Data.Level.Value >= 800 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 0 then
+                    if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Swan Pirates") and string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "50") and game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then 
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Swan Pirate [Lv. 775]") then
+                            Ms = "Swan Pirate [Lv. 775]"
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v.Name == Ms then
+                                    pcall(function()
+                                        repeat task.wait()
+                                            sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRadius", math.huge)
+                                            EquipWeapon(_G.SelectWeapon)
+                                            AutoHaki()
+                                            v.HumanoidRootPart.CanCollide = false
+                                            topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))													
+                                            PosMonBarto =  v.HumanoidRootPart.CFrame
+                                            game:GetService'VirtualUser':CaptureController()
+                                            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                            AutoBartiloBring = true
+                                        until not v.Parent or v.Humanoid.Health <= 0 or _G.AutoBartilo == false or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
+                                        AutoBartiloBring = false
+                                    end)
+                                end
+                            end
+                        else
+                            topos(CFrame.new(932.624451, 156.106079, 1180.27466, -0.973085582, 4.55137119e-08, -0.230443969, 2.67024713e-08, 1, 8.47491108e-08, 0.230443969, 7.63147128e-08, -0.973085582))
+                        end
+                    else
+                        topos(CFrame.new(-456.28952, 73.0200958, 299.895966))
+                        wait(1.1)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest","BartiloQuest",1)
+                    end
+                elseif game:GetService("Players").LocalPlayer.Data.Level.Value >= 800 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 1 then
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Jeremy [Lv. 850] [Boss]") then
+                        Ms = "Jeremy [Lv. 850] [Boss]"
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == Ms then
+                                repeat task.wait()
+                                    sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRadius", math.huge)
+                                    EquipWeapon(_G.SelectWeapon)
+                                    AutoHaki()
+                                    v.HumanoidRootPart.CanCollide = false
+                                    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                    game:GetService'VirtualUser':CaptureController()
+                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                    sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
+                                until not v.Parent or v.Humanoid.Health <= 0 or _G.AutoBartilo == false
+                            end
+                        end
+                    elseif game:GetService("ReplicatedStorage"):FindFirstChild("Jeremy [Lv. 850] [Boss]") then
+                        topos(CFrame.new(-456.28952, 73.0200958, 299.895966))
+                        wait(1.1)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo")
+                        wait(1)
+                        topos(CFrame.new(2099.88159, 448.931, 648.997375))
+                        wait(2)
+                    else
+                        topos(CFrame.new(2099.88159, 448.931, 648.997375))
+                    end
+                elseif game:GetService("Players").LocalPlayer.Data.Level.Value >= 800 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 2 then
+                    repeat wait(.2)
+                        topos(CFrame.new(-1850.49329, 13.1789551, 1750.89685))
+                    until (Vector3.new(-1850.49329, 13.1789551, 1750.89685)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        topos(CFrame.new(-1858.87305, 19.3777466, 1712.01807))
+                    until (Vector3.new(-1858.87305, 19.3777466, 1712.01807)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        topos(CFrame.new(-1803.94324, 16.5789185, 1750.89685))
+                    until (Vector3.new(-1803.94324, 16.5789185, 1750.89685)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        topos(CFrame.new(-1858.55835, 16.8604317, 1724.79541))
+                    until (Vector3.new(-1858.55835, 16.8604317, 1724.79541)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        topos(CFrame.new(-1869.54224, 15.987854, 1681.00659))
+                    until (Vector3.new(-1869.54224, 15.987854, 1681.00659)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        topos(CFrame.new(-1800.0979, 16.4978027, 1684.52368))
+                    until (Vector3.new(-1800.0979, 16.4978027, 1684.52368)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        topos(CFrame.new(-1819.26343, 14.795166, 1717.90625))
+                    until (Vector3.new(-1819.26343, 14.795166, 1717.90625)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                    repeat wait(.2)
+                        topos(CFrame.new(-1813.51843, 14.8604736, 1724.79541))
+                    until (Vector3.new(-1813.51843, 14.8604736, 1724.79541)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                    wait(2)
+                end  
+            end)
+        end
+    end
+end)
 Melee = {"Combat","Black Leg","Electro","Fishman Karate","Dragon Claw","Superhuman","Death Step","Electric Claw","Sharkman Karate","Dragon Talon","Godhuman"}
 local ml = BuyItem:Label("")
 ml:Refresh("Fighting Style")
