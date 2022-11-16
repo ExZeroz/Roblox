@@ -2474,9 +2474,7 @@ spawn(function ()
     while wait() do
         if _G.Auto_Tushita then
             pcall(function ()
-                if game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra [Lv. 5000] [Raid Boss]") then
-                    topos(CFrame.new(5148.03613, 162.352493, 910.548218, 0, 0, -1, 0, 1, 0, 1, 0, 0))
-                elseif game.Players.LocalPlayer.Backpack:FindFirstChild("Holy Torch") or game.Players.LocalPlayer.Character:FindFirstChild("Holy Torch") then
+                if game.Players.LocalPlayer.Backpack:FindFirstChild("Holy Torch") or game.Players.LocalPlayer.Character:FindFirstChild("Holy Torch") then
                     repeat wait(.2)
                         EquipWeapon("Holy Torch")
                         topos(CFrame.new(-10752.4434, 415.261749, -9367.43848, 1, 0, 0, 0, 1, 0, 0, 0, 1))
@@ -2501,6 +2499,8 @@ spawn(function ()
                     repeat wait(.2)
                         topos(CFrame.new(-13487.623, 336.436188, -7924.53857, -0.982848108, 0, 0.184417039, 0, 1, 0, -0.184417039, 0, -0.982848108))
                     until (Vector3.new(-13487.623, 336.436188, -7924.53857)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                elseif game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra [Lv. 5000] [Raid Boss]") then
+                    topos(CFrame.new(5148.03613, 162.352493, 910.548218, 0, 0, -1, 0, 1, 0, 1, 0, 0))
                 else
                     if game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") then
                         repeat wait(.2) 
@@ -2568,6 +2568,7 @@ spawn(function ()
         end
     end
 end)
+
 Melee = {"Combat","Black Leg","Electro","Fishman Karate","Dragon Claw","Superhuman","Death Step","Electric Claw","Sharkman Karate","Dragon Talon","Godhuman"}
 local ml = BuyItem:Label("")
 ml:Refresh("Fighting Style")
@@ -3584,9 +3585,9 @@ spawn(function ()
             divil:Refresh("Devil Fruit : "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
             local BartiloQuestProgress = game.ReplicatedStorage.Remotes.CommF_:InvokeServer("BartiloQuestProgress", "Bartilo") 
             if BartiloQuestProgress == 3 then
-                BartiloQuestLable:Refresh("Bartilo Quest : Finished✔️")
+                BartiloQuestLable:Refresh("Bartilo Quest : Finished ✔️")
             else
-                BartiloQuestLable:Refresh("Bartilo Quest : Not Finished❌")
+                BartiloQuestLable:Refresh("Bartilo Quest : Not Finished ❌")
             end
         end
     end)
@@ -3693,4 +3694,5 @@ misc:Button("Fruits Shop",function ()
     game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
 end)
 Nord:Notify(nil,"Loading Success","",3)
+wait(3)
 Nord:Notify(nil,"Anti AFK : Work","",3)
