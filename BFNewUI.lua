@@ -4084,7 +4084,12 @@ local tab14 = Tabs.page3:AddLeftTabbox() do
         end)
     end
 end
-
+local tab15 = Tabs.page3:AddRightTabbox() do
+    local boost = tab15:AddTab("Boost - Up") do
+        local a = boost:AddLabel("")
+        a:Seperator([[\\ Race - Boost //]])
+    end
+end
 Bitch = true
 local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(function()
@@ -4116,7 +4121,7 @@ local a = require(game:GetService("ReplicatedStorage").Effect.Container.Misc.Dam
 local old = a.Run
 a.Run = function(...)
     args = {...}
-    args[1]['Value'] = "🖕🏽 Critical 🖕🏽"
+    args[1]['Value'] = "😳 Critical 😳"
     return old(...)
 end
 
