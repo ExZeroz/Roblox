@@ -783,14 +783,14 @@ function SetupFPS()
         return os.clock() - StartTime >= 1 and #TimeTable or #TimeTable / (os.clock() - StartTime)
     end
 end
---thank to dekudimz
+
 local GetFPS = SetupFPS()
 local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(function()
         pcall(function()
                 if Bitch == true then
                     Library:SetWatermarkVisibility(true)
-                    Library:SetWatermark('Reso Hub | '..string.format("%s %i FPS %i MS",os.date("%X"),GetFPS(),math.round(Ping:GetValue())))
+                    Library:SetWatermark('Xeris Hub Free Script | '..string.format("%s %i FPS %i MS",os.date("%X"),GetFPS(),math.round(Ping:GetValue())))
                 elseif Bitch == false then
                     Library:SetWatermarkVisibility(false)
                 end
