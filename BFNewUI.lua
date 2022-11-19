@@ -1006,7 +1006,7 @@ end
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ExZeroz/Roblox/main/RemakelinoriahubUI.lua"))()
 Library:Notify("Loading Script...",3)
 local Window = Library:CreateWindow({
-    Title = 'Xeris Hub Script For Everyone - '..os.date("%A, ".."%d, ".."%B, ".."%Y"),
+    Title = 'Xeris Hub Script Free For Everyone - '..os.date("%A, ".."%d, ".."%B, ".."%Y"),
     Center = true,
     AutoShow = true,
 })
@@ -2166,49 +2166,63 @@ local tab2 = Tabs.page1:AddRightTabbox() do
     local stat = tab2:AddTab("Stat") do
         local s = stat:AddLabel("")
         s:Seperator([[\\ Auto Stat //]])
-        stat:AddDropdown("Select_Stat",{
-            Values = {"Melee","Defense","Sword","Gun","Devil Fruit"},
-            Default = 1,
-            Multi = true,
-            Text = "Select Stats",
-        }):OnChanged(function ()
-            _G.SelectStat = Options.Select_Stat.Value
-        end)
-        stat:AddToggle("Add_Stat",{
-            Text = "Auto Stats",
+        stat:AddToggle("Add_Stat_Melee",{
+            Text = "Auto Melee",
             Default = false
         }):OnChanged(function ()
-            _G.AddStat = Toggles.Add_Stat.Value
+            _G.Melee = Toggles.Add_Stat_Melee.Value
+        end)
+        stat:AddToggle("Add_Stat_Def",{
+            Text = "Auto Defense",
+            Default = false
+        }):OnChanged(function ()
+            _G.Def = Toggles.Add_Stat_Def.Value
+        end)
+        stat:AddToggle("Add_Stat_Sword",{
+            Text = "Auto Sword",
+            Default = false
+        }):OnChanged(function ()
+            _G.Sword = Toggles.Add_Stat_Sword.Value
+        end)
+        stat:AddToggle("Add_Stat_Gun",{
+            Text = "Auto Gun",
+            Default = false
+        }):OnChanged(function ()
+            _G.Gun = Toggles.Add_Stat_Gun.Value
+        end)
+        stat:AddToggle("Add_Stat_Fruits",{
+            Text = "Auto Devil Fruit",
+            Default = false
+        }):OnChanged(function ()
+            _G.Fruit = Toggles.Add_Stat_Fruits.Value
         end)
         stat:AddSlider("Select_Point",{
             Text = "Select Point",
             Default = 1,
             Min = 1,
-            Max = 10,
+            Max = 100,
             Rounding = 0,
             Compact = false
         }):OnChanged(function ()
             _G.PointStats = Options.Select_Point.Value
         end)
-        task.spawn(function ()
+        spawn(function ()
             pcall(function ()
                 while task.wait() do
-                    if _G.AddStat then
-                        if _G.SelectStat == "Melee" then
-                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",_G.PointStats)
-                        end
-                        if _G.SelectStat == "Defense" then
-                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense",_G.PointStats)
-                        end
-                        if _G.SelectStat == "Sword" then
-                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Sword",_G.PointStats)
-                        end
-                        if _G.SelectStat == "Gun" then
-                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Gun",_G.PointStats)
-                        end
-                        if _G.SelectStat == "Devil Fruit" then
-                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Demon Fruit",_G.PointStats)
-                        end
+                    if _G.Melee then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",_G.PointStats)
+                    end
+                    if _G.Def then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense",_G.PointStats)
+                    end
+                    if _G.Sword then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Sword",_G.PointStats)
+                    end
+                    if _G.Gun then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Gun",_G.PointStats)
+                    end
+                    if _G.Fruit then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Demon Fruit",_G.PointStats)
                     end
                 end
             end)
@@ -2872,128 +2886,131 @@ local tab3 = Tabs.page1:AddLeftTabbox() do
                         end 
                     end
                 end)
+            else
+
             end
         end
     end)
 end
-allcode = {
-    "Redeem All Codes",
-    "ADMINGIVEAWAY",
-    "SUBGAMERROBOT_RESET",
-    "GAMERROBOT_YT",
-    "kittgaming",
-    "Sub2Fer999",
-    "Enyu_is_Pro",
-    "Magicbus",
-    "JCWK",
-    "Starcodeheo",
-    "Bluxxy",
-    "fudd10_v2",
-    "FUDD10",
-    "BIGNEWS",
-    "THEGREATACE",
-    "SUB2GAMERROBOT_RESET1",
-    "SUB2GAMERROBOT_EXP1",
-    "Sub2OfficialNoobie",
-    "StrawHatMaine",
-    "SUB2NOOBMASTER123"
-}
+
 function UseCode(Text)
     game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
 end
 local tab4 = Tabs.page1:AddRightTabbox() do
-    local code = tab4:AddTab("Code") do
+    local code = tab4:AddTab("Code and Webhook") do
         local a = code:AddLabel("")
         a:Seperator([[\\ Redeem Codes //]])
-        code:AddDropdown("Select_Code",{
-            Values = allcode,
-            Default = 1,
-            Multi = false,
-            Text = "Select Code",
-        }):OnChanged(function ()
-            _G.SelectCode = Options.Select_Code.Value
+        code:AddButton("Redeem All Codes",function ()
+            UseCode("ADMINGIVEAWAY")
+            UseCode("SUBGAMERROBOT_RESET")
+            UseCode("GAMERROBOT_YT")
+            UseCode("kittgaming")
+            UseCode("Sub2Fer999")
+            UseCode("Enyu_is_Pro")
+            UseCode("Magicbus")
+            UseCode("JCWK")
+            UseCode("Starcodeheo")
+            UseCode("Bluxxy")
+            UseCode("fudd10_v2")
+            UseCode("FUDD10")
+            UseCode("BIGNEWS")
+            UseCode("THEGREATACE")
+            UseCode("SUB2GAMERROBOT_RESET1")
+            UseCode("SUB2GAMERROBOT_EXP1")
+            UseCode("Sub2OfficialNoobie")
+            UseCode("StrawHatMaine")
+            UseCode("SUB2NOOBMASTER123")
         end)
-        code:AddInput("Select_Level",{
-            Default = '',
-            Numeric = true,
-            Finished = true,
-            Text = 'Use Code',
-            Placeholder = 'Put Your Level Here',
-        }):OnChanged(function ()
-            _G.SelectLvl = Options.Select_Level.Value
+        code:AddInput('Hook', {
+            Default = 'WebHook',
+            Numeric = false, -- true / false, only allows numbers
+            Finished = false, -- true / false, only calls callback when you press enter
+        
+            Text = 'WebHook',
+            Tooltip = 'Get Webhook From Discord\n\n Create a Channel and click Setting then click Intergration\nthen Create your Webhook',
+        
+            Placeholder = 'Put Your Webhook',
+        })
+        
+        Options.Hook:OnChanged(function()
+            _G.WebHook = Options.Hook.Value
         end)
-        code:AddToggle("Auto_Code",{
-            Text = "Auto Redeem Code At Level",
-            Default = false,
+        code:AddToggle("Check_status",{
+            Text = "Auto WebHook [Every 1 Minute]",
+            Default = false
         }):OnChanged(function ()
-            _G.AutoCode = Toggles.Auto_Code.Value
+            _G.AutoWebHook = Toggles.Check_status.Value
         end)
+
         spawn(function ()
-            while wait() do
-                if _G.AutoCode then
-                    if game:GetService("Players").LocalPlayer.Data.Level.Value >= _G.SelectLvl then
-                        if _G.SelectCode == "Redeem All Codes" then
-                            UseCode("ADMINGIVEAWAY")
-                            UseCode("SUBGAMERROBOT_RESET")
-                            UseCode("GAMERROBOT_YT")
-                            UseCode("kittgaming")
-                            UseCode("Sub2Fer999")
-                            UseCode("Enyu_is_Pro")
-                            UseCode("Magicbus")
-                            UseCode("JCWK")
-                            UseCode("Starcodeheo")
-                            UseCode("Bluxxy")
-                            UseCode("fudd10_v2")
-                            UseCode("FUDD10")
-                            UseCode("BIGNEWS")
-                            UseCode("THEGREATACE")
-                            UseCode("SUB2GAMERROBOT_RESET1")
-                            UseCode("SUB2GAMERROBOT_EXP1")
-                            UseCode("Sub2OfficialNoobie")
-                            UseCode("StrawHatMaine")
-                            UseCode("SUB2NOOBMASTER123")
-                        elseif _G.SelectCode == "ADMINGIVEAWAY" then
-                            UseCode("ADMINGIVEAWAY")
-                        elseif _G.SelectCode == "SUBGAMERROBOT_RESET" then
-                            UseCode("SUBGAMERROBOT_RESET")
-                        elseif _G.SelectCode == "GAMERROBOT_YT" then
-                            UseCode("GAMERROBOT_YT")
-                        elseif _G.SelectCode == "kittgaming" then
-                            UseCode("kittgaming")
-                        elseif _G.SelectCode == "Sub2Fer999" then
-                            UseCode("Sub2Fer999")
-                        elseif _G.SelectCode == "Enyu_is_Pro" then
-                            UseCode("Enyu_is_Pro")
-                        elseif _G.SelectCode == "Magicbus" then
-                            UseCode("Magicbus")
-                        elseif _G.SelectCode == "JCWK" then
-                            UseCode("JCWK")
-                        elseif _G.SelectCode == "Starcodeheo" then
-                            UseCode("Starcodeheo")
-                        elseif _G.SelectCode == "Bluxxy" then
-                            UseCode("Bluxxy")
-                        elseif _G.SelectCode == "fudd10_v2" then
-                            UseCode("fudd10_v2")
-                        elseif _G.SelectCode == "FUDD10" then
-                            UseCode("FUDD10")
-                        elseif _G.SelectCode == "BIGNEWS" then
-                            UseCode("BIGNEWS")
-                        elseif _G.SelectCode == "THEGREATACE" then
-                            UseCode("THEGREATACE")
-                        elseif _G.SelectCode == "SUB2GAMERROBOT_RESET1" then
-                            UseCode("SUB2GAMERROBOT_RESET1")
-                        elseif _G.SelectCode == "SUB2GAMERROBOT_EXP1" then
-                            UseCode("SUB2GAMERROBOT_EXP1")
-                        elseif _G.SelectCode == "Sub2OfficialNoobie" then
-                            UseCode("Sub2OfficialNoobie")
-                        elseif _G.SelectCode == "StrawHatMaine" then
-                            UseCode("StrawHatMaine")
-                        elseif _G.SelectCode == "SUB2NOOBMASTER123" then
-                            UseCode("SUB2NOOBMASTER123")
-                        end
+            pcall(function ()
+                while wait(60) do
+                    if _G.AutoWebHook then
+                        local url = _G.WebHook
+
+                        local data = {
+                            ["embeds"] = {{
+                        
+                                ["author"] = {
+                                    ["name"] = "Username : "..game.Players.LocalPlayer.Name,
+                                    ["icon_url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=100&height=100&format=png"
+                                },
+                                ["description"] = "Executor: "..identifyexecutor().."\nId : "..game.Players.localPlayer.UserId,
+                                ["color"] = tonumber(0xFFFAFA),
+                                ["fields"] = {
+                                    {
+                                        ["name"] = "Level : ",
+                                        ["value"] = game.Players.LocalPlayer.Data.Level.Value,
+                                        ["inline"] = true
+                                    },
+                                    {
+                                        ["name"] = "Exp : ",
+                                        ["value"] = game.Players.LocalPlayer.Data.Exp.Value,
+                                        ["inline"] = true
+                                    },
+                                    {
+                                        ["name"] = "Race : ",
+                                        ["value"] = game.Players.LocalPlayer.Data.Race.Value,
+                                        ["inline"] = true
+                                    },
+                                    {
+                                        ["name"] = "Beli : ",
+                                        ["value"] = game.Players.LocalPlayer.Data.Beli.Value,
+                                        ["inline"] = true
+                                    },
+                                    {
+                                        ["name"] = "Fragments : ",
+                                        ["value"] = game.Players.LocalPlayer.Data.Fragments.Value,
+                                        ["inline"] = true
+                                    },
+                                    {
+                                        ["name"] = "SpawnPoint : ",
+                                        ["value"] = game.Players.LocalPlayer.Data.SpawnPoint.Value,
+                                        ["inline"] = true
+                                    },
+                                    
+                                },
+                                ["thumbnail"] = {
+                                    ["url"] = "https://i.pinimg.com/originals/64/5b/89/645b8904ac8537c59a71d6380f461fb3.jpg"
+                                },
+                                ["footer"] = {
+                                    ["name"] = "Game Id : "..game.PlaceId
+                                }
+                            }},
+                        
+                        }
+                        
+                        local newdata = game:GetService("HttpService"):JSONEncode(data)
+                        
+                        local headers = {
+                        ["content-type"] = "application/json"
+                        }
+                        request = http_request or request or HttpPost or syn.request
+                        local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+                        request(abcdef)
                     end
                 end
-            end
+            end)
         end)
     end
 end
