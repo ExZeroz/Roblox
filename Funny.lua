@@ -2,13 +2,7 @@ if game:GetService('CoreGui'):FindFirstChild('ScreenGui') then
     game:GetService('CoreGui'):FindFirstChild('ScreenGui'):Destroy()
 end
 local start = tick()
-local function IsAlive(plr)
-	if plr and plr.Character and plr.Character.FindFirstChild(plr.Character, "Humanoid") and plr.Character.Humanoid.Health > 0 then
-		return true
-	end
 
-	return false
-end
 
 local client = game:GetService('Players').LocalPlayer;
 local set_identity = (type(syn) == 'table' and syn.set_thread_identity) or setidentity or setthreadcontext
@@ -100,11 +94,7 @@ end
 
 
 
-local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
-local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
-local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
-local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ExZeroz/Roblox/main/RemakelinoriahubUI.lua"))()
 
 local metadata = urlLoad("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/metadata.lua")
 local httpService = game:GetService('HttpService')
@@ -454,9 +444,9 @@ do
     end)
 end
 
-local Window = Library:CreateWindow({Title = 'Reso Hub - Update 5/10/2022                       Premieum Edition',Center = true, AutoShow = true,})
+local Window = Library:CreateWindow({Title = 'Xeris Hub Script Free For Everyone - '..os.date("%A, ".."%d, ".."%B, ".."%Y"),Center = true, AutoShow = true,})
 local Groups = {}
-local Tabs = {Main = Window:AddTab('Main'), ['UI Settings'] = Window:AddTab('UI Settings'),}
+local Tabs = {Main = Window:AddTab('Main'),}
 Groups.Autoplayer = Tabs.Main:AddLeftGroupbox('Autoplayer')
     Groups.Autoplayer:AddToggle('Autoplayer', { Text = 'Autoplayer' }):AddKeyPicker('AutoplayerBind', { Default = 'End', NoUI = true, SyncToggleState = true })
     Groups.Autoplayer:AddDropdown('PressMode', {
@@ -509,86 +499,14 @@ Groups.Keybinds = Tabs.Main:AddRightGroupbox('Keybinds')
     Groups.Keybinds:AddLabel('Good'):AddKeyPicker('GoodBind', { Default = 'Two', NoUI = true })
     Groups.Keybinds:AddLabel('Ok'):AddKeyPicker('OkayBind', { Default = 'Three', NoUI = true })
     Groups.Keybinds:AddLabel('Bad'):AddKeyPicker('BadBind', { Default = 'Four', NoUI = true })
-local Bitch = true
-local tabMenugroup = Tabs['UI Settings']:AddLeftTabbox() do
-    local MenuGroup = tabMenugroup:AddTab('Menu') do
-        MenuGroup:AddButton('Unload', function() Library:Unload() end)
-        MenuGroup:AddToggle('Show',{Text = 'Show Watermark',Default = true}):OnChanged(function()
-            Bitch = Toggles.Show.Value
-        end)
-        MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'RightControl', NoUI = true, Text = 'Menu keybind' })
-            Library.ToggleKeybind = Options.MenuKeybind
-        end
-    local Client = tabMenugroup:AddTab('Server Time') do
-        Client:AddLabel('         -- Server Time --')
-        Hours = Client:AddLabel('      |Hour(s) : ')
-        Minutes = Client:AddLabel('    |Minute(s) : ')
-        Seconds = Client:AddLabel('    |Second(s) : ')
-        function UpdateTime()
-            local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-            local Hour = math.floor(GameTime/(60^2))%24
-            local Minute = math.floor(GameTime/(60^1))%60
-            local Second = math.floor(GameTime/(60^0))%60
-            Hours:SetText("         Hour(s)   : "..Hour)
-            Minutes:SetText('         Minute(s) : '..Minute)
-            Seconds:SetText('         Second(s) : '..Second)
-        end
-        
-        spawn(function()
-            while true do wait(.1)
-                UpdateTime()
-            end
-        end)
-    end
-end
 
-SaveManager:SetLibrary(Library)
-SaveManager:IgnoreThemeSettings()
-SaveManager:SetIgnoreIndexes({ 'MenuKeybind' })
-SaveManager:SetFolder('MyScriptHub/specific-game')
-SaveManager:BuildConfigSection(Tabs['UI Settings'])
-local column = Tabs['UI Settings']:AddRightTabbox() do
-    local section = column:AddTab('-- Status Players --') do
-    section:AddInput('MyTextbox', {Default = 'Put PlayersName Here',Numeric = false,Finished = false,Text = 'Players',Placeholder = 'PlaceHolder TextPlayerName',})
-        local age = section:AddLabel('Age : ')
-        local alive = section:AddLabel('Alive : ')
-        local id = section:AddLabel('Id : ')
-        local dis = section:AddLabel('DisplayName : ')
-        local name = section:AddLabel('Name : ')
-        
-        Options.MyTextbox:OnChanged(function(val)
-            if game.Players:FindFirstChild(val) then
-                local plr = game.Players:FindFirstChild(val)
-
-                while game.Players:FindFirstChild(Options.MyTextbox.Value) do
-                    wait(0.1)
-                    age:SetText("Age : "..plr.AccountAge.." days")
-                    alive:SetText('Alive : '..(IsAlive(plr) and "yes" or "no"))
-                    id:SetText('Id : '..plr.UserId)
-                    dis:SetText('DisplayName : '..plr.DisplayName)
-                    name:SetText('Name : '..plr.Name)
-                end
-                age:SetText('Age : ')
-                alive:SetText('Alive : ')
-                id:SetText('Id : ')
-                dis:SetText('DisplayName : ')
-                name:SetText('Name : ')
-            end
-        end)
-    end
-end
-local columncredit = Tabs['UI Settings']:AddRightTabbox() do
-    local credit = columncredit:AddTab('--Credit--') do
-            credit:AddLabel('<b><font color=\"rgb(255, 147, 0)\">SKX</font></b>'..' - Scripter')
-            credit:AddLabel('<b><font color=\"rgb(1, 220, 255)\">Inori</font></b>'..' - UI Library')
-            credit:AddButton('Copy discord', function()
-            if pcall(setclipboard, "https://discord.gg/BP8aUZgT8f") then
-                Library:Notify('Successfully copied discord link to your clipboard!', 5)
-            end
-        end)
-    end
-end
-
+misc = Tabs.Main:AddRightGroupbox("Misc Settings")
+misc:AddToggle("loldso",{
+    Text = "Show Watermark",
+    Default = true
+}):OnChanged(function ()
+    Bitch = Toggles.loldso.Value
+end)
 local Ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]
 function SetupFPS()
     local StartTime,TimeTable,
@@ -600,14 +518,14 @@ function SetupFPS()
         return os.clock() - StartTime >= 1 and #TimeTable or #TimeTable / (os.clock() - StartTime)
     end
 end
---thank to dekudimz
+
 local GetFPS = SetupFPS()
 local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(function()
         pcall(function()
                 if Bitch == true then
                     Library:SetWatermarkVisibility(true)
-                    Library:SetWatermark('Reso Hub | '..string.format("%s %i FPS %i MS",os.date("%X"),GetFPS(),math.round(Ping:GetValue())))
+                    Library:SetWatermark('Xeris Hub Free Script | '..string.format("%s %i FPS %i MS",os.date("%X"),GetFPS(),math.round(Ping:GetValue())))
                 elseif Bitch == false then
                     Library:SetWatermarkVisibility(false)
                 end
@@ -616,51 +534,5 @@ RunService.RenderStepped:Connect(function()
     end
 )
 
-spawn(function()
-    while game:GetService("RunService").Stepped:wait(10) do
-        character = game.Players.LocalPlayer.Character
-        if _G.NoClip then
-            pcall(function()
-                for _, v in pairs(character:GetDescendants()) do
-                    pcall(function()
-                        if v:IsA("BasePart") then
-                            pcall(function()
-                            v.CanCollide = false
-                            end)
-                        end
-                    end)
-                end
-            end)
-        end
-    end
-end)
-
-do
-    local latestThemeIndex = 0
-    for i, theme in next, ThemeManager.BuiltInThemes do
-        if theme[1] > latestThemeIndex then
-            latestThemeIndex = theme[1]
-        end
-    end
-
-    latestThemeIndex = latestThemeIndex + 1
-
-    local linoriaTheme = ThemeManager.BuiltInThemes.Default[2]
-    local funkyFridayTheme = table.clone(ThemeManager.BuiltInThemes.Default[2])
-
-    funkyFridayTheme.AccentColor = Color3.fromRGB(255, 147, 0):ToHex()
-
-    ThemeManager.BuiltInThemes['Linoria'] = { latestThemeIndex, linoriaTheme }
-    ThemeManager.BuiltInThemes['Default'] = { 1, funkyFridayTheme }
-
-    ThemeManager:SetLibrary(Library)
-    ThemeManager:SetFolder('funky_friday_autoplayer')
-    ThemeManager:ApplyToGroupbox(Tabs['UI Settings']:AddLeftGroupbox('Themes'))
-
-    SaveManager:SetIgnoreIndexes({ 
-        "BackgroundColor", "MainColor", "AccentColor", "OutlineColor", "FontColor", -- themes
-        "ThemeManager_ThemeList", 'ThemeManager_CustomThemeList', 'ThemeManager_CustomThemeName', -- themes
-    })
-end
 Library:Notify(string.format('Loaded script in %.4f second(s)!', tick() - start), 3)
 Library:Notify('Script Has Loaded', 3)
