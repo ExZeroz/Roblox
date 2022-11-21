@@ -917,7 +917,7 @@ end
 spawn(function()
     pcall(function()
         while wait() do
-            if _G.Auto_Fully_Superhuman or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Auto_Open_Dough_Dungeon or _G.AutoFarmMasDF or _G.Auto_Tushita or _G.Auto_Yama or _G.Auto_New_World or _G.TpLab or _G.AutoBossLaw or _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.Auto_Saber or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or FarmBoss or _G.AutoElitehunter or _G.AutoThirdSea or _G.AutoFarmBone == true then
+            if _G.Auto_Kill_Player_Gun or _G.Auto_Fully_Superhuman or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Auto_Open_Dough_Dungeon or _G.AutoFarmMasDF or _G.Auto_Tushita or _G.Auto_Yama or _G.Auto_New_World or _G.TpLab or _G.AutoBossLaw or _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.Auto_Saber or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or FarmBoss or _G.AutoElitehunter or _G.AutoThirdSea or _G.AutoFarmBone == true then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -933,7 +933,7 @@ end)
 spawn(function()
     pcall(function()
         game:GetService("RunService").Stepped:Connect(function()
-            if _G.Auto_Fully_SharkMan_Karate or _G.Auto_Open_Dough_Dungeon or _G.AutoFarmMasDF or _G.Auto_Tushita or _G.Auto_Yama or _G.Auto_New_World or _G.TpLab or _G.AutoBossLaw or _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.Auto_Saber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.AutoFarmBone == true then
+            if _G.Auto_Kill_Player_Gun or _G.Auto_Fully_SharkMan_Karate or _G.Auto_Open_Dough_Dungeon or _G.AutoFarmMasDF or _G.Auto_Tushita or _G.Auto_Yama or _G.Auto_New_World or _G.TpLab or _G.AutoBossLaw or _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.Auto_Saber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.AutoFarmBone == true then
                 for _, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
                     if v:IsA("BasePart") then
                         v.CanCollide = false
@@ -946,7 +946,7 @@ end)
     
 spawn(function()
     while wait() do
-        if _G.Auto_Fully_SharkMan_Karate or _G.Auto_Open_Dough_Dungeon or _G.AutoFarmMasDF or _G.Auto_Tushita or _G.Auto_Yama or _G.Auto_New_World or _G.AutoBossLaw or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.Auto_Saber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.AutoFarmBone == true then
+        if _G.Auto_Kill_Player_Gun or _G.Auto_Fully_SharkMan_Karate or _G.Auto_Open_Dough_Dungeon or _G.AutoFarmMasDF or _G.Auto_Tushita or _G.Auto_Yama or _G.Auto_New_World or _G.AutoBossLaw or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.Auto_Saber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.AutoFarmBone == true then
             pcall(function()
                 game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken",true)
             end)
@@ -1003,7 +1003,10 @@ end)
 if game:GetService('CoreGui'):FindFirstChild('ScreenGui') then
     game:GetService('CoreGui'):FindFirstChild('ScreenGui'):Destroy()
 end
+local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ExZeroz/Roblox/main/RemakelinoriahubUI.lua"))()
+local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 local ESP = loadstring(game:HttpGet('https://raw.githubusercontent.com/ExZeroz/Roblox/main/KiriotESP.lua'))()
 ESP:Toggle(true)
 ESP.Boxes = false
@@ -1022,7 +1025,6 @@ local Tabs = {
     page2 = Window:AddTab("Items"),
     page3 = Window:AddTab("Combat"),
     page4 = Window:AddTab("Visuals"),
-    page5 = Window:AddTab("Misc")
 }
 
 local tab1 = Tabs.page1:AddLeftTabbox() do
@@ -2753,7 +2755,7 @@ local tab3 = Tabs.page1:AddLeftTabbox() do
                     if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
                         e:SetText("Portal : Opened")
                     else
-                        e:SetText("Portal :  Not Opened")
+                        e:SetText("Portal : Not Opened")
                     end
                 end
             end)
@@ -4193,6 +4195,27 @@ local tab11 = Tabs.page2:AddLeftTabbox() do
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","2")
         end)
     end
+    local bone = tab11:AddTab("Bone Shop") do
+        bone:AddButton("Random Bone",function ()
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
+        end)
+        bone:AddToggle("AutoRandomBone",{
+            Text = "Auto Random Bone",
+            Default = false
+        }):OnChanged(function ()
+            _G.Auto_Random_Bone = Toggles.AutoRandomBone.Value
+        end)
+
+        spawn(function()
+            pcall(function()
+                while wait() do
+                    if _G.Auto_Random_Bone then    
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
+                    end
+                end
+            end)
+        end)
+    end
 end
 Playerslist = {}
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
@@ -4593,10 +4616,283 @@ local tab14 = Tabs.page3:AddLeftTabbox() do
         end)
     end
 end
+nododgecool = false
+function NoDodgeCool()
+    if nododgecool then
+        for i,v in next, getgc() do
+            if game.Players.LocalPlayer.Character.Dodge then
+                if typeof(v) == "function" and getfenv(v).script == game.Players.LocalPlayer.Character.Dodge then
+                    for i2,v2 in next, getupvalues(v) do
+                        if tostring(v2) == "0.4" then
+                            repeat wait(.1)
+                                setupvalue(v,i2,0)
+                            until not nododgecool
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+function NoGeppoCool()
+    if noGeppocool then
+        for i,v in next, getgc() do
+            if game.Players.LocalPlayer.Character.Geppo then
+                if typeof(v) == "function" and getfenv(v).script == game.Players.LocalPlayer.Character.Geppo then
+                    for i2,v2 in next, getupvalues(v) do
+                        if tostring(v2) == "0" then
+                            repeat wait(.1)
+                                setupvalue(v,i2,0)
+                            until not noGeppocool
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+function NoSoruCool()
+    if Sorunocool then
+        for i, v in pairs(getgc()) do
+            if type(v) == "function" and getfenv(v).script == game.Players.LocalPlayer.Character:WaitForChild("Soru") then
+                for i2,v2 in pairs(debug.getupvalues(v)) do
+                    if type(v2) == 'table' then
+                        if v2.LastUse then
+                            repeat wait()
+                                setupvalue(v, i2, {LastAfter = 0,LastUse = 0})
+                            until not Sorunocool
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+spawn(function ()
+    while wait() do
+        if nododgecool then
+            NoDodgeCool()
+        end
+        if Sorunocool then
+            NoSoruCool()
+        end
+        if noGeppocool then
+            NoGeppoCool()
+        end
+    end
+end)
+
+function InfAb()
+    if InfAbility then
+        if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
+            local inf = Instance.new("ParticleEmitter")
+            inf.Acceleration = Vector3.new(0,0,0)
+            inf.Archivable = true
+            inf.Drag = 20
+            inf.EmissionDirection = Enum.NormalId.Top
+            inf.Enabled = true
+            inf.Lifetime = NumberRange.new(0.2,0.2)
+            inf.LightInfluence = 0
+            inf.LockedToPart = true
+            inf.Name = "Agility"
+            inf.Rate = 500
+            local numberKeypoints2 = {
+                NumberSequenceKeypoint.new(0, 0);
+                NumberSequenceKeypoint.new(1, 4); 
+            }
+            inf.Size = NumberSequence.new(numberKeypoints2)
+            inf.RotSpeed = NumberRange.new(999, 9999)
+            inf.Rotation = NumberRange.new(0, 0)
+            inf.Speed = NumberRange.new(30, 30)
+            inf.SpreadAngle = Vector2.new(360,360)
+            inf.Texture = "rbxassetid://7157487174"
+            inf.VelocityInheritance = 0
+            inf.ZOffset = 2
+            inf.Transparency = NumberSequence.new(0)
+            inf.Color = ColorSequence.new(Color3.fromRGB(30, 215, 96),Color3.fromRGB(30, 215, 96))
+            inf.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+        end
+    else
+        if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
+        end
+    end
+end
 local tab15 = Tabs.page3:AddRightTabbox() do
     local boost = tab15:AddTab("Boost - Up") do
         local a = boost:AddLabel("")
         a:Seperator([[\\ Race - Boost //]])
+        boost:AddToggle("Auto_Ability",{
+            Text = "Auto Activate Ability",
+            Default = false
+        }):OnChanged(function ()
+            _G.AutoAbilty = Toggles.Auto_Ability.Value
+        end)
+
+        spawn(function ()
+            while wait() do
+                if _G.AutoAbilty then
+                    game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
+                end
+            end
+        end)
+        local b = boost:AddLabel("")
+        b:Seperator([[\\ Movement - Boost //]])
+        boost:AddToggle("InfAbilitys",{
+            Text = "Inf Ability",
+            Default = false
+        }):OnChanged(function ()
+            InfAbility = Toggles.InfAbilitys.Value
+        end)
+
+        spawn(function()
+            while wait() do
+                if InfAbility then
+                    InfAb()
+                end
+            end
+        end)
+
+        boost:AddToggle('InfEnergy',{
+            Text = "Inf Stamina",
+            Default = false
+        }):OnChanged(function ()
+            InfiniteEnergy = Toggles.InfEnergy.Value
+        end)
+        local c = boost:AddLabel("")
+        c:Seperator([[\\ No Cooldown //]])
+        boost:AddToggle("Dodge",{
+            Text = "No Dodge Cooldown",
+            Default = false
+        }):OnChanged(function ()
+            nododgecool = Toggles.Dodge.Value
+            NoDodgeCool()
+        end)
+        boost:AddToggle("Soru",{
+            Text = "No Dodge Cooldown",
+            Default = false
+        }):OnChanged(function ()
+            Sorunocool = Toggles.Soru.Value
+            NoSoruCool()
+        end)
+        boost:AddToggle("Geppo",{
+            Text = "No Dodge Cooldown",
+            Default = false
+        }):OnChanged(function ()
+            noGeppocool = Toggles.Geppo.Value
+            NoGeppoCool()
+        end)
+        local d = boost:AddLabel("")
+        d:Seperator([[\\ Miscellaneous //]])
+        boost:AddToggle("WalkWater",{
+            Text = "Walk On Water",
+            Default = false
+        }):OnChanged(function ()
+            WaterWalk = Toggles.WalkWater.Value
+        end)
+        if game.workspace:FindFirstChild("WaterWalk") then
+            game.workspace:FindFirstChild("WaterWalk"):Destroy()
+        end
+        local platform = Instance.new("Part")
+        platform.Name = "WaterWalk"
+        platform.Size = Vector3.new(math.huge, 1, math.huge)
+        platform.Transparency = 1
+        platform.Anchored = true
+        platform.Parent = game.workspace
+        spawn(function()
+            while wait() do
+                if WaterWalk then
+                    platform.CanCollide = true
+                    platform.Position = Vector3.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.X,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y * 0 -5, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Z)
+                else
+                    platform.CanCollide = false
+                    platform.Position = Vector3.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.X,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y * 0 -6, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Z)
+                end
+            end
+        end)
+    end
+end
+local spe = Tabs.page3:AddLeftTabbox() do
+    local fruit = spe:AddTab("Fruit - Sniper") do
+        FruitList = {
+            "Bomb-Bomb",
+            "Spike-Spike",
+            "Chop-Chop",
+            "Spring-Spring",
+            "Kilo-Kilo",
+            "Spin-Spin",
+            "Bird: Falcon",
+            "Smoke-Smoke",
+            "Flame-Flame",
+            "Ice-Ice",
+            "Sand-Sand",
+            "Dark-Dark",
+            "Revive-Revive",
+            "Diamond-Diamond",
+            "Light-Light",
+            "Love-Love",
+            "Rubber-Rubber",
+            "Barrier-Barrier",
+            "Magma-Magma",
+            "Door-Door",
+            "Quake-Quake",
+            "Human-Human: Buddha",
+            "String-String",
+            "Bird-Bird: Phoenix",
+            "Rumble-Rumble",
+            "Paw-Paw",
+            "Gravity-Gravity",
+            "Dough-Dough",
+            "Venom-Venom",
+            "Shadow-Shadow",
+            "Control-Control",
+            "Soul-Soul",
+            "Dragon-Dragon",
+            "Leopard-Leopard"
+        }
+        fruit:AddDropdown("Fruitss",{
+            Values = FruitList,
+            Default = 0,
+            Multi = false,
+            Text = "Select Fruits",
+        }):OnChanged(function ()
+            _G.SelectFruit = Options.Fruitss.Value
+        end)
+        fruit:AddToggle("AutoFruit",{
+            Text = "Auto Random Fruits",
+            Default = false
+        }):OnChanged(function ()
+            _G.Random_Auto = Toggles.AutoFruit.Value
+        end)
+
+        spawn(function()
+            pcall(function()
+                while wait() do
+                    if _G.Random_Auto then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Cousin","Buy")
+                    end 
+                end
+            end)
+        end)
+
+        fruit:AddToggle("BuyFruit",{
+            Text = "Auto Buy Fruit Sniper",
+            Default = false
+        }):OnChanged(function ()
+            _G.AutoBuyFruitSniper = Toggles.BuyFruit.Value
+        end)
+
+        spawn(function()
+            pcall(function()
+                while wait() do
+                    if _G.AutoBuyFruitSniper then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("PurchaseRawFruit",_G.SelectFruit)
+                    end 
+                end
+            end)
+        end)
     end
 end
 local tab16 = Tabs.page4:AddLeftTabbox() do
@@ -4895,6 +5191,8 @@ local tab18 = Tabs.page4:AddLeftTabbox() do
                 "Chocolate Island"
                 }
         end
+        local a = tpil:AddLabel("")
+        a:Seperator([[\\ Island - Select //]])
         tpil:AddDropdown("SelectIsland",{
             Values = Island,
             Default = 1,
@@ -4903,6 +5201,8 @@ local tab18 = Tabs.page4:AddLeftTabbox() do
         }):OnChanged(function ()
             _G.SelectIsland = Options.SelectIsland.Value
         end)
+        local b = tpil:AddLabel("")
+        b:Seperator([[\\ Main - Stuff //]])
         ESP:AddObjectListener(workspace["_WorldOrigin"].Locations, {
             Color = Color3.fromRGB(0, 255, 255),
             IsEnabled = "Island"
@@ -5018,6 +5318,196 @@ local tab18 = Tabs.page4:AddLeftTabbox() do
         end)
     end
 end
+
+local tab19 = Tabs.page4:AddRightTabbox() do
+    local status = tab19:AddTab("Statistics") do
+        local a = status:AddLabel("")
+        spawn(function()
+            while wait() do
+                pcall(function()
+                    for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+                        if i == 12 then
+                            a:SetText(" "..i.." ".."/".." ".."12".." ".."(Max)")
+                        elseif i == 1 then
+                            a:SetText(" "..i.." ".."/".." ".."12")
+                        else
+                            a:SetText(" "..i.." ".."/".." ".."12")
+                        end
+                    end
+                end)
+            end
+        end)
+        status:AddLabel("12 Players Max")
+        status:AddLabel("Place ID : "..game.PlaceId)
+        Infomation = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId);
+        NameGames = Infomation.Name
+        status:AddLabel(NameGames)
+    end
+end
+
+local tab20 = Tabs.page4:AddLeftTabbox() do
+    local Team = tab20:AddTab("Teams") do
+        Team:AddButton('Join Marines Teams',function ()
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Marines")
+        end)
+        Team:AddButton('Join Pirates Teams',function ()
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Pirates")
+        end)
+    end
+    local gripic = tab20:AddTab("Graphic") do
+        local a = game.Lighting
+        local c = Instance.new("ColorCorrectionEffect", a)
+        local e = Instance.new("ColorCorrectionEffect", a)
+        OldAmbient = a.Ambient
+        OldBrightness = a.Brightness
+        OldColorShift_Top = a.ColorShift_Top
+        OldBrightnessc = c.Brightness
+        OldContrastc = c.Contrast
+        OldTintColorc = c.TintColor
+        OldTintColore = e.TintColor
+        gripic:AddToggle("Remove",{
+            Text = "Remove Fog",
+            Default = false
+        }):OnChanged(function ()
+            RemoveFog = Toggles.Remove.Value
+            if not RemoveFog then return end
+            while RemoveFog do wait()
+                game.Lighting.FogEnd = 9e9
+                if not RemoveFog then
+                    game.Lighting.FogEnd = 99999
+                end
+            end
+        end)
+        gripic:AddToggle("RTX",{
+            Text = "RTX Shades",
+            Default = false
+        }):OnChanged(function ()
+            _G.RTXMode = Toggles.RTX.Value
+            if not _G.RTXMode then return end
+            while _G.RTXMode do wait()
+                a.Ambient = Color3.fromRGB(33, 33, 33)
+                a.Brightness = 0.3
+                c.Brightness = 0.176
+                c.Contrast = 0.39
+                c.TintColor = Color3.fromRGB(217, 145, 57)
+                game.Lighting.FogEnd = 999
+                if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight") then
+                    local a2 = Instance.new("PointLight")
+                    a2.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                    a2.Range = 15
+                    a2.Color = Color3.fromRGB(217, 145, 57)
+                end
+                if not _G.RTXMode then
+                    a.Ambient = OldAmbient
+                    a.Brightness = OldBrightness
+                    a.ColorShift_Top = OldColorShift_Top
+                    c.Contrast = OldContrastc
+                    c.Brightness = OldBrightnessc
+                    c.TintColor = OldTintColorc
+                    e.TintColor = OldTintColore
+                    game.Lighting.FogEnd = 2500
+                    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight"):Destroy()
+                end
+            end
+        end)
+    end
+    local FPS = tab20:AddTab("FPS") do
+        FPS:AddButton("FPS Boost [1-2 Minutes]",function ()
+            local decalsyeeted = true
+            local g = game
+            local w = g.Workspace
+            local l = g.Lighting
+            local t = w.Terrain
+            t.WaterWaveSize = 0
+            t.WaterWaveSpeed = 0
+            t.WaterReflectance = 0
+            t.WaterTransparency = 0
+            l.GlobalShadows = false
+            l.FogEnd = 9e9
+            l.Brightness = 0
+            settings().Rendering.QualityLevel = "Level01"
+            for i, v in pairs(g:GetDescendants()) do
+                if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then 
+                    v.Material = "Plastic"
+                    v.Reflectance = 0
+                elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+                    v.Transparency = 1
+                elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+                    v.Lifetime = NumberRange.new(0)
+                elseif v:IsA("Explosion") then
+                    v.BlastPressure = 1
+                    v.BlastRadius = 1
+                elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+                    v.Enabled = false
+                elseif v:IsA("MeshPart") then
+                    v.Material = "Plastic"
+                    v.Reflectance = 0
+                    v.TextureID = 10385902758728957
+                end
+            end
+            for i, e in pairs(l:GetChildren()) do
+                if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+                    e.Enabled = false
+                end
+            end
+        end)
+        FPS:AddToggle("White",{
+            Text = "Screen FPS Boost",
+            Default = false
+        }):OnChanged(function ()
+            _G.WhiteScreen = Toggles.White.Value
+            if _G.WhiteScreen  then
+                game:GetService("RunService"):Set3dRenderingEnabled(false)
+            else
+                game:GetService("RunService"):Set3dRenderingEnabled(true)
+            end
+        end)
+    end
+end
+
+local tab21 = Tabs.page4:AddRightTabbox() do
+    local Misc = tab21:AddTab("Server - Misc") do
+        Misc:AddButton("Server Hop",function ()
+            Hop()
+        end)
+        Misc:AddButton("Rejoin",function ()
+            game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+        end)
+    end
+end
+
+local tab22 = Tabs.page4:AddLeftTabbox() do
+    local Tab = tab22:AddTab("Tab") do
+        local a = Tab:AddLabel("")
+        a:Seperator([[\\ Misc - Tab //]])
+        Tab:AddButton("Fruits Shop",function ()
+            game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
+        end)
+        Tab:AddButton("Titles Tab",function ()
+            game:GetService("Players").LocalPlayer.PlayerGui.Main.Titles.Visible = true
+        end)
+        Tab:AddButton("Awaken Tab",function ()
+            game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
+        end)
+        Tab:AddButton("Colors Tab",function ()
+            game:GetService("Players").LocalPlayer.PlayerGui.Main.Colors.Visible = true
+        end)
+    end
+end
+
+local tab23 = Tabs.page4:AddRightTabbox() do
+    local misc = tab23:AddTab("Misc") do
+        misc:AddToggle("Water",{
+            Text = "Show Watermark",
+            Default = true
+        }):OnChanged(function ()
+            Bitch = Toggles.Water.Value
+        end)
+        misc:AddButton("Unload",function ()
+            Library:Unload()
+        end)
+    end
+end
 Bitch = true
 local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(function()
@@ -5052,6 +5542,36 @@ a.Run = function(...)
     args[1]['Value'] = "😳 Critical 😳"
     return old(...)
 end
+
+task.spawn(function()
+    while task.wait() do
+        local Registry = Window.Holder.Visible and Library.Registry or Library.HudRegistry
+
+        for Idx, Object in next, Library.Registry do
+            for Property, ColorIdx in next, Object.Properties do
+                if ColorIdx == 'AccentColor' or ColorIdx == 'AccentColorDark' then
+                    local Instance = Object.Instance
+                    local yPos = Instance.AbsolutePosition.Y
+
+                    local Mapped = Library:MapValue(yPos, 0, 1080, 0, 0.5) * 1.5
+                    local Color = Color3.fromHSV((Library.CurrentRainbowHue - Mapped) % 1, 0.8, 1)
+
+                    if ColorIdx == 'AccentColorDark' then
+                        Color = Library:GetDarkerColor(Color)
+                    end
+
+                    Instance[Property] = Color
+                end
+            end
+        end
+    end
+
+    if not Toggles.Rainbow.Value then
+        ThemeManager:UpdateTheme()
+    end
+end)
+
+
 
 Library:Notify("Loading Success",3)
 Library:Notify("Your In Version Test",3)
