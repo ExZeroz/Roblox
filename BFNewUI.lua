@@ -3388,29 +3388,6 @@ local tab4 = Tabs.page1:AddRightTabbox() do
             end)
         end)
     end
-    local other = tab4:AddTab("Others") do
-        local a = other:AddLabel("")
-        a:Seperator([[\\ Teleport - Mystic Island //]])
-        other:AddToggle("Mystic",{
-            Text = "Auto Teleport To Mystic Island",
-            Default = false
-        }):OnChanged(function ()
-            _G.AutoMysticIsland = Toggles.Mystic.Value
-            StopTween(_G.AutoMysticIsland)
-        end)
-
-        spawn(function()
-            while wait() do
-                if _G.AutoMysticIsland and W3 then
-                    pcall(function()
-                        if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                            topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
-                        end
-                    end)
-                end
-            end
-        end)
-    end
 end
 local tab5 = Tabs.page1:AddLeftTabbox() do
     local ob = tab5:AddTab("Observations") do
@@ -4241,8 +4218,10 @@ local tab11 = Tabs.page2:AddLeftTabbox() do
     end
 end
 Playerslist = {}
-for i,v in pairs(game:GetService("Players"):GetChildren()) do
-    table.insert(Playerslist,v.Name)
+for i,v in pairs(game.Players:GetChildren()) do  
+    if v.Name ~= game.Players.LocalPlayer.Name then
+        table.insert(Playerslist ,v.Name)
+    end
 end
 
 local tab12 = Tabs.page3:AddLeftTabbox() do
@@ -4358,6 +4337,7 @@ local tab12 = Tabs.page3:AddLeftTabbox() do
             Default = false
         }):OnChanged(function ()
             _G.Auto_Kill_Player_Gun = Toggles.Auto_Farm_Plr_Gun.Value
+            StopTween(_G.Auto_Kill_Player_Gun)
         end)
 
         spawn(function()
@@ -4376,7 +4356,7 @@ local tab12 = Tabs.page3:AddLeftTabbox() do
                                             UseGunKillPlayer = true
                                             game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun].Cooldown.Value = 0
                                             v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-                                            v.HumanoidRootPart.Transparency = 0.7
+                                            v.HumanoidRootPart.Transparency = 1
                                             topos(v.HumanoidRootPart.CFrame * CFrame.new(0,50,-10))
                                             game:GetService'VirtualUser':CaptureController()
                                             game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -4793,14 +4773,14 @@ local tab15 = Tabs.page3:AddRightTabbox() do
             NoDodgeCool()
         end)
         boost:AddToggle("Soru",{
-            Text = "No Dodge Cooldown",
+            Text = "No Soru Cooldown",
             Default = false
         }):OnChanged(function ()
             Sorunocool = Toggles.Soru.Value
             NoSoruCool()
         end)
         boost:AddToggle("Geppo",{
-            Text = "No Dodge Cooldown",
+            Text = "No Geppo Cooldown",
             Default = false
         }):OnChanged(function ()
             noGeppocool = Toggles.Geppo.Value
@@ -4824,7 +4804,7 @@ local tab15 = Tabs.page3:AddRightTabbox() do
         platform.Anchored = true
         platform.Parent = game.workspace
         spawn(function()
-            while task.spawn() do
+            while task.wait() do
                 if WaterWalk then
                     platform.CanCollide = true
                     platform.Position = Vector3.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.X,game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y * 0 -5, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Z)
@@ -5394,10 +5374,16 @@ local tab20 = Tabs.page4:AddLeftTabbox() do
         }):OnChanged(function ()
             RemoveFog = Toggles.Remove.Value
             if not RemoveFog then return end
+            Lighting = game:GetService("Lighting")
+            for i,v in pairs(Lighting:GetDescendants()) do
+                if v:IsA("Atmosphere") then
+                    v:Destroy()
+                end
+            end
             while RemoveFog do wait()
-                game.Lighting.FogEnd = 9e9
+                Lighting.FogEnd = 100000
                 if not RemoveFog then
-                    game.Lighting.FogEnd = 99999
+                    Lighting.FogEnd = 9000
                 end
             end
         end)
