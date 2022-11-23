@@ -4241,8 +4241,10 @@ local tab12 = Tabs.page3:AddLeftTabbox() do
         spawn(function ()
             while wait(.2) do
                 table.clear(Playerslist)
-                for i,v in pairs(game:GetService("Players"):GetChildren()) do
-                    table.insert(Playerslist,v.Name)
+                for i,v in pairs(game.Players:GetChildren()) do  
+                    if v.Name ~= game.Players.LocalPlayer.Name then
+                        table.insert(Playerslist ,v.Name)
+                    end
                 end
                 play:SetValues(Playerslist)
             end
@@ -4799,7 +4801,7 @@ local tab15 = Tabs.page3:AddRightTabbox() do
         end
         local platform = Instance.new("Part")
         platform.Name = "WaterWalk"
-        platform.Size = Vector3.new(math.huge, 1, math.huge)
+        platform.Size = Vector3.new(30, 1, 30)
         platform.Transparency = 0
         platform.Anchored = true
         platform.Parent = game.workspace
