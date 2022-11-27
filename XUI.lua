@@ -1,3 +1,4 @@
+-- "(WARNING: This Repository is Licensed! You are not permitted to use/copy this User Interface library)" - kiss my ass, you log data w/o stating it anywhere.
 local library = { 
 	flags = { }, 
 	items = { } 
@@ -164,7 +165,7 @@ function library:CreateWatermark(name, position)
     watermark.BlackOutline.Size = watermark.mainbar.Size + UDim2.fromOffset(4, 4)
 
     local startTime, counter, oldfps = os.clock(), 0, nil
-    runservice.Heartbeat:Connect(function()
+    runservice.RenderStepped:Connect(function()
         watermark.label.Visible = watermark.Visible
         watermark.mainbar.Visible = watermark.Visible
         watermark.topbar.Visible = watermark.Visible
@@ -184,7 +185,7 @@ function library:CreateWatermark(name, position)
                 startTime = currentTime
 
                 if fps ~= oldfps then
-                    watermark.label.Text = " " .. name:gsub("{game}", gamename):gsub("{fps}", fps .. " FPS") .. " "
+                    watermark.label.Text = " " .. name:gsub("{game}", NameGames):gsub("{fps}", fps .. " FPS") .. " "
         
                     watermark.label.Size = UDim2.new(0, watermark.label.TextBounds.X+10, 0, 25)
                     watermark.mainbar.Size = UDim2.new(0, watermark.label.TextBounds.X, 0, 25)
@@ -197,6 +198,7 @@ function library:CreateWatermark(name, position)
             end
         end
     end)
+    
 
     watermark.mainbar.MouseEnter:Connect(function()
         tweenservice:Create(watermark.mainbar, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), { BackgroundTransparency = 1, Active = false }):Play()
