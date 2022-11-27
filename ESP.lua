@@ -5,18 +5,18 @@ local ESP = {
 	BoxShift = CFrame.new(0,-1.5,0),
 	BoxSize = Vector3.new(4,6,0),
 	Color = Color3.fromRGB(199, 255, 255),
-    ToolColor = Color3.fromRGB(199, 255, 255),
+    	ToolColor = Color3.fromRGB(199, 255, 255),
 	FaceCamera = false,
 	Names = false,
 	Distance = false,
 	Health = false,
-    Tool = false,
+    	Tool = false,
 	TeamColor = true,
 	Thickness = 1.5,
 	AttachShift = 1,
 	TeamMates = true,
 	Players = true,
-    DistanceS = 2000,
+    	DistanceS = 2000,
 
 	Objects = setmetatable({}, {__mode="kv"}),
 	Overrides = {}
@@ -232,7 +232,7 @@ function boxBase:Update()
                 if Vis5 then
                     self.Components.Distance.Visible = true
                     self.Components.Distance.Position = Vector2.new(TagPos.X, TagPos.Y + 28)
-                    self.Components.Distance.Text = math.floor((cam.CFrame.p - cf.p).magnitude) .."m"
+                    self.Components.Distance.Text = math.floor((cam.CFrame.p - cf.p).magnitude) .."M"
                     self.Components.Distance.Color = color
                 else
                     self.Components.Distance.Visible = false
