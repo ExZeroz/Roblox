@@ -1,4 +1,3 @@
--- "(WARNING: This Repository is Licensed! You are not permitted to use/copy this User Interface library)" - kiss my ass, you log data w/o stating it anywhere.
 local library = { 
 	flags = { }, 
 	items = { } 
@@ -87,7 +86,7 @@ function library:CreateWatermark(name, position)
     NameGames = Infomation.Name
     local watermark = { }
     watermark.Visible = true
-    watermark.text = " " .. name:gsub("{game}", gamename):gsub("{fps}", "0 FPS") .. " "
+    watermark.text = " " .. name:gsub("{game}", NameGames):gsub("{fps}", "0 FPS") .. " "
 
     watermark.main = Instance.new("ScreenGui", coregui)
     watermark.main.Name = "Watermark"
