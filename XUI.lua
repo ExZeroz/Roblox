@@ -1,4 +1,4 @@
-
+-- "(WARNING: This Repository is Licensed! You are not permitted to use/copy this User Interface library)" - kiss my ass, you log data w/o stating it anywhere.
 local library = { 
 	flags = { }, 
 	items = { } 
@@ -83,7 +83,8 @@ if library.theme.cursor and Drawing then
 end
 
 function library:CreateWatermark(name, position)
-    local gamename = game.Name -- marketplaceservice:GetProductInfo(game.PlaceId).Name
+    Infomation = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId);
+    NameGames = Infomation.Name
     local watermark = { }
     watermark.Visible = true
     watermark.text = " " .. name:gsub("{game}", gamename):gsub("{fps}", "0 FPS") .. " "
@@ -172,7 +173,7 @@ function library:CreateWatermark(name, position)
         watermark.BlackOutline.Visible = watermark.Visible
 
         if not name:find("{fps}") then
-            watermark.label.Text = " " .. name:gsub("{game}", gamename):gsub("{fps}", "0 FPS") .. " "
+            watermark.label.Text = " " .. name:gsub("{game}", NameGames):gsub("{fps}", "0 FPS") .. " "
         end
 
         if name:find("{fps}") then
