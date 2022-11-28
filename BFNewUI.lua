@@ -3753,7 +3753,7 @@ local tab6 = Tabs.page1:AddRightTabbox() do
                             topos(CFrame.new(5148.03613, 162.352493, 910.548218, 0, 0, -1, 0, 1, 0, 1, 0, 0))
                         else
                             if game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") then
-                                repeat wait(.2) 
+                                repeat wait(.2)
                                     local ohString1 = "activateColor"
                                     local ohString2 = "Snow White"
                                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
@@ -4230,7 +4230,7 @@ local tab12 = Tabs.page3:AddLeftTabbox() do
         a:Seperator([[\\ Select Players //]])
         local play = plr:AddDropdown("Select_Player",{
             Values = Playerslist,
-            Default = 1,
+            Default = 0,
             Text = "Select Players",
             Multi = false,
         })
@@ -4385,13 +4385,21 @@ local tab12 = Tabs.page3:AddLeftTabbox() do
             Text = "Spectate Players",
             Default = false
         }):OnChanged(function ()
-            SpectatePlys = Toggles.Spectate.Value
-            local plr1 = game:GetService("Players").LocalPlayer.Character.Humanoid
-            local plr2 = game:GetService("Players"):FindFirstChild(_G.SelectPly)
-            repeat wait(.1)
-                game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.Humanoid
-            until SpectatePlys == false 
-            game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players").LocalPlayer.Character.Humanoid
+            _G.Spectate_Player = Toggles.Spectate.Value
+        end)
+
+        spawn(function()
+            while wait() do
+                if _G.Spectate_Player then
+                    pcall(function()
+                        if game.Players:FindFirstChild(_G.SelectPly) then
+                            game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(_G.SelectPly).Character.Humanoid
+                        end
+                    end)
+                else
+                    game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+                end
+            end
         end)
         local d = plr:AddLabel("")
         d:Seperator([[\\ Miscellaneous //]])
