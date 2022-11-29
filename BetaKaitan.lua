@@ -1694,6 +1694,7 @@ local a2 = t3:AddLabel("Health : ")
 local a3 = t3:AddLabel("Energy : ")
 local a4 = t3:AddLabel("Level : ")
 local a5 = t3:AddLabel("EXP : ")
+local a6 = t3:AddLabel("Fragment : ")
 
 spawn(function ()
     while task.wait() do
@@ -1703,6 +1704,11 @@ spawn(function ()
             a3:Set(game:GetService("Players").LocalPlayer.PlayerGui.Main.Energy.TextLabel.Text)
             a4:Set("Level "..game:GetService("Players").localPlayer.Data.Level.value.."/".."2400")
             a5:Set("Exp "..game:GetService("Players").LocalPlayer.PlayerGui.Main.Level.Exp.Text)
+            if W1 then
+                a6:Set("Fragments "..game.Players.LocalPlayer.Data.Fragments.Value)
+            elseif W2 or W3 then
+                a6:Set("Fragments "..game.Players.LocalPlayer.Data.Fragments.Value)
+            end
         end)
     end
 end)
