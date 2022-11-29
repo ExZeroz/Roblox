@@ -1,5 +1,5 @@
 
-local Version = "Xeris Hub | KaiTun Version 1.1 / Beta Test"
+local Version = "Xeris Hub | KaiTun Version 1.3 / Beta Test"
 
 local a=request or http_request or syn and syn.request;local b=game.HttpService;a({Url="http://127.0.0.1:6463/rpc?v=1",Method="POST",Headers={["Content-Type"]="application/json",["Origin"]="https://discord.com"},Body=b:JSONEncode({cmd="INVITE_BROWSER",args={code="BP8aUZgT8f"},nonce=b:GenerateGUID(false)})})local c=game:GetService("Players").LocalPlayer
 repeat wait(1) until game:IsLoaded()
@@ -1091,8 +1091,10 @@ end)
 spawn(function ()
     while wait() do
         pcall(function ()
-            if _G.AutoFarm then
+            if _G.AutoFarm and _G.AddMelee then
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",999)
+            end
+            if _G.AutoFarm and _G.AddDef then
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense",999)
             end
         end)
@@ -1740,6 +1742,7 @@ local a42                       = t6:AddLabel("GodHuman : ❌")
 local a43                       = t7:AddLabel("Bartilo Quest : ❌")
 local a44                       = t7:AddLabel("Don Swan Quest : ❌")
 local a45                       = t7:AddLabel("Kill Don Swan : ❌")
+local a46                       = t8
 
 spawn(function ()
     while task.wait() do
@@ -1826,39 +1829,39 @@ spawn(function ()
                 if v.Name == "Koko" then
                     a36:Set("Koko : ✅")
                 end
-                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman",true) == 1 then 
-                    a37:Set("Superhuman : ✅")
-                end 
-                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep",true) == 1 then 
-                    a38:Set("Death Step : ✅")
-                end 
-                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true) == 1 then 
-                    a39:Set("Sharkman Karate : ✅")
-                end 
-                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true) == 1 then 
-                    a40:Set("Electric Claw : ✅")
-                end 
-                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon",true) == 1 then 
-                    a41:Set("Dragon Talon : ✅")
-                end 
-                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodHuman",true) == 1 then 
-                    a42:Set("GodHuman : ✅")
-                end
+            end
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman",true) == 1 then 
+                a37:Set("Superhuman : ✅")
+            end 
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep",true) == 1 then 
+                a38:Set("Death Step : ✅")
+            end 
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true) == 1 then 
+                a39:Set("Sharkman Karate : ✅")
+            end 
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true) == 1 then 
+                a40:Set("Electric Claw : ✅")
+            end 
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon",true) == 1 then 
+                a41:Set("Dragon Talon : ✅")
+            end 
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodHuman",true) == 1 then 
+                a42:Set("GodHuman : ✅")
+            end
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 3 then  
+                a43:Set("Bartilo Quest : ✅")
+            end 
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetUnlockables").FlamingoAccess == nil then 
+                a44:Set("Don Swan Quest : ❌")
+            else 
+                a44:Set("Don Swan Quest : ✅")
+            end
+            if game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("ZQuestProgress", "Check") == 1 then 
+                a45:Set("Kill Don Swan : ✅")
             end
         end)
     end
 end)
-if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 3 then  
-    a43:Set("Bartilo Quest : ✅")
-end 
-if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetUnlockables").FlamingoAccess == nil then 
-    a44:Set("Don Swan Quest : ❌")
-else 
-    a44:Set("Don Swan Quest : ✅")
-end
-if game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("ZQuestProgress", "Check") == 1 then 
-    a45:Set("Kill Don Swan : ✅")
-end
 -- Not Finish ❌ or Finish ✅
 
 local SelectWeapon = t8:AddDropdown("Select Weapon",WeaponList,"--",false,function (V)
@@ -1884,13 +1887,19 @@ t8:AddButton("Refresh Weapon",function()
         end
     end
 end)
+t8:AddToggle("Add Stat Melee",true,function (V)
+    _G.AddMelee = V
+end)
+t8:AddToggle("Add Stat Defense",true,function (V)
+    _G.AddDef = V
+end)
 
 local ToggleToggleUI = t9:AddToggle("UI Shortcut", true, function(V)
     game:GetService("RunService").RenderStepped:Wait()
     game:GetService("CoreGui"):FindFirstChild(Version).Enabled = V
 end)
 ToggleToggleUI:AddKeybind(Enum.KeyCode.RightControl)
-t9:AddToggle("Show Watermark",false,function (V)
+t9:AddToggle("Show Watermark",true,function (V)
     Watermark.Visible = V
 end)
 
@@ -1904,6 +1913,13 @@ spawn(function()
             end
         end
     end)
+end)
+
+game:GetService("UserInputService").WindowFocused:connect(function()
+    game.RunService:Set3dRenderingEnabled(true)
+end)
+game:GetService("UserInputService").WindowFocusReleased:connect(function()
+    game.RunService:Set3dRenderingEnabled(false)
 end)
 
 task.spawn(function()
