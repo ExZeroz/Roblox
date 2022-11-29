@@ -1,3 +1,6 @@
+
+local Version = "Xeris Hub | KaiTun Version 1.1 / Beta Test"
+
 local a=request or http_request or syn and syn.request;local b=game.HttpService;a({Url="http://127.0.0.1:6463/rpc?v=1",Method="POST",Headers={["Content-Type"]="application/json",["Origin"]="https://discord.com"},Body=b:JSONEncode({cmd="INVITE_BROWSER",args={code="BP8aUZgT8f"},nonce=b:GenerateGUID(false)})})local c=game:GetService("Players").LocalPlayer
 repeat wait(1) until game:IsLoaded()
 if game.PlaceId == 2753915549 then
@@ -917,7 +920,7 @@ end
 spawn(function()
     pcall(function()
         while wait() do
-            if _G.AutoMysticIsland or _G.Auto_Kill_Player_Gun or _G.Auto_Fully_Superhuman or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Auto_Open_Dough_Dungeon or _G.AutoFarmMasDF or _G.Auto_Tushita or _G.Auto_Yama or _G.Auto_New_World or _G.TpLab or _G.AutoBossLaw or _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.Auto_Saber or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or FarmBoss or _G.AutoElitehunter or _G.AutoThirdSea or _G.AutoFarmBone == true then
+            if _G.AutoFarm == true then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -933,7 +936,7 @@ end)
 spawn(function()
     pcall(function()
         game:GetService("RunService").Stepped:Connect(function()
-            if _G.AutoMysticIsland or _G.Auto_Kill_Player_Gun or _G.Auto_Fully_SharkMan_Karate or _G.Auto_Open_Dough_Dungeon or _G.AutoFarmMasDF or _G.Auto_Tushita or _G.Auto_Yama or _G.Auto_New_World or _G.TpLab or _G.AutoBossLaw or _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.Auto_Saber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.AutoFarmBone == true then
+            if _G.AutoFarm == true then
                 for _, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
                     if v:IsA("BasePart") then
                         v.CanCollide = false
@@ -946,7 +949,7 @@ end)
     
 spawn(function()
     while wait() do
-        if _G.AutoMysticIsland or _G.Auto_Kill_Player_Gun or _G.Auto_Fully_SharkMan_Karate or _G.Auto_Open_Dough_Dungeon or _G.AutoFarmMasDF or _G.Auto_Tushita or _G.Auto_Yama or _G.Auto_New_World or _G.AutoBossLaw or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.Auto_Saber or _G.NOCLIP or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.AutoFarm or _G.Clip or _G.AutoElitehunter or _G.AutoThirdSea or _G.AutoFarmBone == true then
+        if _G.AutoFarm == true then
             pcall(function()
                 game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken",true)
             end)
@@ -1138,51 +1141,27 @@ task.spawn(function()
 end)
 
 Melee = {"Combat","Black Leg","Electro","Fishman Karate","Dragon Claw","Superhuman","Death Step","Electric Claw","Sharkman Karate","Dragon Talon","Godhuman"}
-_G.FastAttack                   = false
 _G.Quest                        = true
 _G.BringMonster                 = true
 _G.Team                         = "Pirate"
 local Library                   = loadstring(game:HttpGet("https://raw.githubusercontent.com/ExZeroz/Roblox/main/XUI.lua"))()
 local Watermark                 = Library:CreateWatermark("Xeris Hub | {game} | {fps}")
-local Window                    = Library:CreateWindow("Xeris Hub | KaiTun Version 1.0",Vector2.new(492, 580))
+local Window                    = Library:CreateWindow(Version,Vector2.new(492, 580))
 local main                      = Window:CreateTab("Main")
+local setting                   = Window:CreateTab("Settings")
 local t1                        = main:CreateSector("Auto Farm","left")
-local t2                        = main:CreateSector("Settings","Right")
 local t3                        = main:CreateSector("Status KaiTun","Right")
 local t4                        = main:CreateSector("Status","left")
 local t5                        = main:CreateSector("Swords","Right")
 local t6                        = main:CreateSector("Melee","left")
 local t7                        = main:CreateSector("Quest","left")
+local t8                        = setting:CreateSector("Settings Auto Farm","left")
+local t9                        = setting:CreateSector("UI","Right")
 
 t1:AddToggle("Start Farm KaiTun",false,function (V)
     _G.AutoFarm = V
     StopTween(_G.AutoFarm)
 end)
-local SelectWeapon = t2:AddDropdown("Select Weapon",WeaponList,"--",false,function (V)
-    _G.SelectWeapon = V
-end)
-t2:AddButton("Refresh Weapon",function()
-    for i,v in pairs(game.ReplicatedStorage.Remotes.CommF_:InvokeServer("getInventory")) do
-        SelectWeapon:Remove(v.Name)
-    end
-    for i,v in pairs(Melee) do
-        SelectWeapon:Remove(v)
-    end
-    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-        if v:IsA("Tool") then
-            SelectWeapon:Remove(v.Name)
-            SelectWeapon:Add(v.Name)
-        end
-    end
-    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do  
-        if v:IsA("Tool") then
-            SelectWeapon:Remove(v.Name)
-            SelectWeapon:Add(v.Name)
-        end
-    end
-end)
-
-
 
 spawn(function()
     while wait() do
@@ -1689,28 +1668,242 @@ spawn(function()
     end
 end)
 
-local a1 = t3:AddLabel("UserName : ")
-local a2 = t3:AddLabel("Health : ")
-local a3 = t3:AddLabel("Energy : ")
-local a4 = t3:AddLabel("Level : ")
-local a5 = t3:AddLabel("EXP : ")
-local a6 = t3:AddLabel("Fragment : ")
+--[[
+Shisui = t5:AddLabel({Name = "❌ : Shisui"})
+Saddi = t5:AddLabel({Name = "❌ : Saddi"})
+Wando = t5:AddLabel({Name = "❌ : Wando"})
+TrueTripleKatana = t5:AddLabel({Name = "❌ : True Triple Katana"})
+Saber = t5:AddLabel({Name = "❌ : Saber"})
+Rengoku = KaiTun6:AddLabel({Name = "❌ : Rengoku"})
+MidnightBlade = KaiTun6:AddLabel({Name = "❌ : Midnight Blade"})
+DragonTrident = KaiTun6:AddLabel({Name = "❌ : DragonTrident"})
+Yama = KaiTun6:AddLabel({Name = "❌ : Yama"})
+BuddySword = KaiTun6:AddLabel({Name = "❌ : Buddy Sword"})
+Canvander = KaiTun6:AddLabel({Name = "❌ : Canvander"})
+TwinHooks = KaiTun6:AddLabel({Name = "❌ : Twin Hooks"})
+SpikeyTrident = KaiTun6:AddLabel({Name = "❌ : Spikey Trident"})
+HallowScythe = KaiTun6:AddLabel({Name = "❌ : Hallow Scythe"})
+DarkDagger = KaiTun6:AddLabel({Name = "❌ : Dark Dagger"})
+Tushita = KaiTun6:AddLabel({Name = "❌ : Tushita"})
+
+Kabucha = Gun:AddLabel({Name = "❌ : Kabucha"})
+AcidumRifle = Gun:AddLabel({Name = "❌ : Acidum Rifle"})
+BizarreRifle = Gun:AddLabel({Name = "❌ : Bizarre Rifle"})
+
+BartiloQuest = QuestAR:AddLabel({Name = "❌ : Bartilo Quest"})
+DonSwanQuest = QuestAR:AddLabel({Name = "❌ : Don Swan Quest"})
+KillDonSwan = QuestAR:AddLabel({Name = "❌ : Kill Don Swan"})
+]]
+
+local a1                        = t3:AddLabel("UserName : ")
+local a2                        = t3:AddLabel("Health : ")
+local a3                        = t3:AddLabel("Energy : ")
+local a4                        = t3:AddLabel("Level : ")
+local a5                        = t3:AddLabel("EXP : ")
+local a6                        = t3:AddLabel("Beli : ")
+local a7                        = t3:AddLabel("Fragment : ")
+local a8                        = t3:AddLabel("Bounty : ")
+local a9                        = t3:AddLabel("Fruit : ")
+local a10                       = t3:AddLabel("Race : ")
+local a11                       = t4:AddLabel("Status : ")
+local a12                       = t4:AddLabel("Fast Attack : ")
+local a13                       = t4:AddLabel("Melee : ")
+local a14                       = t4:AddLabel("Defense : ")
+local a15                       = t4:AddLabel("Sword : ")
+local a16                       = t4:AddLabel("Gun : ")
+local a17                       = t4:AddLabel("Devil Fruit : ")
+local a18                       = t4:AddLabel("Point Stats : ")
+local a19                       = t5:AddLabel("Shisui : ❌")
+local a20                       = t5:AddLabel("Saddi : ❌")
+local a21                       = t5:AddLabel("Wando : ❌")
+local a22                       = t5:AddLabel("True Triple Katana : ❌")
+local a23                       = t5:AddLabel("Saber : ❌")
+local a24                       = t5:AddLabel("Rengoku : ❌")
+local a25                       = t5:AddLabel("Midnight Blade : ❌")
+local a26                       = t5:AddLabel("Dragon Trident : ❌")
+local a27                       = t5:AddLabel("Yama : ❌")
+local a28                       = t5:AddLabel("Tushita : ❌")
+local a29                       = t5:AddLabel("Canvander : ❌")
+local a30                       = t5:AddLabel("Twin Hooks : ❌")
+local a31                       = t5:AddLabel("Spikey Trident : ❌")
+local a32                       = t5:AddLabel("Hallow Scythe : ❌")
+local a33                       = t5:AddLabel("Dark Dagger : ❌")
+local a34                       = t5:AddLabel("Buddy Sword : ❌")
+local a35                       = t5:AddLabel("Cursed Dual Katana : ❌")
+local a36                       = t5:AddLabel("Koko : ❌")
+local a37                       = t6:AddLabel("Superhuman : ❌")
+local a38                       = t6:AddLabel("Death Step : ❌")
+local a39                       = t6:AddLabel("Sharkman Karate : ❌")
+local a40                       = t6:AddLabel("Electric Claw : ❌")
+local a41                       = t6:AddLabel("Dragon Talon : ❌")
+local a42                       = t6:AddLabel("GodHuman : ❌")
+local a43                       = t7:AddLabel("Bartilo Quest : ❌")
+local a44                       = t7:AddLabel("Don Swan Quest : ❌")
+local a45                       = t7:AddLabel("Kill Don Swan : ❌")
 
 spawn(function ()
     while task.wait() do
         pcall(function ()
-            a1:Set("UserName "..game.Players.LocalPlayer.Name)
+            a1:Set("UserName : "..game.Players.LocalPlayer.Name)
             a2:Set(game:GetService("Players").LocalPlayer.PlayerGui.Main.HP.TextLabel.Text)
             a3:Set(game:GetService("Players").LocalPlayer.PlayerGui.Main.Energy.TextLabel.Text)
-            a4:Set("Level "..game:GetService("Players").localPlayer.Data.Level.value.."/".."2400")
-            a5:Set("Exp "..game:GetService("Players").LocalPlayer.PlayerGui.Main.Level.Exp.Text)
-            if W1 then
-                a6:Set("Fragments "..game.Players.LocalPlayer.Data.Fragments.Value)
-            elseif W2 or W3 then
-                a6:Set("Fragments "..game.Players.LocalPlayer.Data.Fragments.Value)
+            a4:Set(game:GetService("Players").LocalPlayer.PlayerGui.Main.Level.Text)
+            a5:Set("Exp : "..game:GetService("Players").LocalPlayer.PlayerGui.Main.Level.Exp.Text)
+            a6:Set("Beli : "..game:GetService("Players").LocalPlayer.PlayerGui.Main.Beli.Text)
+            a7:Set("Fragments : "..game.Players.LocalPlayer.Data.Fragments.Value)
+            a8:Set("Bounty/Honor : "..game.Players.LocalPlayer.leaderstats["Bounty/Honor"].Value)
+            if game.Players.LocalPlayer.Data.DevilFruit.Value == nil then
+                a9:Set("Devil Fruit : None")
+            else
+                a9:Set("Devil Fruit : "..game.Players.LocalPlayer.Data.DevilFruit.Value)
+            end
+            a10:Set("Race : "..game:GetService("Players").LocalPlayer.Data.Race.Value)
+            if _G.AutoFarm then
+                a11:Set("Auto Farm Status : ✅")
+                a12:Set("Fast Attack Status : ✅")
+            else
+                a11:Set("Auto Farm Status : ❌")
+                a12:Set("Fast Attack Status : ❌")
+            end
+            a13:Set("Melee : "..game:GetService("Players").LocalPlayer.Data.Stats.Melee.Level.Value)
+            a14:Set("Defense : "..game:GetService("Players").LocalPlayer.Data.Stats.Defense.Level.Value)
+            a15:Set("Sword : "..game:GetService("Players").LocalPlayer.Data.Stats.Sword.Level.Value)
+            a16:Set("Gun : "..game:GetService("Players").LocalPlayer.Data.Stats.Gun.Level.Value)
+            a17:Set("Devil Fruit : "..game:GetService("Players").LocalPlayer.Data.Stats["Demon Fruit"].Level.Value)
+            a18:Set("Point Stats : "..game:GetService("Players").LocalPlayer.Data.Points.Value)
+            for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+                if v.Name == "Shisui" then
+                    a19:Set("Shisui : ✅")
+                end
+                if v.Name == "Saddi" then
+                    a20:Set("Saddi : ✅")
+                end
+                if v.Name == "Wando" then
+                    a21:Set("Wando : ✅")
+                end
+                if v.Name == "True Triple Katana" then
+                    a22:Set("True Triple Katana : ✅")
+                end
+                if v.Name == "Saber" then
+                    a23:Set("Saber : ✅")
+                end
+                if v.Name == "Rengoku" then
+                    a24:Set("Rengoku : ✅")
+                end
+                if v.Name == "Midnight Blade" then
+                    a25:Set("Midnight Blade : ✅")
+                end
+                if v.Name == "Dragon Trident" then
+                    a26:Set("Dragon Trident : ✅")
+                end
+                if v.Name == "Yama" then
+                    a27:Set("Yama : ✅")
+                end
+                if v.Name == "Tushita" then
+                    a28:Set("Tushita : ✅")
+                end
+                if v.Name == "Canvander" then
+                    a29:Set("Canvander : ✅")
+                end
+                if v.Name == "Twin Hooks" then
+                    a30:Set("Twin Hooks : ✅")
+                end
+                if v.Name == "Spikey Trident" then
+                    a31:Set("Spikey Trident : ✅")
+                end
+                if v.Name == "Hallow Scythe" then
+                    a32:Set("Hallow Scythe : ✅")
+                end
+                if v.Name == "Dark Dagger" then
+                    a33:Set("Dark Dagger : ✅")
+                end
+                if v.Name == "Buddy Sword" then
+                    a34:Set("Buddy Sword : ✅")
+                end
+                if v.Name == "Cursed Dual Katana" then
+                    a35:Set("Cursed Dual Katana : ✅")
+                end
+                if v.Name == "Koko" then
+                    a36:Set("Koko : ✅")
+                end
+                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman",true) == 1 then 
+                    a37:Set("Superhuman : ✅")
+                end 
+                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep",true) == 1 then 
+                    a38:Set("Death Step : ✅")
+                end 
+                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true) == 1 then 
+                    a39:Set("Sharkman Karate : ✅")
+                end 
+                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true) == 1 then 
+                    a40:Set("Electric Claw : ✅")
+                end 
+                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon",true) == 1 then 
+                    a41:Set("Dragon Talon : ✅")
+                end 
+                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodHuman",true) == 1 then 
+                    a42:Set("GodHuman : ✅")
+                end
             end
         end)
     end
+end)
+if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 3 then  
+    a43:Set("Bartilo Quest : ✅")
+end 
+if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetUnlockables").FlamingoAccess == nil then 
+    a44:Set("Don Swan Quest : ❌")
+else 
+    a44:Set("Don Swan Quest : ✅")
+end
+if game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("ZQuestProgress", "Check") == 1 then 
+    a45:Set("Kill Don Swan : ✅")
+end
+-- Not Finish ❌ or Finish ✅
+
+local SelectWeapon = t8:AddDropdown("Select Weapon",WeaponList,"--",false,function (V)
+    _G.SelectWeapon = V
+end)
+t8:AddButton("Refresh Weapon",function()
+    for i,v in pairs(game.ReplicatedStorage.Remotes.CommF_:InvokeServer("getInventory")) do
+        SelectWeapon:Remove(v.Name)
+    end
+    for i,v in pairs(Melee) do
+        SelectWeapon:Remove(v)
+    end
+    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+        if v:IsA("Tool") then
+            SelectWeapon:Remove(v.Name)
+            SelectWeapon:Add(v.Name)
+        end
+    end
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do  
+        if v:IsA("Tool") then
+            SelectWeapon:Remove(v.Name)
+            SelectWeapon:Add(v.Name)
+        end
+    end
+end)
+
+local ToggleToggleUI = t9:AddToggle("UI Shortcut", true, function(V)
+    game:GetService("RunService").RenderStepped:Wait()
+    game:GetService("CoreGui"):FindFirstChild(Version).Enabled = V
+end)
+ToggleToggleUI:AddKeybind(Enum.KeyCode.RightControl)
+t9:AddToggle("Show Watermark",false,function (V)
+    Watermark.Visible = V
+end)
+
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoFarm then
+                if game:GetService("Players").LocalPlayer.Character.Humanoid.Health > 0 then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
+                end
+            end
+        end
+    end)
 end)
 
 task.spawn(function()
