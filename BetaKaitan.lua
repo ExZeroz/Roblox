@@ -1,6 +1,45 @@
 
 local Version = "Xeris Hub | KaiTun Version 1.3 / Beta Test"
 
+_G.SaveSetting = {
+   AutoFarm = false,
+   Def = false,
+   Melee = false,
+   SelectWeapon = nil,
+}
+
+local filename = "BloxFruit_"..game.Players.LocalPlayer.Name
+
+function savesetting()
+    local json
+    local HttpService = game:GetService("HttpService")
+    if (writefile) then
+        json = HttpService:JSONEncode(_G.SaveSetting)
+        writefile(filename, json)
+    else
+        print("-- DzXSave --")
+    end
+end
+
+function loadsetting()
+    local HttpService = game:GetService("HttpService")
+    if (readfile and isfile and isfile(filename)) then
+        _G.SaveSetting = HttpService:JSONDecode(readfile(filename))
+    end
+end
+
+loadsetting()
+
+if _G.SelectWeapon == nil then
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+        if v.ToolTip == "Melee" then
+            if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                _G.SelectWeapon = tostring(v.Name)
+            end
+        end
+    end
+end
+
 local a=request or http_request or syn and syn.request;local b=game.HttpService;a({Url="http://127.0.0.1:6463/rpc?v=1",Method="POST",Headers={["Content-Type"]="application/json",["Origin"]="https://discord.com"},Body=b:JSONEncode({cmd="INVITE_BROWSER",args={code="BP8aUZgT8f"},nonce=b:GenerateGUID(false)})})local c=game:GetService("Players").LocalPlayer
 repeat wait(1) until game:IsLoaded()
 if game.PlaceId == 2753915549 then
@@ -1159,10 +1198,13 @@ local t6                        = main:CreateSector("Melee","left")
 local t7                        = main:CreateSector("Quest","left")
 local t8                        = setting:CreateSector("Settings Auto Farm","left")
 local t9                        = setting:CreateSector("UI","Right")
+local t10                       = setting:CreateSector("Auto Farm Melee","Right")
 
-t1:AddToggle("Start Farm KaiTun",false,function (V)
+t1:AddToggle("Start Farm KaiTun",_G.SaveSetting.AutoFarm,function (V)
     _G.AutoFarm = V
+    _G.SaveSetting.AutoFarm = V
     StopTween(_G.AutoFarm)
+    savesetting()
 end)
 
 spawn(function()
@@ -1670,33 +1712,6 @@ spawn(function()
     end
 end)
 
---[[
-Shisui = t5:AddLabel({Name = "❌ : Shisui"})
-Saddi = t5:AddLabel({Name = "❌ : Saddi"})
-Wando = t5:AddLabel({Name = "❌ : Wando"})
-TrueTripleKatana = t5:AddLabel({Name = "❌ : True Triple Katana"})
-Saber = t5:AddLabel({Name = "❌ : Saber"})
-Rengoku = KaiTun6:AddLabel({Name = "❌ : Rengoku"})
-MidnightBlade = KaiTun6:AddLabel({Name = "❌ : Midnight Blade"})
-DragonTrident = KaiTun6:AddLabel({Name = "❌ : DragonTrident"})
-Yama = KaiTun6:AddLabel({Name = "❌ : Yama"})
-BuddySword = KaiTun6:AddLabel({Name = "❌ : Buddy Sword"})
-Canvander = KaiTun6:AddLabel({Name = "❌ : Canvander"})
-TwinHooks = KaiTun6:AddLabel({Name = "❌ : Twin Hooks"})
-SpikeyTrident = KaiTun6:AddLabel({Name = "❌ : Spikey Trident"})
-HallowScythe = KaiTun6:AddLabel({Name = "❌ : Hallow Scythe"})
-DarkDagger = KaiTun6:AddLabel({Name = "❌ : Dark Dagger"})
-Tushita = KaiTun6:AddLabel({Name = "❌ : Tushita"})
-
-Kabucha = Gun:AddLabel({Name = "❌ : Kabucha"})
-AcidumRifle = Gun:AddLabel({Name = "❌ : Acidum Rifle"})
-BizarreRifle = Gun:AddLabel({Name = "❌ : Bizarre Rifle"})
-
-BartiloQuest = QuestAR:AddLabel({Name = "❌ : Bartilo Quest"})
-DonSwanQuest = QuestAR:AddLabel({Name = "❌ : Don Swan Quest"})
-KillDonSwan = QuestAR:AddLabel({Name = "❌ : Kill Don Swan"})
-]]
-
 local a1                        = t3:AddLabel("UserName : ")
 local a2                        = t3:AddLabel("Health : ")
 local a3                        = t3:AddLabel("Energy : ")
@@ -1864,8 +1879,10 @@ spawn(function ()
 end)
 -- Not Finish ❌ or Finish ✅
 
-local SelectWeapon = t8:AddDropdown("Select Weapon",WeaponList,"--",false,function (V)
+local SelectWeapon = t8:AddDropdown("Select Weapon",WeaponList,_G.SaveSetting.SelectWeapon,false,function (V)
     _G.SelectWeapon = V
+    _G.SaveSetting.SelectWeapon = V
+    savesetting()
 end)
 t8:AddButton("Refresh Weapon",function()
     for i,v in pairs(game.ReplicatedStorage.Remotes.CommF_:InvokeServer("getInventory")) do
@@ -1887,11 +1904,15 @@ t8:AddButton("Refresh Weapon",function()
         end
     end
 end)
-t8:AddToggle("Add Stat Melee",true,function (V)
+t8:AddToggle("Add Stat Melee",_G.SaveSetting.Melee,function (V)
     _G.AddMelee = V
+    _G.SaveSetting.Melee = V
+    savesetting()
 end)
-t8:AddToggle("Add Stat Defense",true,function (V)
+t8:AddToggle("Add Stat Defense",_G.SaveSetting.Def,function (V)
     _G.AddDef = V
+    _G.SaveSetting.Def = V
+    savesetting()
 end)
 
 local ToggleToggleUI = t9:AddToggle("UI Shortcut", true, function(V)
