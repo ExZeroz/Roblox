@@ -1922,7 +1922,7 @@ end)
 t8:AddToggle("Auto New World",_G.SaveSetting.NewWorld,function (V)
     _G.Auto_New_World = V
     _G.SaveSetting.NewWorld = V
-    saveSettings()
+    savesetting()
     StopTween(_G.Auto_New_World)
 end)
 local ToggleToggleUI = t9:AddToggle("UI Shortcut", true, function(V)
