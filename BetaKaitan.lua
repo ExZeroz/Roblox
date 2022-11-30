@@ -1173,7 +1173,7 @@ end
 
 task.spawn(function() 
     while wait() do 
-        if getgenv().LevelFarm then 
+        if _G.AutoFarm then 
             for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do 
                 if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "SwordSlash" or v.Name == "Sounds" then 
                     v:Destroy()
@@ -1925,7 +1925,30 @@ ToggleToggleUI:AddKeybind(Enum.KeyCode.RightControl)
 t9:AddToggle("Show Watermark",true,function (V)
     Watermark.Visible = V
 end)
-
+function UseCode(Text)
+    game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
+end
+t8:AddButton("Redeem All Codes",function ()
+    UseCode("ADMINGIVEAWAY")
+    UseCode("SUBGAMERROBOT_RESET")
+    UseCode("GAMERROBOT_YT")
+    UseCode("kittgaming")
+    UseCode("Sub2Fer999")
+    UseCode("Enyu_is_Pro")
+    UseCode("Magicbus")
+    UseCode("JCWK")
+    UseCode("Starcodeheo")
+    UseCode("Bluxxy")
+    UseCode("fudd10_v2")
+    UseCode("FUDD10")
+    UseCode("BIGNEWS")
+    UseCode("THEGREATACE")
+    UseCode("SUB2GAMERROBOT_RESET1")
+    UseCode("SUB2GAMERROBOT_EXP1")
+    UseCode("Sub2OfficialNoobie")
+    UseCode("StrawHatMaine")
+    UseCode("SUB2NOOBMASTER123")
+end)
 spawn(function()
     pcall(function()
         while wait() do
