@@ -1968,6 +1968,7 @@ end)
 t10:AddToggle("Auto Superhuman Fully",_G.SaveSetting.superhumanfully,function (V)
     _G.FullyHuman = V
     _G.SaveSetting.superhumanfully = V
+    StopTween(_G.Auto_Dungeon)
     saveSettings()
 end)
 
@@ -2018,7 +2019,7 @@ task.spawn(function()
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman") 
                 end
             end
-            StopTween(_G.Auto_Dungeon)
+            
         end
     end 
 end)
