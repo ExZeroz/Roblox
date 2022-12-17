@@ -6566,7 +6566,7 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
         _G.SkillV = value
     end)
 elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId == 5931540094 or game.PlaceId == 5931540094 then
-    _G.Color = Color3.fromRGB(255,0,0)
+    _G.Color = Color3.fromRGB(30, 215, 96)
     if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
     
     repeat wait() until game:GetService("Players")
@@ -9484,7 +9484,7 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
         end
     end)
 elseif game.PlaceId == 6329844902 then
-    _G.Color = Color3.fromRGB(255,0,0)
+    _G.Color = Color3.fromRGB(30, 215, 96)
     if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
     
     repeat wait() until game:GetService("Players")
