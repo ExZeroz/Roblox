@@ -4841,8 +4841,8 @@ local vi = u:AddTab("Visuals") do
         end
         local gripic = tfg:AddTab("Graphic") do
             local b = game.Lighting
-            local c = Instance.new("ColorCorrectionEffect", a)
-            local e = Instance.new("ColorCorrectionEffect", a)
+            local c = Instance.new("ColorCorrectionEffect", b)
+            local e = Instance.new("ColorCorrectionEffect", b)
             OldAmbient = b.Ambient
             OldBrightness = b.Brightness
             OldColorShift_Top = b.ColorShift_Top
@@ -4970,6 +4970,16 @@ local vi = u:AddTab("Visuals") do
             end)
             Tab:AddButton("Colors Tab",function ()
                 game:GetService("Players").LocalPlayer.PlayerGui.Main.Colors.Visible = true
+            end)
+        end
+    end
+    local mis = vi:AddRightTabbox() do
+        local Misc = mis:AddTab("Server - Misc") do
+            Misc:AddButton("Server Hop",function ()
+                Hop()
+            end)
+            Misc:AddButton("Rejoin",function ()
+                game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
             end)
         end
     end
