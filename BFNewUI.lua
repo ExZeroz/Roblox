@@ -2399,7 +2399,7 @@ local maintab = u:AddTab("General") do
             spawn(function ()
                 pcall(function ()
                     while wait() do
-                        if W3 and game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
+                        if World3 and game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
                             sp1:ChangeText('Elite Hunter : Spawned')
                         elseif World1 or World2 then
                             sp1:ChangeText("Elite Hunter : !!!World 3 Only!!!")
@@ -3051,7 +3051,7 @@ local maintab = u:AddTab("General") do
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","1")
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","2")
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","3")
-                    if _G.AutoBuyEnchancementColour_Hop and _G.AutoBuyEnchancementColour and not W then
+                    if _G.AutoBuyEnchancementColour_Hop and _G.AutoBuyEnchancementColour and not World1 then
                         wait(10)
                         Hop()
                     end
