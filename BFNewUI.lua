@@ -1543,7 +1543,7 @@ local l=", %Y.";
 h=os.date(h,os.time())..t..GetSubPrefix(t)..os.date(l,os.time());
 local u=A:CreateWindow(("Xeris Hub Premium Scripts - "..tostring(h)));
 A:Notify("Loading User Interface.");
-local s={Load={AutoLoad={Enabled=true,RageSettings=false,SilentLoad=false,AutoLoadType="Last Config",LastUsedConfig="",LastConfig={},CustomConfig=""},Configs={},Ignored={"SettingsConfigName","SettingsConfigData","SettingsConfigConfigs","SettingsAutoLoadData","SettingsAutoLoadEnabled","SettingsAutoLoadRage","SettingsAutoLoadSilent","SettingsAutoLoadType","SettingsAutoLoadConfig","Level_Limit","Gems_Limit","Beli_Limit","Select_Weapon","Select_Delay","Select_Boss","Select_Mode"}},Tick=tick()};
+local s={Load={AutoLoad={Enabled=true,RageSettings=false,SilentLoad=false,AutoLoadType="Last Config",LastUsedConfig="",LastConfig={},CustomConfig=""},Configs={},Ignored={"SettingsConfigName","SettingsConfigData","SettingsConfigConfigs","SettingsAutoLoadData","SettingsAutoLoadEnabled","SettingsAutoLoadRage","SettingsAutoLoadSilent","SettingsAutoLoadType","SettingsAutoLoadConfig","Level_Limit","Gems_Limit","Beli_Limit","Select_Weapon","Select_Delay","Select_Boss","Select_Mode","Select_Stat","SelectIsland","SelectChip","Selected_Players"}},Tick=tick()};
 
 function UpdateTheme()
     A.BackgroundColor=L.SettingsMenuBackgroundColor.Value;
