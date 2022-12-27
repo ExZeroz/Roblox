@@ -1162,7 +1162,7 @@ end
 spawn(function()
     pcall(function()
         game:GetService("RunService").Stepped:Connect(function()
-              if _G.Auto_Dungeon or _G.AutoAllBoss or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.Auto_Kill_Law then
+              if _G.Auto_Farm_Candy or _G.Present or _G.Auto_Dungeon or _G.AutoAllBoss or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.Auto_Kill_Law then
                  if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -1182,7 +1182,7 @@ end)
 spawn(function()
     pcall(function()
         game:GetService("RunService").Stepped:Connect(function()
-            if _G.Auto_Dungeon or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.Auto_Kill_Law then
+            if _G.Auto_Farm_Candy or _G.Present or _G.Auto_Dungeon or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.Auto_Kill_Law then
                 for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
                     if v:IsA("BasePart") then
                         v.CanCollide = false    
@@ -1204,7 +1204,7 @@ spawn(function()
                 STOPRL.wrapAttackAnimationAsync = function(a,b,c,d,func)
                 local Hits = STOPRL.getBladeHits(b,c,d)
                 if Hits then
-                    if _G.Auto_Dungeon or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate then
+                    if _G.Auto_Farm_Candy or _G.Present or _G.Auto_Dungeon or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate then
                         STOP.play = function() end
                         a:Play(0.01,0.01,0.01)
                         func(Hits)
@@ -2119,7 +2119,7 @@ local maintab = u:AddTab("General") do
                                                     v.HumanoidRootPart.CanCollide = false
                                                     v.HumanoidRootPart.Size = Vector3.new(60,60,60)
                                                     v.HumanoidRootPart.Transparency = 1
-                                                    getgenv().ToTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
+                                                    getgenv().ToTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
                                                     game:GetService("VirtualUser"):CaptureController()
                                                     game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 870),workspace.CurrentCamera.CFrame)
                                                 until v.Humanoid.Health <= 0 or not v.Parent or not _G.Auto_New_World
@@ -2162,7 +2162,7 @@ local maintab = u:AddTab("General") do
                                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                                     v.HumanoidRootPart.CanCollide = false
                                                     v.Humanoid.WalkSpeed = 0
-                                                    getgenv().ToTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Select_Distance,0))
+                                                    getgenv().ToTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
                                                     game:GetService'VirtualUser':CaptureController()
                                                     game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
                                                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
@@ -2183,7 +2183,9 @@ local maintab = u:AddTab("General") do
             spawn(function()
                 while wait() do
                     if _G.Auto_Saber then
-                        if game.Players.localPlayer.Data.Level.Value >= 200 then
+                        if game.Players.localPlayer.Data.Level.Value <= 199 then
+                            A:Notify("Yours Level Too Low",3)
+                        elseif game.Players.localPlayer.Data.Level.Value >= 200 then
                             if game.Workspace.Map.Jungle.Final.Part.CanCollide == false then
                                 if _G.Auto_Saber and game.ReplicatedStorage:FindFirstChild("Saber Expert [Lv. 200] [Boss]") or game.Workspace.Enemies:FindFirstChild("Saber Expert [Lv. 200] [Boss]") then
                                     if game.Workspace.Enemies:FindFirstChild("Saber Expert [Lv. 200] [Boss]") then
@@ -3094,6 +3096,10 @@ local maintab = u:AddTab("General") do
                 _G.Auto_Farm_Bone = a
                 StopTween(_G.Auto_Farm_Bone)
             end)
+            misc:AddToggle("AutoCandy",{Text = "Auto Farm Candy",Default = false}):OnChanged(function (a)
+                _G.Auto_Farm_Candy = a
+                StopTween(_G.Auto_Farm_Candy)
+            end)
             misc:AddToggle("AutoRainbowHaki",{Text = "Auto Rainbow Haki",Default = false}):OnChanged(function (a)
                 _G.Auto_Rainbow_Haki = a
                 StopTween(_G.Auto_Rainbow_Haki)
@@ -3109,6 +3115,62 @@ local maintab = u:AddTab("General") do
             misc:AddToggle("AutoFinishDough",{Text = "Auto Finish Awakened Dough Quest",Default = false}):OnChanged(function (a)
                 _G.Auto_Open_Dough_Dungeon = a
                 StopTween(_G.Auto_Open_Dough_Dungeon)
+            end)
+
+            spawn(function()
+                game:GetService("RunService").Heartbeat:Connect(function()
+                    pcall(function()
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if _G.Auto_Farm_Candy and StartMagnetCandy and (v.Name == "Candy Pirate [Lv. 2400]" or v.Name == "Snow Demon [Lv. 2425]") and (v.HumanoidRootPart.Position - POSCANDY.Position).magnitude <= 350 then
+                                v.HumanoidRootPart.CFrame = POSCANDY
+                                v.HumanoidRootPart.CanCollide = false
+                                v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                if v.Humanoid:FindFirstChild("Animator") then
+                                    v.Humanoid.Animator:Destroy()
+                                end
+                                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
+                            end
+                        end
+                    end)
+                end)
+            end)
+
+            spawn(function ()
+                while wait() do
+                    if _G.Auto_Farm_Candy and World3 then
+                        pcall(function()
+                            if game:GetService("Workspace").Enemies:FindFirstChild("Candy Pirate [Lv. 2400]") or game:GetService("Workspace").Enemies:FindFirstChild("Snow Demon [Lv. 2425]") then
+                                for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                    if v.Name == "Candy Pirate [Lv. 2400]" or v.Name == "Snow Demon [Lv. 2425]" then
+                                        if v.Humanoid.Health > 0 then
+                                            repeat wait()
+                                                AutoHaki()
+                                                EquipWeapon(_G.Select_Weapon)
+                                                StartMagnetCandy = true
+                                                v.HumanoidRootPart.CanCollide = false
+                                                v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                                POSCANDY = v.HumanoidRootPart.CFrame
+                                                getgenv().ToTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                                game:GetService'VirtualUser':CaptureController()
+                                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                            until _G.Auto_Farm_Candy == false or not v.Parent or v.Humanoid.Health <= 0
+                                        end
+                                    end
+                                end
+                            else
+                                StartMagnetCandy = false
+                                for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
+                                    if v.Name == "Candy Pirate [Lv. 2400]" then
+                                        getgenv().ToTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                    elseif v.Name == "Snow Demon [Lv. 2425]" then
+                                        getgenv().ToTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
+                                    end
+                                end
+                                getgenv().ToTarget(CFrame.new(-1077.79, 14.6404, -14475.5))
+                            end
+                        end)
+                    end
+                end
             end)
 
             spawn(function()
@@ -3771,6 +3833,35 @@ local maintab = u:AddTab("General") do
                                     wait(0.5)
                                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
                                 end
+                            end
+                        end)
+                    end
+                end
+            end)
+        end
+        local e = mis:AddTab("Others") do
+            e:AddLabel("Others",true)
+            e:AddToggle("Present",{Text = "Auto Present/Gift",Default = false}):OnChanged(function (a)
+                _G.Present = a
+                StopTween(_G.Present)
+            end)
+            spawn(function ()
+                if _G.Present then
+                    while wait() do
+                        pcall(function ()
+                            for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"]:GetChildren()) do
+                                local Item = v
+
+                                if Item:FindFirstChild("Present") then
+                                    Item = Item.Present
+
+                                    if Item:FindFirstChild("ProximityPrompt") then
+                                        fireproximityprompt(Item.ProximityPrompt)
+                                    end
+                                end
+                            end
+                            if game:GetService("Workspace")["_WorldOrigin"].Present then
+                                getgenv().ToTarget(game:GetService("Workspace")["_WorldOrigin"].Present)
                             end
                         end)
                     end
