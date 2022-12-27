@@ -7,7 +7,10 @@ elseif game.PlaceId == 4442272183 then
 elseif game.PlaceId == 7449423635 then
     World3 = true
 end
- 
+
+local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+CameraShaker:Stop()
+
 function CheckQuest()
     local MyLevel = game.Players.LocalPlayer.Data.Level.Value
     if World1 then
@@ -4534,6 +4537,86 @@ local combat = u:AddTab("Combat") do
             end)
         end
     end
+    local df = combat:AddLeftTabbox() do
+        local dvi = df:AddTab("Devil Fruits") do
+            dvi:AddLabel("Select Devil Fruit Snipers",true)
+            FruitList = {
+                "Bomb-Bomb",
+                "Spike-Spike",
+                "Chop-Chop",
+                "Spring-Spring",
+                "Kilo-Kilo",
+                "Spin-Spin",
+                "Bird: Falcon",
+                "Smoke-Smoke",
+                "Flame-Flame",
+                "Ice-Ice",
+                "Sand-Sand",
+                "Dark-Dark",
+                "Revive-Revive",
+                "Diamond-Diamond",
+                "Light-Light",
+                "Love-Love",
+                "Rubber-Rubber",
+                "Barrier-Barrier",
+                "Magma-Magma",
+                "Portal-Portal",
+                "Quake-Quake",
+                "Human-Human: Buddha",
+                "String-String",
+                "Bird-Bird: Phoenix",
+                "Rumble-Rumble",
+                "Paw-Paw",
+                "Gravity-Gravity",
+                "Dough-Dough",
+                "Venom-Venom",
+                "Shadow-Shadow",
+                "Control-Control",
+                "Blizzard-Blizzard",
+                "Spirit-Spirit",
+                "Dragon-Dragon",
+                "Leopard-Leopard"
+            }
+            dvi:AddDropdown("DF",{Text = "Select Devil Fruits",Default = 0,Values = FruitList}):OnChanged(function (a)
+                _G.SelectFruit = a
+            end)
+            dvi:AddLabel("Main Stuff",true)
+            dvi:AddToggle("AutoFruit",{
+                Text = "Auto Random Fruits",
+                Default = false
+            }):OnChanged(function (a)
+                _G.Random_Auto = a
+            end)
+    
+            spawn(function()
+                pcall(function()
+                    while wait() do
+                        if _G.Random_Auto then
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Cousin","Buy")
+                        end 
+                    end
+                end)
+            end)
+    
+            dvi:AddToggle("BuyFruit",{
+                Text = "Auto Buy Fruit Sniper",
+                Default = false
+            }):OnChanged(function (a)
+                _G.AutoBuyFruitSniper = a
+            end)
+    
+            spawn(function()
+                pcall(function()
+                    while wait() do
+                        if _G.AutoBuyFruitSniper then
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("PurchaseRawFruit",_G.SelectFruit)
+                        end 
+                    end
+                end)
+            end)
+        end
+    end
 end
 local vi = u:AddTab("Visuals") do
     local te = vi:AddLeftTabbox() do
@@ -4789,8 +4872,9 @@ local vi = u:AddTab("Visuals") do
                     "Ice Cream Island",
                     "Peanut Island",
                     "Cake Island",
-                    "Chocolate Island"
-                    }
+                    "Chocolate Island",
+                    "Christmas Island"
+                }
             end
             tele:AddLabel("Island Select",true)
             tele:AddDropdown("SelectIsland",{
@@ -4903,8 +4987,10 @@ local vi = u:AddTab("Visuals") do
                             getgenv().ToTarget(CFrame.new(-2062.7475585938, 50.473892211914, -10232.568359375))
                         elseif _G.Select_Island == "Cake Island" then
                             getgenv().ToTarget(CFrame.new(-1884.7747802734375, 19.327526092529297, -11666.8974609375))
-                        elseif _G.SelectIsland == 'Chocolate Island' then
+                        elseif _G.Select_Island == 'Chocolate Island' then
                             getgenv().ToTarget(CFrame.new(14.3735638, 20.5485172, -12048.2598, -0.68978548, 0, 0.724013805, 0, 1, 0, -0.724013805, 0, -0.68978548))
+                        elseif _G.Select_Island == 'Christmas Island' then
+                            getgenv().ToTarget(CFrame.new(-1048.34424, 14.8212471, -14183.3379, -0.987955391, 5.88209268e-08, -0.154739052, 6.96052709e-08, 1, -6.42758025e-08, 0.154739052, -7.4272279e-08, -0.987955391))
                         end
                     until not _G.Start_Tween_Island
                 end
