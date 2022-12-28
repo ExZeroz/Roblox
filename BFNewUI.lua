@@ -7,9 +7,19 @@ elseif game.PlaceId == 4442272183 then
 elseif game.PlaceId == 7449423635 then
     World3 = true
 end
-
+repeat wait(1) until game:IsLoaded()
 local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
 CameraShaker:Stop()
+
+if _G.Select_Weapon == nil then
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+        if v.ToolTip == "Melee" then
+            if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                _G.Select_Weapon = tostring(v.Name)
+            end
+        end
+    end
+end
 
 function CheckQuest()
     local MyLevel = game.Players.LocalPlayer.Data.Level.Value
@@ -1546,7 +1556,7 @@ local l=", %Y.";
 h=os.date(h,os.time())..t..GetSubPrefix(t)..os.date(l,os.time());
 local u=A:CreateWindow(("Xeris Hub Premium Scripts - "..tostring(h)));
 A:Notify("Loading User Interface.");
-local s={Load={AutoLoad={Enabled=true,RageSettings=false,SilentLoad=false,AutoLoadType="Last Config",LastUsedConfig="",LastConfig={},CustomConfig=""},Configs={},Ignored={"SettingsConfigName","SettingsConfigData","SettingsConfigConfigs","SettingsAutoLoadData","SettingsAutoLoadEnabled","SettingsAutoLoadRage","SettingsAutoLoadSilent","SettingsAutoLoadType","SettingsAutoLoadConfig","Level_Limit","Gems_Limit","Beli_Limit","Select_Weapon","Select_Delay","Select_Boss","Select_Mode","Select_Stat","SelectIsland","SelectChip","Selected_Players"}},Tick=tick()};
+local s={Load={AutoLoad={Enabled=true,RageSettings=false,SilentLoad=false,AutoLoadType="Last Config",LastUsedConfig="",LastConfig={},CustomConfig=""},Configs={},Ignored={"SettingsConfigName","SettingsConfigData","SettingsConfigConfigs","SettingsAutoLoadData","SettingsAutoLoadEnabled","SettingsAutoLoadRage","SettingsAutoLoadSilent","SettingsAutoLoadType","SettingsAutoLoadConfig","Level_Limit","Gems_Limit","Beli_Limit","Select_Weapon","Select_Delay","Select_Boss","Select_Mode","Select_Stat","SelectIsland","SelectChip","Selected_Players","Health","DisX","DisY","DisZ"}},Tick=tick()};
 
 function UpdateTheme()
     A.BackgroundColor=L.SettingsMenuBackgroundColor.Value;
@@ -3177,24 +3187,6 @@ local maintab = u:AddTab("General") do
             end)
 
             spawn(function()
-                while wait() do
-                    if _G.Auto_Farm_Chest then
-                        pcall(function()
-                            if game:GetService("Workspace"):FindFirstChild("Chest1") or game:GetService("Workspace"):FindFirstChild("Chest2") or game:GetService("Workspace"):FindFirstChild("Chest3") then
-                                for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-                                    if v.Name == "Chest1" or v.Name == "Chest2" or v.Name == "Chest3" then
-                                        repeat wait()
-                                            getgenv().ToTarget(v.CFrame)
-                                        until not v.Parent or _G.Auto_Farm_Chest == false
-                                    end
-                                end
-                            end
-                        end)
-                    end
-                end
-            end)
-
-            spawn(function()
                 game:GetService("RunService").Heartbeat:Connect(function()
                     pcall(function()
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
@@ -3844,27 +3836,41 @@ local maintab = u:AddTab("General") do
         end
         local e = mis:AddTab("Others") do
             e:AddLabel("Others",true)
-            e:AddToggle("Present",{Text = "Auto Present/Gift",Default = false}):OnChanged(function (a)
-                _G.Present = a
-                StopTween(_G.Present)
+            e:AddToggle("Chest",{Text = "Auto Collect Chests",Default = false}):OnChanged(function (a)
+                _G.Auto_Farm_Chest = a
+                StopTween(_G.Auto_Farm_Chest)
             end)
-            spawn(function ()
-                if _G.Present then
-                    while wait() do
-                        pcall(function ()
-                            for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"]:GetChildren()) do
-                                local Item = v
 
-                                if Item:FindFirstChild("Present") then
-                                    Item = Item.Present
-
-                                    if Item:FindFirstChild("ProximityPrompt") then
-                                        fireproximityprompt(Item.ProximityPrompt)
+            spawn(function()
+                while wait() do
+                    if _G.Auto_Farm_Chest then
+                        pcall(function()
+                            if game:GetService("Workspace"):FindFirstChild("Chest1") or game:GetService("Workspace"):FindFirstChild("Chest2") or game:GetService("Workspace"):FindFirstChild("Chest3") then
+                                for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+                                    if v.Name == "Chest1" or v.Name == "Chest2" or v.Name == "Chest3" then
+                                        repeat wait()
+                                            getgenv().ToTarget(v.CFrame)
+                                        until not v.Parent or _G.Auto_Farm_Chest == false
                                     end
                                 end
                             end
-                            if game:GetService("Workspace")["_WorldOrigin"].Present then
-                                getgenv().ToTarget(game:GetService("Workspace")["_WorldOrigin"].Present)
+                        end)
+                    end
+                end
+            end)
+
+            spawn(function ()
+                while wait() do
+                    if _G.Present then
+                        pcall(function ()
+                            if game:GetService("Workspace"):FindFirstChild("Present") then
+                                for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+                                    if v.Name == "Present" then
+                                        repeat wait()
+                                            getgenv().ToTarget(v.CFrame)
+                                        until not v.Parent or _G.Present == false
+                                    end
+                                end
                             end
                         end)
                     end
