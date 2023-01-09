@@ -5695,6 +5695,9 @@ local pp2 = friendstatus:AddLabel("Fps : ")
 
 local pp3 = friendstatus:AddLabel("Ping : ")
 
+local st1 = sta1:AddTab("Main")
+
+
 
 local status1 = sta1:AddTab("Main Status")
 
@@ -7855,7 +7858,7 @@ spawn(function()
                     if game.Players:FindFirstChild(_G.SelectPly) then
                         if game.Players:FindFirstChild(_G.SelectPly).Character.Humanoid.Health > 0 then
                             repeat task.wait()
-                                EquipWeapon(_G.SelectWeapon)
+                                EquipWeapon(_G.Select_Weapon)
                                 AutoHaki()
                                 game.Players:FindFirstChild(_G.SelectPly).Character.HumanoidRootPart.CanCollide = false
                                 getgenv().ToTarget(game.Players:FindFirstChild(_G.SelectPly).Character.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
