@@ -3932,6 +3932,348 @@ spawn(function()
     end
 end)
 
+local WebHookLog = {}
+
+local AllRequest = http_request or request or HttpPost or syn.request
+function WebHookLog:WebHookKaiTanSend(WebHookUrl)
+
+	function GetFightingStyle(Style)
+		ReturnText = ""
+		for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v:IsA("Tool") then
+				if v.ToolTip == Style then
+					ReturnText = v.Name
+				end
+			end
+		end
+		for i ,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v:IsA("Tool") then
+				if v.ToolTip == Style then
+					ReturnText = v.Name
+				end
+			end
+		end
+		if ReturnText ~= "" then
+			return ReturnText
+		else
+			return "Not Have"
+		end
+	end
+
+	function GetAwaken()
+		ReturnText = ""
+		Awakened_Z = ":x:"
+		Awakened_X = ":x:"
+		Awakened_C = ":x:"
+		Awakened_V = ":x:"
+		Awakened_F = ":x:"
+		for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v:IsA("Tool") then
+				if v.ToolTip == "Blox Fruit" then
+					if v:FindFirstChild("AwakenedMoves") then
+						if v.AwakenedMoves:FindFirstChild("Z") then
+							Awakened_Z = ":white_check_mark:"
+						end
+						if v.AwakenedMoves:FindFirstChild("X") then
+							Awakened_X = ":white_check_mark:"
+						end
+						if v.AwakenedMoves:FindFirstChild("C") then
+							Awakened_C = ":white_check_mark:"
+						end
+						if v.AwakenedMoves:FindFirstChild("V") then
+							Awakened_V = ":white_check_mark:"
+						end
+						if v.AwakenedMoves:FindFirstChild("F") then
+							Awakened_F = ":white_check_mark:"
+						end
+						ReturnText = ":regional_indicator_z:"..Awakened_Z..
+							"\n"..":regional_indicator_x:"..Awakened_X..
+							"\n"..":regional_indicator_c:"..Awakened_C..
+							"\n"..":regional_indicator_v:"..Awakened_V..
+							"\n"..":regional_indicator_f:"..Awakened_F
+					else
+						ReturnText = "This Fruit Can't Awakened"
+					end
+				end
+			end
+		end
+		for i ,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v:IsA("Tool") then
+				if v.ToolTip == "Blox Fruit" then
+					if v:FindFirstChild("AwakenedMoves") then
+						if v.AwakenedMoves:FindFirstChild("Z") then
+							Awakened_Z = ":white_check_mark:"
+						end
+						if v.AwakenedMoves:FindFirstChild("X") then
+							Awakened_X = ":white_check_mark:"
+						end
+						if v.AwakenedMoves:FindFirstChild("C") then
+							Awakened_C = ":white_check_mark:"
+						end
+						if v.AwakenedMoves:FindFirstChild("V") then
+							Awakened_V = ":white_check_mark:"
+						end
+						if v.AwakenedMoves:FindFirstChild("F") then
+							Awakened_F = ":white_check_mark:"
+						end
+						ReturnText = ":regional_indicator_z:"..Awakened_Z..
+							"\n"..":regional_indicator_x:"..Awakened_X..
+							"\n"..":regional_indicator_c:"..Awakened_C..
+							"\n"..":regional_indicator_v:"..Awakened_V..
+							"\n"..":regional_indicator_f:"..Awakened_F
+					else
+						ReturnText = "This Fruit Can't Awakened"
+					end
+				end
+			end
+		end
+		if ReturnText ~= "" then
+			return ReturnText
+		else
+			return "Not Have"
+		end
+	end
+
+	function GetWeapon(Rare)
+		if Rare == "Common" then
+			RareNumber = 0
+		elseif Rare == "Uncommon" then
+			RareNumber = 1
+		elseif Rare == "Rare" then
+			RareNumber = 2
+		elseif Rare == "Legendary" then
+			RareNumber = 3
+		elseif Rare == "Mythical" then
+			RareNumber = 4
+		else
+			return "Worng InPut"
+		end
+		local ReturnText = ""
+		for i,v in pairs(game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("getInventoryWeapons")) do
+			if type(v) == "table" then
+				if v.Rarity then
+					if tonumber(v.Rarity) == RareNumber then
+						ReturnText = ReturnText .. v.Name .. "\n"
+					end
+				end
+			end
+		end
+		if ReturnText ~= "" then
+			return ReturnText
+		else
+			return "Not Have"
+		end
+	end
+
+	function GetFruitInU()
+		local ReturnText = ""
+		for i,v in pairs(game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("getInventoryFruits")) do
+			if type(v) == "table" then
+				if v ~= nil then
+					ReturnText = ReturnText .. v.Name .. "\n"
+				end
+			end
+		end
+
+		if ReturnText ~= "" then
+			return ReturnText
+		else
+			return "Not Have"
+		end
+	end
+
+	function GetAllMelee()
+		BuyDragonTalon = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon",true))
+		if BuyDragonTalon then
+			if BuyDragonTalon == 1 then
+				TalComplete = true
+			end
+		end
+		BuySuperhuman = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman",true))
+		if BuySuperhuman then
+			if BuySuperhuman == 1 then
+				SupComplete = true
+			end
+		end
+		BuySharkmanKarate = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true))
+		if BuySharkmanKarate then
+			if BuySharkmanKarate == 1 then
+				SharkComplete = true
+			end
+		end
+		BuyDeathStep = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep",true))
+		if BuyDeathStep then
+			if BuyDeathStep == 1 then
+				DeathComplete = true
+			end
+		end
+		BuyElectricClaw = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true))
+		if BuyElectricClaw then
+			if BuyElectricClaw == 1 then
+				EClawComplete = true
+			end
+		end
+		BuyGod = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman",true))
+		if BuyGod then
+			if BuyGod == 1 then
+				GodComplete = true
+			end
+		end
+		ReturnText = {}
+		if SupComplete == true then
+			table.insert(ReturnText,"Superhuman")
+		end
+		if EClawComplete == true then
+			table.insert(ReturnText,"Electric Claw")
+		end
+		if TalComplete == true then
+			table.insert(ReturnText,"Dragon Talon")
+		end
+		if SharkComplete == true then
+			table.insert(ReturnText,"Sharkman Karate")
+		end
+		if DeathComplete == true then
+			table.insert(ReturnText,"Death Step")
+		end
+		if GodComplete == true then
+			table.insert(ReturnText,"Godhuman")
+		end
+
+		if #ReturnText ~= 0 then
+			return table.concat(ReturnText,"\n")
+		else
+			return "your are not have all melees"
+		end
+	end
+
+	local Embeds = {{
+		["title"] = "**Xeris Hub Webhooks💐**",
+		["color"] = tonumber(0xD936FF),
+		["fields"] = {
+			{
+				["name"] = "User Info",
+				["value"] = "||"..tostring(game.Players.LocalPlayer.Name).."||",
+				["inline"] = true
+			},
+			{
+				["name"] = "Level",
+				["value"] = tostring(game:GetService("Players").LocalPlayer.Data:FindFirstChild("Level").Value),
+				["inline"] = true
+			},
+			{
+				["name"] = "Fragments",
+				["value"] = tostring(game:GetService("Players").LocalPlayer.Data:FindFirstChild("Fragments").Value),
+				["inline"] = true
+			},
+			{
+				["name"] = "Beli",
+				["value"] = tostring(game:GetService("Players").LocalPlayer.Data:FindFirstChild("Beli").Value),
+				["inline"] = true
+			},
+			{
+				["name"] = "Using Fighting Style",
+				["value"] = GetFightingStyle("Melee"),
+				["inline"] = true
+			},
+			{
+				["name"] = "Using Sword",
+				["value"] = GetFightingStyle("Sword"),
+				["inline"] = true
+			},
+			{
+				["name"] = "Devil Fruit",
+				["value"] = GetFightingStyle("Blox Fruit"),
+				["inline"] = true
+			},
+			{
+				["name"] = "Gun",
+				["value"] = GetFightingStyle("Gun"),
+				["inline"] = true
+			},
+			{
+				["name"] = "Accessory",
+				["value"] = GetFightingStyle("Wear"),
+				["inline"] = true
+			},
+			{
+				["name"] = "Race",
+				["value"] = tostring(game:GetService("Players").LocalPlayer.Data:FindFirstChild("Race").Value),
+				["inline"] = true
+			},
+			{
+				["name"] = "Awakened",
+				["value"] = tostring(GetAwaken()),
+				["inline"] = true
+			},
+			{
+				["name"] = ":signal_strength: Status",
+				["value"] = "```sml\n"..tostring("Melee : "..game:GetService("Players").LocalPlayer.Data.Stats.Melee:WaitForChild("Level").Value .. 
+					"\nDefense : "..game:GetService("Players").LocalPlayer.Data.Stats.Defense:WaitForChild("Level").Value .. 
+					"\nSword : "..game:GetService("Players").LocalPlayer.Data.Stats.Sword:WaitForChild("Level").Value.. 
+					"\nGun : "..game:GetService("Players").LocalPlayer.Data.Stats.Gun:WaitForChild("Level").Value .. 
+					"\nDevil Fruit : "..game:GetService("Players").LocalPlayer.Data.Stats["Demon Fruit"]:WaitForChild("Level").Value).."```",
+				["inline"] = true
+			},
+			{
+				["name"] = "Rare :yellow_circle:",
+				["value"] = "```sml\n"..tostring(GetWeapon("Rare")).."```",
+				["inline"] = true
+			},
+			{
+				["name"] = "Legendary :orange_circle: ",
+				["value"] = "```sml\n"..tostring(GetWeapon("Legendary")).."```",
+				["inline"] = true
+			},
+			{
+				["name"] = "Mythical :red_circle:",
+				["value"] = "```sml\n"..tostring(GetWeapon("Mythical")).."```",
+				["inline"] = true
+			},
+			{
+				["name"] = ":apple: Fruit In Inventory",
+				["value"] = "```sml\n"..tostring(GetFruitInU()).."```",
+				["inline"] = true
+			},
+			{
+				["name"] = ":punch: All Melee",
+				["value"] = "```sml\n"..tostring(GetAllMelee()).."```",
+				["inline"] = true
+			},
+        },
+		["footer"] = {
+			["text"] = "Made by In China".."\nTime".." : "..os.date("%c").." ("..os.date("%X")..")",
+			["icon_url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=100&height=100&format=png"
+		},
+	}}
+
+	local Message
+
+if _G.SendWebHookPing then
+		Message = {
+			['username'] = "Xeris Hub | Webhook",
+			["avatar_url"] = "https://cdn.discordapp.com/icons/1031918709608022036/efafaf2e6ede6d29df489dacf157dcb4.webp?size=240",
+			["content"] = "@everyone",
+			["embeds"] = Embeds,
+		}
+	else
+		Message = {
+			['username'] = "Xeris Hub | Webhook",
+			["avatar_url"] = "https://cdn.discordapp.com/icons/1031918709608022036/efafaf2e6ede6d29df489dacf157dcb4.webp?size=240",
+			["embeds"] = Embeds,
+		}
+	end
+
+	local DataCallBack = AllRequest({
+		Url = WebHookUrl,
+		Method = 'POST',
+		Headers = {
+			["Content-Type"] = "application/json"
+		},
+		Body = game:GetService("HttpService"):JSONEncode(Message)
+	})
+	return DataCallBack
+end
+
 spawn(function()
     while wait() do
         if setscriptable then
@@ -5748,6 +6090,28 @@ Config:SetFolder('Xeris Hub/BF')
 Config:BuildConfigSection(Tabs.page6)
 
 local sett = Tabs.page6:AddRightGroupbox("Settings")
+
+local hooks = Tabs.page6:AddLeftTabbox()
+
+local hook = hooks:AddTab("WebHooks")
+
+hook:AddInput("PutWebHook",{
+    Text = "WebHooks",
+    Placeholder = "Put Yours Url WebHooks Here"
+}):OnChanged(function ()
+    Webhooklink = Options.PutWebHook.Value
+end)
+
+hook:AddButton("Send WebHooks",function ()
+    WebHookLog:WebHookKaiTanSend(Webhooklink)
+end)
+
+hook:AddToggle('Hello',{
+    Text = "Ping Every One",
+    Default = false
+ }):OnChanged(function()
+    _G.SendWebHookPing = Toggles.Hello.Value
+ end)
 
 sett:AddDropdown("Select_Fast",{
     Text = "Select Fast Attack",
@@ -8176,9 +8540,9 @@ spawn(function()
                 if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") then
                     if _G.Auto_StartRaid then
                         if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == false then
-                            if W2 then
+                            if World2 then
                                 fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
-                            elseif W3 then
+                            elseif World3 then
                                 fireclickdetector(game:GetService("Workspace").Map["Boat Castle"].RaidSummon2.Button.Main.ClickDetector)
                             end
                         end
