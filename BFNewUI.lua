@@ -4691,6 +4691,8 @@ local sta3 = Tabs.page5:AddLeftTabbox()
 
 local sta4 = Tabs.page5:AddRightTabbox()
 
+local sta5 = Tabs.page5:AddLeftTabbox()
+
 --List--
 local J=game:GetService("Players");
 local i=J.LocalPlayer;
@@ -6093,6 +6095,12 @@ AcidumRifle = CheckGun:AddLabel("🔴 : Acidum Rifle")
 BizarreRifle = CheckGun:AddLabel("🔴 : Bizarre Rifle")
 Serpent = CheckGun:AddLabel("🔴 : Serpent Bow")
 Soul = CheckGun:AddLabel("🔴 : Soul Guitar")
+
+local CheckQuest = sta5:AddTab("Quest Status")
+
+BartiloQuest = CheckQuest:AddLabel("🔴 : Bartilo Quest")
+DonSwanQuest = CheckQuest:AddLabel("🔴 : Don Swan Quest")
+KillDonSwan = CheckQuest:AddLabel("🔴 : Kill Don Swan")
 
 local vy=Tabs.page6:AddLeftGroupbox("Menu");
 
@@ -8857,6 +8865,23 @@ task.spawn(
                     end
                 end
             )
+        end
+    end
+)
+
+task.spawn(
+    function()
+        while task.wait() do
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress", "Bartilo") == 3 then
+                BartiloQuest:SetText("🟢 : Bartilo Quest")
+            end
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetUnlockables").FlamingoAccess == nil then
+            else
+                DonSwanQuest:SetText("🟢 : Don Swan Quest")
+            end
+            if game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("ZQuestProgress", "Check") == 1 then
+                KillDonSwan:SetText("🟢 : Kill Don Swan")
+            end
         end
     end
 )
