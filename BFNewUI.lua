@@ -3874,7 +3874,7 @@ end
 spawn(function()
     pcall(function()
         game:GetService("RunService").Stepped:Connect(function()
-              if _G.Auto_Farm_Candy or _G.Present or _G.Auto_Dungeon or _G.AutoAllBoss or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.Auto_Kill_Law then
+              if _G.MysticIsland or _G.Auto_Farm_Candy or _G.Present or _G.Auto_Dungeon or _G.AutoAllBoss or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.Auto_Kill_Law then
                  if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -3894,7 +3894,7 @@ end)
 spawn(function()
     pcall(function()
         game:GetService("RunService").Stepped:Connect(function()
-            if _G.Auto_Farm_Candy or _G.Present or _G.Auto_Dungeon or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.Auto_Kill_Law then
+            if _G.MysticIsland or _G.Auto_Farm_Candy or _G.Present or _G.Auto_Dungeon or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.Auto_Kill_Law then
                 for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
                     if v:IsA("BasePart") then
                         v.CanCollide = false    
@@ -3916,7 +3916,7 @@ spawn(function()
                 STOPRL.wrapAttackAnimationAsync = function(a,b,c,d,func)
                 local Hits = STOPRL.getBladeHits(b,c,d)
                 if Hits then
-                    if _G.Auto_Farm_Candy or _G.Present or _G.Auto_Dungeon or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate then
+                    if _G.MysticIsland or _G.Auto_Farm_Candy or _G.Present or _G.Auto_Dungeon or _G.AutoFarmBoss or _G.TeleportPly or _G.Auto_Kill_Ply or _G.AutoObservation or _G.Auto_Farm_Level or _G.Auto_New_World or _G.Auto_Third_World or _G.Auto_Farm_Boss or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate then
                         STOP.play = function() end
                         a:Play(0.01,0.01,0.01)
                         func(Hits)
@@ -4685,6 +4685,8 @@ local sta1 = Tabs.page5:AddLeftTabbox()
 
 local sta2 = Tabs.page5:AddRightTabbox()
 
+local legnd = Tabs.page5:AddRightTabbox()
+
 local sta3 = Tabs.page5:AddLeftTabbox()
 
 local sta4 = Tabs.page5:AddRightTabbox()
@@ -5152,12 +5154,21 @@ miscfarm:AddToggle("AutoFinishDough",{
     StopTween(_G.Auto_Open_Dough_Dungeon)
 end)
 
+otherfarm:AddLabel("Others - Farm",true)
+
 otherfarm:AddToggle("FarmChest",{
     Text = "Auto Collect Chests",
     Default = false,
 }):OnChanged(function ()
     _G.Auto_Farm_Chest = Toggles.FarmChest.Value
     StopTween(_G.Auto_Farm_Chest)
+end)
+
+otherfarm:AddToggle("Mystic",{
+    Text = "Auto Teleport To Mirage Island",
+    Default = false,
+}):OnChanged(function ()
+    _G.MysticIsland = Toggles.Mystic.Value
 end)
 
 local ob = tab5:AddTab("Obeservations")
@@ -6037,11 +6048,51 @@ local pp2 = friendstatus:AddLabel("Fps : ")
 
 local pp3 = friendstatus:AddLabel("Ping : ")
 
-local st1 = sta1:AddTab("Main")
+local st1 = sta1:AddTab("Server Status")
 
+local FM = st1:AddLabel("")
 
+local MI = st1:AddLabel("")
+--🟢🔴
 
-local status1 = sta1:AddTab("Main Status")
+local CheckSwords = sta2:AddTab("Swords Status")
+
+TrueTripleKatana = CheckSwords:AddLabel("🔴 : True Triple Katana")
+Saber = CheckSwords:AddLabel("🔴 : Saber")
+Rengoku = CheckSwords:AddLabel("🔴 : Rengoku")
+MidnightBlade = CheckSwords:AddLabel("🔴 : Midnight Blade")
+DragonTrident = CheckSwords:AddLabel("🔴 : DragonTrident")
+Yama = CheckSwords:AddLabel("🔴 : Yama")
+BuddySword = CheckSwords:AddLabel("🔴 : Buddy Sword")
+Canvander = CheckSwords:AddLabel("🔴 : Canvander")
+SpikeyTrident = CheckSwords:AddLabel("🔴 : Spikey Trident")
+HallowScythe = CheckSwords:AddLabel("🔴 : Hallow Scythe")
+DarkDagger = CheckSwords:AddLabel("🔴 : Dark Dagger")
+Tushita = CheckSwords:AddLabel("🔴 : Tushita")
+Cursed = CheckSwords:AddLabel("🔴 : Cursed Dual Katana")
+
+local CheckLegendSwords = legnd:AddTab("Legendary Swords Status")
+
+Shisui = CheckLegendSwords:AddLabel("🔴 : Shisui Sword")
+Saddi = CheckLegendSwords:AddLabel("🔴 : Saddi Sword")
+Wando = CheckLegendSwords:AddLabel("🔴 : Wando Sword")
+
+local CheckMelee = sta3:AddTab("Melee Status")
+
+Superhuman = CheckMelee:AddLabel("🔴 : Superhuman")
+DeathStep = CheckMelee:AddLabel("🔴 : Death Step")
+SharkmanKarate = CheckMelee:AddLabel("🔴 : Sharkman Karate")
+ElectricClaw = CheckMelee:AddLabel("🔴 : Electric Claw")
+DragonTalon = CheckMelee:AddLabel("🔴 : Dragon Talon")
+GodHuman = CheckMelee:AddLabel("🔴 : God Human")
+
+local CheckGun = sta4:AddTab("Guns Status")
+
+Kabucha = CheckGun:AddLabel("🔴 : Kabucha")
+AcidumRifle = CheckGun:AddLabel("🔴 : Acidum Rifle")
+BizarreRifle = CheckGun:AddLabel("🔴 : Bizarre Rifle")
+Serpent = CheckGun:AddLabel("🔴 : Serpent Bow")
+Soul = CheckGun:AddLabel("🔴 : Soul Guitar")
 
 local vy=Tabs.page6:AddLeftGroupbox("Menu");
 
@@ -8639,6 +8690,175 @@ RunService.RenderStepped:Connect(function()
         end
     )
 end
+)
+
+if _G.MysticIsland then
+    while wait() do
+        if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
+            getgenv().ToTarget(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island").CFrame * CFrame.new(100,70,100))
+        end
+    end
+end
+
+task.spawn(function()
+    while task.wait() do
+        pcall(function()
+            if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+                FM:SetText("Moon Status : 🌑 Full Moon 100%")
+            elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
+                FM:SetText("Moon Status : 🌒 Full Moon 75%")
+            elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
+                FM:SetText("Moon Status : 🌓 Full Moon 50%")
+            elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
+                FM:SetText("Moon Status : 🌗 Full Moon 25%")
+            elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
+                FM:SetText("Moon Status : 🌖 Full Moon 15%")
+            else
+                FM:SetText("Moon Status : 🌕 Full Moon 0%")
+            end
+        end)
+    end
+end)
+
+task.spawn(function ()
+    if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
+        MI:SetText("Mirage Island Status : Spawn")
+    else
+        MI:SetText("Mirage Island Status : Not Spawn")
+    end
+end)
+
+task.spawn(
+    function()
+        while task.wait() do
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman", true) == 1 then
+                Superhuman:SetText("🟢 : Superhuman")
+            end
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep", true) == 1 then
+                DeathStep:SetText("🟢 : Death Step")
+            end
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate", true) == 1 then
+                SharkmanKarate:SetText("🟢 : Sharkman Karate")
+            end
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw", true) == 1 then
+                ElectricClaw:SetText("🟢 : Electric Claw")
+            end
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon", true) == 1 then
+                DragonTalon:SetText("🟢 : Dragon Talon")
+            end
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman", true) == 1 then
+                GodHuman:SetText("🟢 : God Human")
+            end
+        end
+    end
+)
+
+task.spawn(
+    function()
+        while task.wait() do
+            pcall(
+                function()
+                    for i, v in pairs(
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
+                    ) do
+                        if v.Name == "Saber" then
+                            Saber:SetText("🟢 : Saber")
+                        end
+                        if v.Name == "Rengoku" then
+                            Rengoku:SetText("🟢 : Rengoku")
+                        end
+                        if v.Name == "Midnight Blade" then
+                            MidnightBlade:SetText("🟢 : Midnight Blade")
+                        end
+                        if v.Name == "Dragon Trident" then
+                            DragonTrident:SetText("🟢 : Dragon Trident")
+                        end
+                        if v.Name == "Yama" then
+                            Yama:SetText("🟢 : Yama")
+                        end
+                        if v.Name == "Buddy Sword" then
+                            BuddySword:SetText("🟢 : Buddy Sword")
+                        end
+                        if v.Name == "Canvander" then
+                            Canvander:SetText("🟢 : Canvander")
+                        end
+                        if v.Name == "Spikey Trident" then
+                            SpikeyTrident:SetText("🟢 : Spikey Trident")
+                        end
+                        if v.Name == "Hallow Scythe" then
+                            HallowScythe:SetText("🟢 : Hallow Scythe")
+                        end
+                        if v.Name == "Dark Dagger" then
+                            DarkDagger:SetText("🟢 : Dark Dagger")
+                        end
+                        if v.Name == "Tushita" then
+                            Tushita:SetText("🟢 : Tushita")
+                        end
+                        if v.Name == "Cursed Dual Katana" then
+                            Cursed:SetText("🟢 : Cursed Dual Katana")
+                        end
+                    end
+                end
+            )
+        end
+    end
+)
+
+task.spawn(
+    function()
+        while task.wait() do
+            pcall(
+                function()
+                    for i, v in pairs(
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
+                    ) do
+                        if v.Name == "Kabucha" then
+                            Kabucha:SetText("🟢 : Kabucha")
+                        end
+                        if v.Name == "Acidum Rifle" then
+                            AcidumRifle:SetText("🟢 : Acidum Rifle")
+                        end
+                        if v.Name == "Bizarre Rifle" then
+                            BizarreRifle:SetText("🟢 : Bizarre Rifle")
+                        end
+                        if v.Name == "Serpent Bow" then
+                            Serpent:SetText("🟢 : Serpent Bow")
+                        end
+                        if v.Name == "Soul Guitar" then
+                            Soul:SetText("🟢 : Soul Guitar")
+                        end
+                    end
+                end
+            )
+        end
+    end
+)
+
+task.spawn(
+    function()
+        while task.wait() do
+            pcall(
+                function()
+                    for i, v in pairs(
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
+                    ) do
+                        if v.Name == "Shisui" then
+                            Shisui:SetText("🟢 : Shisui")
+                        end
+                        if v.Name == "Saddi" then
+                            Saddi:SetText("🟢 : Saddi")
+                        end
+                        if v.Name == "Wando" then
+                            Wando:SetText("🟢 : Wando")
+                        end
+                        if v.Name == "True Triple Katana" then
+                            TrueTripleKatana:SetText("🟢 : True Triple Katana")
+                        end
+                    end
+                end
+            )
+        end
+    end
 )
 
 return Library -- don't Delete This ไอสัสห้ามลบไอโง่
